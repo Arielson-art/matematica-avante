@@ -65,6 +65,31 @@ nav a:hover{
     font-size:18px;
     cursor:pointer;
     transition:0.3s;
+    .materias{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+
+.materias button{
+    background:#1E3A8A;
+    color:white;
+    border:none;
+    padding:20px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+
+.materias button:hover{
+    background:#294ec5;
+    transform:scale(1.05);
+}
 }
 
 .hero button:hover{
