@@ -676,7 +676,7 @@ header svg{
 
     margin-top:45px;
 
-    background:white;
+    background:rgba(255,255,255,0.12);
 
     color:#1E3A8A;
 
@@ -700,7 +700,7 @@ header svg{
 
 .hero h2:nth-of-type(n+2)+p{
 
-    background:white;
+    background:rgba(255,255,255,0.08);
 
     padding:20px;
 
