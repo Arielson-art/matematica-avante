@@ -115,17 +115,19 @@ let pontos = 0;
 
 function acertou(){
 
+    if(pontos < 4){
 
-    pontos++;
+        pontos++;
 
+    }
+
+    respondidas++;
 
     document.getElementById("pontuacao").innerHTML =
     "Pontuação: " + pontos + "/4";
 
-
     document.getElementById("resultado").innerHTML =
     "✅ Correto!";
-
 
 }
 
