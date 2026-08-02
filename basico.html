@@ -1,127 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
-    <meta charset="UTF-8">
-    <title>Básico da Matemática</title>
-    <link rel="stylesheet" href="css/style.css">
+
+<meta charset="UTF-8">
+
+<title>Básico da Matemática</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
+
 
 <body>
 
+
+
 <header>
-    <h1>➕ Básico da Matemática</h1>
+
+<h1>➕ Básico da Matemática</h1>
+
+
+<button id="modoEscuro" type="button">
+🌙
+</button>
+
+
 </header>
 
 
-<script>
-
-let pontos = 0;
-let respondidas = 0;
 
 
-function acertou(){
 
-    pontos++;
-    respondidas++;
-
-    document.getElementById("pontuacao").innerHTML =
-    "Pontuação: " + pontos + "/4";
-
-    document.getElementById("resultado").innerHTML =
-    "✅ Correto!";
-
-}
-
-
-function errou(){
-
-    respondidas++;
-
-    document.getElementById("resultado").innerHTML =
-    "❌ Resposta errada.";
-
-}
-
-    function proximaAula(){
-
-    window.location.href = "operacoes.html";
-
-}
-</script>
-</body>
 <section class="hero">
 
-    <h2>Aprenda o básico da Matemática</h2>
 
-    <p>
-        A matemática começa com quatro operações principais:
-        adição, subtração, multiplicação e divisão.
-    </p>
+<h2>Aprenda o básico da Matemática</h2>
 
-    <h2>➕ Adição</h2>
 
-    <p>
-        A adição é usada para juntar valores.
-        Exemplo: 5 + 3 = 8
-    </p>
-
-    <h2>➖ Subtração</h2>
-
-    <p>
-        A subtração é usada para retirar valores.
-        Exemplo: 10 - 4 = 6
-    </p>
-
-    <h2>✖ Multiplicação</h2>
-
-    <p>
-        A multiplicação representa uma soma repetida.
-        Exemplo: 3 × 4 = 12
-    </p>
-
-    <h2>➗ Divisão</h2>
-
-    <p>
-        A divisão separa um valor em partes iguais.
-        Exemplo: 12 ÷ 3 = 4
-    </p>
 <p>
-    A divisão separa um valor em partes iguais.
-    Exemplo: 12 ÷ 3 = 4
+A matemática começa com quatro operações principais:
+adição, subtração, multiplicação e divisão.
 </p>
+
+
+
+<h2>➕ Adição</h2>
+
+<p>
+Usada para juntar valores.
+Exemplo: 5 + 3 = 8
+</p>
+
+
+
+<h2>➖ Subtração</h2>
+
+<p>
+Usada para retirar valores.
+Exemplo: 10 - 4 = 6
+</p>
+
+
+
+<h2>✖ Multiplicação</h2>
+
+<p>
+Representa uma soma repetida.
+Exemplo: 3 × 4 = 12
+</p>
+
+
+
+<h2>➗ Divisão</h2>
+
+<p>
+Separa um valor em partes iguais.
+Exemplo: 12 ÷ 3 = 4
+</p>
+
+
+
 
 
 <h2>📝 Exercícios</h2>
 
-<p>1) Quanto é 7 + 4?</p>
+
+
+<p>
+1) Quanto é 7 + 4?
+</p>
+
 
 <button onclick="errou()">10</button>
-<button onclick="acertou()">11</button>
-    
-
-<p>2) Quanto é 17 - 6?</p>
 
 <button onclick="acertou()">11</button>
+
+
+
+
+
+<p>
+2) Quanto é 17 - 6?
+</p>
+
+
+<button onclick="acertou()">11</button>
+
 <button onclick="errou()">12</button>
 
 
-<p>3) Quanto é 6 × 4?</p>
 
-    
+
+
+<p>
+3) Quanto é 6 × 4?
+</p>
+
+
 <button onclick="errou()">20</button>
+
 <button onclick="acertou()">24</button>
 
 
-<p>4) Quanto é 14 ÷ 2?</p>
+
+
+
+<p>
+4) Quanto é 14 ÷ 2?
+</p>
+
 
 <button onclick="acertou()">7</button>
+
 <button onclick="errou()">8</button>
-    
-    <h2 id="pontuacao">Pontuação: 0</h2>
-    <p id="resultado"></p>
-    <button onclick="proximaAula()">
-    Próxima Aula →
+
+
+
+
+
+<h2 id="pontuacao">
+Pontuação: 0
+</h2>
+
+
+<p id="resultado"></p>
+
+
+
+<button onclick="proximaAula()">
+Próxima Aula →
 </button>
+
+
+
 </section>
+
+
+
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+
 </html>
