@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <title>Básico da Matemática</title>
+
 
 <link rel="stylesheet" href="css/style.css">
 
+
 <script src="https://unpkg.com/lucide@latest"></script>
 
+
 </head>
+
 
 
 <body>
@@ -21,19 +29,40 @@
 <header>
 
 
-<button id="voltarPagina" type="button">
-    <i data-lucide="arrow-left"></i>
+
+<button id="voltarPagina" type="button" class="icon-button">
+
+<i data-lucide="arrow-left"></i>
+
 </button>
 
 
 
-<h1>➕ Básico da Matemática</h1>
+
+
+<h1>
+➕ Básico da Matemática
+</h1>
 
 
 
-<button id="modoEscuro" type="button">
-🌙
+
+
+<button id="modoEscuro" type="button" class="icon-button">
+
+<i data-lucide="moon"></i>
+
 </button>
+
+
+
+
+<button id="botaoMenu" type="button" class="icon-button">
+
+<i data-lucide="menu"></i>
+
+</button>
+
 
 
 
@@ -47,7 +76,12 @@
 <section class="hero">
 
 
-<h2>Aprenda o básico da Matemática</h2>
+
+<h2>
+Aprenda o básico da Matemática
+</h2>
+
+
 
 
 <p>
@@ -57,7 +91,13 @@ adição, subtração, multiplicação e divisão.
 
 
 
-<h2>➕ Adição</h2>
+
+
+<h2>
+➕ Adição
+</h2>
+
+
 
 <p>
 Usada para juntar valores.
@@ -66,16 +106,21 @@ Exemplo: 5 + 3 = 8
 
 
 
-<h2>➖ Subtração</h2>
+
+<h2>
+➖ Subtração
+</h2>
+
+
 
 <p>
 Usada para retirar valores.
 Exemplo: 10 - 4 = 6
-</p>
+</p>     <h2>
+✖ Multiplicação
+</h2>
 
 
-
-<h2>✖ Multiplicação</h2>
 
 <p>
 Representa uma soma repetida.
@@ -84,7 +129,12 @@ Exemplo: 3 × 4 = 12
 
 
 
-<h2>➗ Divisão</h2>
+
+<h2>
+➗ Divisão
+</h2>
+
+
 
 <p>
 Separa um valor em partes iguais.
@@ -95,7 +145,12 @@ Exemplo: 12 ÷ 3 = 4
 
 
 
-<h2>📝 Exercícios</h2>
+
+<h2>
+📝 Exercícios
+</h2>
+
+
 
 
 
@@ -104,9 +159,17 @@ Exemplo: 12 ÷ 3 = 4
 </p>
 
 
-<button onclick="errou()">10</button>
 
-<button onclick="acertou()">11</button>
+<button onclick="responderQuestao(1,true,this)">
+11
+</button>
+
+
+<button onclick="responderQuestao(1,false,this)">
+10
+</button>
+
+
 
 
 
@@ -117,9 +180,17 @@ Exemplo: 12 ÷ 3 = 4
 </p>
 
 
-<button onclick="acertou()">11</button>
 
-<button onclick="errou()">12</button>
+<button onclick="responderQuestao(2,true,this)">
+11
+</button>
+
+
+<button onclick="responderQuestao(2,false,this)">
+12
+</button>
+
+
 
 
 
@@ -130,9 +201,17 @@ Exemplo: 12 ÷ 3 = 4
 </p>
 
 
-<button onclick="errou()">20</button>
 
-<button onclick="acertou()">24</button>
+<button onclick="responderQuestao(3,true,this)">
+24
+</button>
+
+
+<button onclick="responderQuestao(3,false,this)">
+20
+</button>
+
+
 
 
 
@@ -143,26 +222,38 @@ Exemplo: 12 ÷ 3 = 4
 </p>
 
 
-<button onclick="acertou()">7</button>
 
-<button onclick="errou()">8</button>
+<button onclick="responderQuestao(4,true,this)">
+7
+</button>
+
+
+<button onclick="responderQuestao(4,false,this)">
+8
+</button>
+
 
 
 
 
 
 <h2 id="pontuacao">
-Pontuação: 0
+
+Pontuação: 0/4
+
 </h2>
 
 
-<p id="resultado"></p>
 
 
+<p id="resultado"></p>      <button onclick="proximaAula()">
 
-<button onclick="proximaAula()">
-Próxima Aula →
+Próxima Aula
+
+<i data-lucide="arrow-right"></i>
+
 </button>
+
 
 
 
@@ -172,16 +263,135 @@ Próxima Aula →
 
 
 
+<!-- MENU LATERAL -->
+
+
+<div id="fundoMenu"></div>
+
+
+
+
+<div id="menuLateral">
+
+
+<h2>
+Menu
+</h2>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="user-round"></i>
+
+<span>Perfil</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="book-open"></i>
+
+<span>Matérias</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="clipboard-list"></i>
+
+<span>Atividades</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="graduation-cap"></i>
+
+<span>Professores</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="chart-column"></i>
+
+<span>Meu progresso</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="gem"></i>
+
+<span>Premium</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="credit-card"></i>
+
+<span>Planos e Assinaturas</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="settings"></i>
+
+<span>Configurações</span>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
 
 <script src="js/script.js"></script>
 
 
+
+
 <script>
+
 lucide.createIcons();
+
 </script>
+
+
 
 
 
 </body>
 
-</html>
+</html>     
