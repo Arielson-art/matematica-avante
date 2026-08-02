@@ -801,3 +801,19 @@ header svg{
     transform:translateY(-5px);
 
 }    
+/* Ícones das operações - Página Básico */
+
+
+.hero h2 svg{
+
+    width:32px;
+
+    height:32px;
+
+    vertical-align:middle;
+
+    margin-right:10px;
+
+    stroke-width:2.5;
+
+}
