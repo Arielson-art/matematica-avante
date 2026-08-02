@@ -107,3 +107,19 @@ nav a:hover{
 .modo-escuro .hero p{
     color:white;
 }
+#modoEscuro{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#0b1d3a;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+
+#modoEscuro:hover{
+    transform:scale(1.1);
+}
