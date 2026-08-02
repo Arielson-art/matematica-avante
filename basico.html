@@ -17,20 +17,29 @@
 <script>
 
 let pontos = 0;
+let respondidas = 0;
+
 
 function acertou(){
 
     pontos++;
+    respondidas++;
 
     document.getElementById("pontuacao").innerHTML =
-    "Pontuação: " + pontos;
+    "Pontuação: " + pontos + "/4";
+
+    document.getElementById("resultado").innerHTML =
+    "✅ Correto!";
 
 }
 
 
 function errou(){
 
-    alert("❌ Resposta errada. Tente novamente!");
+    respondidas++;
+
+    document.getElementById("resultado").innerHTML =
+    "❌ Resposta errada.";
 
 }
 
@@ -105,5 +114,6 @@ function errou(){
 <button onclick="errou()">8</button>
     
     <h2 id="pontuacao">Pontuação: 0</h2>
+    <p id="resultado"></p>
 </section>
 </html>
