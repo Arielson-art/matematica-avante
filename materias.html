@@ -4,9 +4,12 @@
 <head>
 
 <meta charset="UTF-8">
+
 <title>Matérias - Matemática Avante</title>
 
 <link rel="stylesheet" href="css/style.css">
+
+<script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
 
@@ -16,8 +19,9 @@
 
 <header>
 
+
 <button id="voltarPagina" type="button">
-    <i class="fa-solid fa-arrow-left"></i>
+    <i data-lucide="arrow-left"></i>
 </button>
 
 
@@ -48,9 +52,11 @@ Escolha um assunto para começar seus estudos.
 <div class="materias">
 
 
+
 <button onclick="window.location.href='basico.html'">
 ➕ Básico da Matemática
 </button>
+
 
 
 <button>
@@ -58,9 +64,11 @@ Escolha um assunto para começar seus estudos.
 </button>
 
 
+
 <button>
 📐 Geometria
 </button>
+
 
 
 <button>
@@ -68,9 +76,11 @@ Escolha um assunto para começar seus estudos.
 </button>
 
 
+
 <button>
 🔢 Álgebra
 </button>
+
 
 
 </div>
@@ -81,6 +91,11 @@ Escolha um assunto para começar seus estudos.
 
 
 <script src="js/script.js"></script>
+
+
+<script>
+lucide.createIcons();
+</script>
 
 
 </body>
