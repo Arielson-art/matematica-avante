@@ -95,3 +95,15 @@ nav a:hover{
 .hero button:hover{
     background:#294ec5;
 }
+.modo-escuro{
+    background:#0b1d3a;
+    color:white;
+}
+
+.modo-escuro .hero h2{
+    color:#FFD54F;
+}
+
+.modo-escuro .hero p{
+    color:white;
+}
