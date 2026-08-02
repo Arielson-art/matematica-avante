@@ -150,3 +150,18 @@ function proximaAula(){
 
 
 }
+
+// BOTÃO VOLTAR
+
+const botaoVoltar = document.getElementById("voltarPagina");
+
+
+if(botaoVoltar){
+
+    botaoVoltar.addEventListener("click", function(){
+
+        history.back();
+
+    });
+
+}
