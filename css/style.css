@@ -10,8 +10,11 @@ body{
     background:#f4f8ff;
     color:#222;
     transition:0.3s;
+    overflow-x:hidden;
 }
 
+
+/* CABEÇALHO */
 
 header{
     background:#1E3A8A;
@@ -20,14 +23,47 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
+    gap:15px;
 }
 
 
 header h1{
     font-size:28px;
+    flex:1;
+    text-align:center;
 }
 
+
+/* BOTÕES DO CABEÇALHO */
+
+header button{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#0b1d3a;
+    color:white;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+}
+
+
+header button:hover{
+    transform:scale(1.1);
+}
+
+
+header svg{
+    width:22px;
+    height:22px;
+}
+
+
+
+/* ÁREA PRINCIPAL */
 
 .hero{
     text-align:center;
@@ -48,6 +84,9 @@ header h1{
 }
 
 
+
+/* BOTÕES GERAIS */
+
 .hero button{
     background:#1E3A8A;
     color:white;
@@ -62,8 +101,7 @@ header h1{
 
 .hero button:hover{
     background:#294ec5;
-}
-
+}  /* BOTÕES DE MATÉRIAS */
 
 .materias{
     display:flex;
@@ -93,7 +131,7 @@ header h1{
 
 
 
-/* Caixa de nome */
+/* CAIXA DE NOME */
 
 #entradaNome{
     margin-top:30px;
@@ -109,70 +147,325 @@ header h1{
 
 
 
-/* Modo escuro */
+/* MENU LATERAL */
 
-.modo-escuro{
-    background:#0b1d3a;
-    color:white;
-}
+#menuLateral{
 
+    position:fixed;
+    top:0;
+    right:-320px;
 
-.modo-escuro .hero h2{
-    color:#FFD54F;
-}
+    width:300px;
+    height:100vh;
 
+    background:white;
+    z-index:1000;
 
-.modo-escuro .hero p{
-    color:white;
-}
+    padding:30px 20px;
 
+    box-shadow:-5px 0 20px rgba(0,0,0,0.2);
 
-
-/* Botão da lua */
-
-#modoEscuro{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    border:none;
-    background:#0b1d3a;
-    color:white;
-    font-size:22px;
-    cursor:pointer;
     transition:0.3s;
+
 }
 
 
-#modoEscuro:hover{
-    transform:scale(1.1);
+#menuLateral.aberto{
+
+    right:0;
+
 }
 
 
 
-/* Botão voltar */
+#menuLateral h2{
 
-#voltarPagina{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    border:none;
-    background:#0b1d3a;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
+    color:#1E3A8A;
+    margin-bottom:30px;
+
+}
+
+
+
+.menu-item{
 
     display:flex;
     align-items:center;
-    justify-content:center;
+    gap:15px;
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    color:#222;
+
 }
 
 
-#voltarPagina svg{
+
+.menu-item:hover{
+
+    background:#e8efff;
+
+}
+
+
+
+.menu-item svg{
+
     width:22px;
     height:22px;
+
+}     /* FUNDO QUANDO MENU ABERTO */
+
+#fundoMenu{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(5px);
+
+    z-index:900;
+
+    display:none;
+
 }
 
 
-#voltarPagina:hover{
-    transform:scale(1.1);
+#fundoMenu.ativo{
+
+    display:block;
+
 }
+
+
+
+/* MODO ESCURO */
+
+.modo-escuro{
+
+    background:#0b1d3a;
+    color:white;
+
+}
+
+
+
+.modo-escuro .hero h2{
+
+    color:#FFD54F;
+
+}
+
+
+
+.modo-escuro .hero p{
+
+    color:white;
+
+}
+
+
+
+/* MENU NO MODO ESCURO */
+
+.modo-escuro #menuLateral{
+
+    background:#13294b;
+
+    color:white;
+
+}
+
+
+
+.modo-escuro #menuLateral h2{
+
+    color:#FFD54F;
+
+}
+
+
+
+.modo-escuro .menu-item{
+
+    color:white;
+
+}
+
+
+
+.modo-escuro .menu-item:hover{
+
+    background:#1d3b6d;
+
+}
+
+
+
+/* BOTÃO LUA */
+
+#modoEscuro{
+
+    font-size:20px;
+
+}
+
+
+
+/* BOTÃO VOLTAR */
+
+#voltarPagina svg{
+
+    width:22px;
+    height:22px;
+
+}
+
+
+
+/* ANIMAÇÕES */
+
+@keyframes aparecerMenu{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+#menuLateral.aberto{
+
+    animation:aparecerMenu 0.3s;
+
+}      /* RESPONSIVIDADE */
+
+@media(max-width:700px){
+
+    header h1{
+
+        font-size:22px;
+
+    }
+
+
+    .hero{
+
+        padding:50px 15px;
+
+    }
+
+
+    .hero h2{
+
+        font-size:30px;
+
+    }
+
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+
+    #menuLateral{
+
+        width:280px;
+
+    }
+
+}
+
+
+
+/* EXERCÍCIOS */
+
+.resposta-bloqueada{
+
+    opacity:0.6;
+
+    cursor:not-allowed;
+
+}
+
+
+
+.resposta-correta{
+
+    background:#22c55e !important;
+
+}
+
+
+
+.resposta-errada{
+
+    background:#ef4444 !important;
+
+}
+
+
+
+/* PROGRESSO */
+
+#pontuacao{
+
+    margin-top:30px;
+
+}
+
+
+
+/* BOTÕES DE ÍCONES */
+
+.icon-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.icon-button svg{
+
+    width:23px;
+
+    height:23px;
+
+} 
