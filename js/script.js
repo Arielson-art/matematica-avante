@@ -1,8 +1,10 @@
-const botao = document.querySelector("button");
+const botaoComecar = document.getElementById("comecarAgora");
 
-botao.addEventListener("click", function(){
+botaoComecar.addEventListener("click", function(){
     window.location.href = "materias.html";
 });
+
+
 const botaoModo = document.getElementById("modoEscuro");
 
 botaoModo.addEventListener("click", function(){
