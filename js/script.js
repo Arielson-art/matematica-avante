@@ -1,166 +1,134 @@
-// COMEÇAR AGORA
+// ==========================
+// MODO ESCURO
+// ==========================
+
+const botaoModo = document.getElementById("modoEscuro");
+
+if (botaoModo) {
+
+    botaoModo.addEventListener("click", function () {
+
+        document.body.classList.toggle("modo-escuro");
+
+    });
+
+}
+
+
+// ==========================
+// BOTÃO VOLTAR
+// ==========================
+
+const botaoVoltar = document.getElementById("voltarPagina");
+
+if (botaoVoltar) {
+
+    botaoVoltar.addEventListener("click", function () {
+
+        history.back();
+
+    });
+
+}
+
+
+// ==========================
+// COMEÇAR AGORA + NOME
+// ==========================
 
 const botaoComecar = document.getElementById("comecarAgora");
 const entradaNome = document.getElementById("entradaNome");
-const salvarNome = document.getElementById("salvarNome");
-const nomeUsuario = document.getElementById("nomeUsuario");
+const campoNome = document.getElementById("nomeUsuario");
+const botaoSalvar = document.getElementById("salvarNome");
 
+if (botaoComecar) {
 
-let nomeSalvo = localStorage.getItem("nomeUsuario");
+    botaoComecar.addEventListener("click", function () {
 
+        const nomeSalvo = localStorage.getItem("nomeUsuario");
 
-if(nomeSalvo && botaoComecar){
+        if (nomeSalvo) {
 
-    botaoComecar.innerHTML = "Continuar como " + nomeSalvo;
+            window.location.href = "materias.html";
 
-}
+        } else {
 
+            botaoComecar.style.display = "none";
+            entradaNome.style.display = "block";
 
+        }
 
-if(botaoComecar){
-
-botaoComecar.addEventListener("click", function(){
-
-
-    if(localStorage.getItem("nomeUsuario")){
-
-        window.location.href = "materias.html";
-
-    }else{
-
-        entradaNome.style.display = "block";
-
-        botaoComecar.style.display = "none";
-
-    }
-
-
-});
+    });
 
 }
 
 
+if (botaoSalvar) {
 
-if(salvarNome){
+    botaoSalvar.addEventListener("click", function () {
 
-salvarNome.addEventListener("click", function(){
+        const nome = campoNome.value.trim();
 
+        if (nome === "") {
 
-    let nome = nomeUsuario.value;
+            alert("Digite um nome.");
 
+            return;
 
-    if(nome.trim() !== ""){
+        }
 
         localStorage.setItem("nomeUsuario", nome);
 
         window.location.href = "materias.html";
 
-    }
-
-
-});
+    });
 
 }
 
 
-
-// MODO ESCURO
-
-
-const botaoModo = document.getElementById("modoEscuro");
-
-
-
-if(localStorage.getItem("modoEscuro") === "ativado"){
-
-    document.body.classList.add("modo-escuro");
-
-}
-
-
-
-if(botaoModo){
-
-botaoModo.addEventListener("click", function(){
-
-
-    document.body.classList.toggle("modo-escuro");
-
-
-
-    if(document.body.classList.contains("modo-escuro")){
-
-        localStorage.setItem("modoEscuro","ativado");
-
-    }else{
-
-        localStorage.setItem("modoEscuro","desativado");
-
-    }
-
-
-
-});
-
-}
-
-
-
+// ==========================
 // EXERCÍCIOS
-
+// ==========================
 
 let pontos = 0;
 
+function acertou() {
 
-function acertou(){
+    pontos++;
 
-    if(pontos < 4){
+    const pontuacao = document.getElementById("pontuacao");
+    const resultado = document.getElementById("resultado");
 
-        pontos++;
+    if (pontuacao) {
 
+        pontuacao.innerHTML = "Pontuação: " + pontos + "/4";
 
+    }
 
-    document.getElementById("pontuacao").innerHTML =
-    "Pontuação: " + pontos + "/4";
+    if (resultado) {
 
-    document.getElementById("resultado").innerHTML =
-    "✅ Correto!";
+        resultado.innerHTML = "✅ Correto!";
 
-}
-
-
-
-function errou(){
-
-
-    document.getElementById("resultado").innerHTML =
-    "❌ Resposta errada.";
-
+    }
 
 }
 
 
+function errou() {
 
+    const resultado = document.getElementById("resultado");
 
-function proximaAula(){
+    if (resultado) {
 
+        resultado.innerHTML = "❌ Resposta errada.";
 
-    window.location.href = "operacoes.html";
-
+    }
 
 }
 
-// BOTÃO VOLTAR
 
-const botaoVoltar = document.getElementById("voltarPagina");
+function proximaAula() {
 
-
-if(botaoVoltar){
-
-    botaoVoltar.addEventListener("click", function(){
-
-        history.back();
-
-    });
+    alert("🚧 A próxima aula ainda está em desenvolvimento.");
 
 }
