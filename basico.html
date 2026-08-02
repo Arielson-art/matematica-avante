@@ -16,12 +16,22 @@
 
 <script>
 
+let pontos = 0;
+
 function acertou(){
-    alert("✅ Correto! Muito bem!");
+
+    pontos++;
+
+    document.getElementById("pontuacao").innerHTML =
+    "Pontuação: " + pontos;
+
 }
 
+
 function errou(){
+
     alert("❌ Resposta errada. Tente novamente!");
+
 }
 
 </script>
