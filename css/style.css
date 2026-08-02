@@ -92,6 +92,7 @@ header h1{
 }
 
 
+
 /* Caixa de nome */
 
 #entradaNome{
@@ -105,6 +106,7 @@ header h1{
     border:1px solid #ccc;
     font-size:16px;
 }
+
 
 
 /* Modo escuro */
@@ -125,6 +127,7 @@ header h1{
 }
 
 
+
 /* Botão da lua */
 
 #modoEscuro{
@@ -141,5 +144,35 @@ header h1{
 
 
 #modoEscuro:hover{
+    transform:scale(1.1);
+}
+
+
+
+/* Botão voltar */
+
+#voltarPagina{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#0b1d3a;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+#voltarPagina svg{
+    width:22px;
+    height:22px;
+}
+
+
+#voltarPagina:hover{
     transform:scale(1.1);
 }
