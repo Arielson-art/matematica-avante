@@ -817,3 +817,295 @@ header svg{
     stroke-width:2.5;
 
 }
+/* ================================
+   PÁGINA PERFIL
+================================ */
+
+
+.perfil-container{
+
+    max-width:900px;
+
+    margin:30px auto;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+
+.card-perfil{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+}
+
+
+
+.card-perfil h2{
+
+    font-size:22px;
+
+    color:#1E3A8A;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}       /* Avatar e identidade */
+
+
+.avatar-area{
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:#1E3A8A;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+}
+
+
+
+.avatar-area svg{
+
+    width:55px;
+
+    height:55px;
+
+    color:#f59e0b;
+
+}
+
+
+
+
+
+.identidade h3{
+
+    text-align:center;
+
+    font-size:24px;
+
+    color:#333;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.identidade p{
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:16px;
+
+}      /* Progresso do aluno */
+
+
+.progresso{
+
+    border-left:5px solid #f59e0b;
+
+}
+
+
+
+
+
+.barra-progresso{
+
+    width:100%;
+
+    height:14px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+
+}
+
+
+
+
+
+.progresso-atual{
+
+    width:0%;
+
+    height:100%;
+
+    background:#1E3A8A;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+.progresso p{
+
+    margin:12px 0;
+
+    color:#555;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+.progresso span{
+
+    font-weight:bold;
+
+    color:#1E3A8A;
+
+}        /* Evolução do aluno */
+
+
+.evolucao{
+
+    border-left:5px solid #f59e0b;
+
+}
+
+
+
+
+
+.evolucao p{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #e5e7eb;
+
+    color:#555;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+.evolucao span{
+
+    font-weight:bold;
+
+    color:#1E3A8A;
+
+}       /* Configurações do perfil */
+
+
+.configuracoes{
+
+    border-left:5px solid #f59e0b;
+
+}
+
+
+
+
+
+.configuracoes button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#1E3A8A;
+
+    color:white;
+
+    font-size:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+
+
+.configuracoes button svg{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+
+
+
+
+.configuracoes button:hover{
+
+    background:#294ec5;
+
+    transform:translateY(-3px);
+
+}  
