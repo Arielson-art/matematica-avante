@@ -1,4 +1,4 @@
-// BOTÃO COMEÇAR AGORA
+// COMEÇAR AGORA
 
 const botaoComecar = document.getElementById("comecarAgora");
 const entradaNome = document.getElementById("entradaNome");
@@ -6,33 +6,23 @@ const salvarNome = document.getElementById("salvarNome");
 const nomeUsuario = document.getElementById("nomeUsuario");
 
 
-// Verifica se já existe nome salvo
-
 let nomeSalvo = localStorage.getItem("nomeUsuario");
 
 
-if(nomeSalvo){
+if(nomeSalvo && botaoComecar){
 
-    if(botaoComecar){
-
-        botaoComecar.innerHTML = "Continuar como " + nomeSalvo;
-
-    }
+    botaoComecar.innerHTML = "Continuar como " + nomeSalvo;
 
 }
 
 
 
-// Quando clicar em começar
-
 if(botaoComecar){
 
 botaoComecar.addEventListener("click", function(){
 
-    nomeSalvo = localStorage.getItem("nomeUsuario");
 
-
-    if(nomeSalvo){
+    if(localStorage.getItem("nomeUsuario")){
 
         window.location.href = "materias.html";
 
@@ -44,17 +34,17 @@ botaoComecar.addEventListener("click", function(){
 
     }
 
+
 });
 
 }
 
 
 
-// Salvar nome
-
 if(salvarNome){
 
 salvarNome.addEventListener("click", function(){
+
 
     let nome = nomeUsuario.value;
 
@@ -67,6 +57,7 @@ salvarNome.addEventListener("click", function(){
 
     }
 
+
 });
 
 }
@@ -75,10 +66,10 @@ salvarNome.addEventListener("click", function(){
 
 // MODO ESCURO
 
+
 const botaoModo = document.getElementById("modoEscuro");
 
 
-// Carregar modo salvo
 
 if(localStorage.getItem("modoEscuro") === "ativado"){
 
@@ -92,19 +83,70 @@ if(botaoModo){
 
 botaoModo.addEventListener("click", function(){
 
+
     document.body.classList.toggle("modo-escuro");
+
 
 
     if(document.body.classList.contains("modo-escuro")){
 
-        localStorage.setItem("modoEscuro", "ativado");
+        localStorage.setItem("modoEscuro","ativado");
 
     }else{
 
-        localStorage.setItem("modoEscuro", "desativado");
+        localStorage.setItem("modoEscuro","desativado");
 
     }
 
+
+
 });
+
+}
+
+
+
+// EXERCÍCIOS
+
+
+let pontos = 0;
+
+
+
+function acertou(){
+
+
+    pontos++;
+
+
+    document.getElementById("pontuacao").innerHTML =
+    "Pontuação: " + pontos + "/4";
+
+
+    document.getElementById("resultado").innerHTML =
+    "✅ Correto!";
+
+
+}
+
+
+
+function errou(){
+
+
+    document.getElementById("resultado").innerHTML =
+    "❌ Resposta errada.";
+
+
+}
+
+
+
+
+function proximaAula(){
+
+
+    window.location.href = "operacoes.html";
+
 
 }
