@@ -110,7 +110,7 @@ botaoModo.addEventListener("click", function(){
 
 
 let pontos = 0;
-
+let respondidas = 0;
 
 
 function acertou(){
