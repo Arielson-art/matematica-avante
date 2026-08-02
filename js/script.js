@@ -1,12 +1,26 @@
-// ==========================
-// MODO ESCURO
-// ==========================
+// BOTÃO COMEÇAR AGORA
+
+const botaoComecar = document.getElementById("comecarAgora");
+
+if(botaoComecar){
+
+    botaoComecar.addEventListener("click", function(){
+
+        window.location.href = "materias.html";
+
+    });
+
+}
+
+
+
+// BOTÃO MODO ESCURO
 
 const botaoModo = document.getElementById("modoEscuro");
 
-if (botaoModo) {
+if(botaoModo){
 
-    botaoModo.addEventListener("click", function () {
+    botaoModo.addEventListener("click", function(){
 
         document.body.classList.toggle("modo-escuro");
 
@@ -15,15 +29,14 @@ if (botaoModo) {
 }
 
 
-// ==========================
+
 // BOTÃO VOLTAR
-// ==========================
 
 const botaoVoltar = document.getElementById("voltarPagina");
 
-if (botaoVoltar) {
+if(botaoVoltar){
 
-    botaoVoltar.addEventListener("click", function () {
+    botaoVoltar.addEventListener("click", function(){
 
         history.back();
 
@@ -32,28 +45,42 @@ if (botaoVoltar) {
 }
 
 
-// ==========================
-// COMEÇAR AGORA + NOME
-// ==========================
 
-const botaoComecar = document.getElementById("comecarAgora");
+// SISTEMA DE NOME COM LOCALSTORAGE
+
 const entradaNome = document.getElementById("entradaNome");
+const botaoSalvarNome = document.getElementById("salvarNome");
 const campoNome = document.getElementById("nomeUsuario");
-const botaoSalvar = document.getElementById("salvarNome");
+const botaoComecarNome = document.getElementById("comecarAgora");
 
-if (botaoComecar) {
 
-    botaoComecar.addEventListener("click", function () {
 
-        const nomeSalvo = localStorage.getItem("nomeUsuario");
+let nomeSalvo = localStorage.getItem("nomeUsuario");
 
-        if (nomeSalvo) {
+
+
+if(nomeSalvo){
+
+    if(entradaNome){
+
+        entradaNome.style.display = "none";
+
+    }
+
+}
+
+
+
+if(botaoComecarNome){
+
+    botaoComecarNome.addEventListener("click", function(){
+
+        if(nomeSalvo){
 
             window.location.href = "materias.html";
 
-        } else {
+        }else{
 
-            botaoComecar.style.display = "none";
             entradaNome.style.display = "block";
 
         }
@@ -63,72 +90,62 @@ if (botaoComecar) {
 }
 
 
-if (botaoSalvar) {
 
-    botaoSalvar.addEventListener("click", function () {
+if(botaoSalvarNome){
 
-        const nome = campoNome.value.trim();
+    botaoSalvarNome.addEventListener("click", function(){
 
-        if (nome === "") {
+        let nome = campoNome.value;
 
-            alert("Digite um nome.");
 
-            return;
+        if(nome.trim() !== ""){
+
+            localStorage.setItem("nomeUsuario", nome);
+
+            window.location.href = "materias.html";
 
         }
-
-        localStorage.setItem("nomeUsuario", nome);
-
-        window.location.href = "materias.html";
 
     });
 
 }
 
 
-// ==========================
+
 // EXERCÍCIOS
-// ==========================
 
 let pontos = 0;
 
-function acertou() {
+
+
+function acertou(){
 
     pontos++;
 
-    const pontuacao = document.getElementById("pontuacao");
-    const resultado = document.getElementById("resultado");
 
-    if (pontuacao) {
+    document.getElementById("pontuacao").innerHTML =
+    "Pontuação: " + pontos + "/4";
 
-        pontuacao.innerHTML = "Pontuação: " + pontos + "/4";
 
-    }
-
-    if (resultado) {
-
-        resultado.innerHTML = "✅ Correto!";
-
-    }
+    document.getElementById("resultado").innerHTML =
+    "✅ Correto!";
 
 }
 
 
-function errou() {
 
-    const resultado = document.getElementById("resultado");
+function errou(){
 
-    if (resultado) {
 
-        resultado.innerHTML = "❌ Resposta errada.";
-
-    }
+    document.getElementById("resultado").innerHTML =
+    "❌ Resposta errada.";
 
 }
 
 
-function proximaAula() {
 
-    alert("🚧 A próxima aula ainda está em desenvolvimento.");
+function proximaAula(){
+
+    window.location.href = "operacoes.html";
 
 }
