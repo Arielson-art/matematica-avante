@@ -5,11 +5,17 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <title>Matérias - Matemática Avante</title>
+
 
 <link rel="stylesheet" href="css/style.css">
 
+
 <script src="https://unpkg.com/lucide@latest"></script>
+
 
 </head>
 
@@ -17,30 +23,59 @@
 <body>
 
 
+
 <header>
 
 
-<button id="voltarPagina" type="button">
-    <i data-lucide="arrow-left"></i>
+
+<button id="voltarPagina" type="button" class="icon-button">
+
+<i data-lucide="arrow-left"></i>
+
 </button>
 
 
-<h1>📚 Matemática Avante</h1>
 
 
-<button id="modoEscuro" type="button">
-🌙
+<h1>
+📚 Matemática Avante
+</h1>
+
+
+
+
+<button id="modoEscuro" type="button" class="icon-button">
+
+<i data-lucide="moon"></i>
+
 </button>
+
+
+
+
+<button id="botaoMenu" type="button" class="icon-button">
+
+<i data-lucide="menu"></i>
+
+</button>
+
 
 
 </header>
 
 
 
+
+
 <section class="hero">
 
 
-<h2>Escolha uma matéria</h2>
+
+<h2>
+Escolha uma matéria
+</h2>
+
+
 
 
 <p>
@@ -49,37 +84,58 @@ Escolha um assunto para começar seus estudos.
 
 
 
+
 <div class="materias">
 
 
 
 <button onclick="window.location.href='basico.html'">
-➕ Básico da Matemática
+
+<i data-lucide="plus"></i>
+
+Básico da Matemática
+
 </button>
+
 
 
 
 <button>
-✖ Multiplicação e Divisão
+
+<i data-lucide="x"></i>
+
+Multiplicação e Divisão
+
 </button>
+
 
 
 
 <button>
-📐 Geometria
+
+<i data-lucide="ruler"></i>
+
+Geometria
+
+</button>       <button>
+
+<i data-lucide="chart-column"></i>
+
+Funções
+
 </button>
+
 
 
 
 <button>
-📊 Funções
+
+<i data-lucide="variable"></i>
+
+Álgebra
+
 </button>
 
-
-
-<button>
-🔢 Álgebra
-</button>
 
 
 
@@ -90,14 +146,132 @@ Escolha um assunto para começar seus estudos.
 
 
 
+
+
+<!-- MENU LATERAL -->
+
+
+<div id="fundoMenu"></div>
+
+
+
+<div id="menuLateral">
+
+
+<h2>
+Menu
+</h2>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="user-round"></i>
+
+<span>Perfil</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="book-open"></i>
+
+<span>Matérias</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="clipboard-list"></i>
+
+<span>Atividades</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="graduation-cap"></i>
+
+<span>Professores</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="chart-column"></i>
+
+<span>Meu progresso</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="gem"></i>
+
+<span>Premium</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="credit-card"></i>
+
+<span>Planos e Assinaturas</span>
+
+</div>
+
+
+
+
+<div class="menu-item">
+
+<i data-lucide="settings"></i>
+
+<span>Configurações</span>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
 <script src="js/script.js"></script>
 
 
+
 <script>
+
 lucide.createIcons();
+
 </script>
+
+
 
 
 </body>
 
-</html>
+</html> 
