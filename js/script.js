@@ -462,7 +462,7 @@ function mostrarResultado(texto){
 function proximaAula(){
 
 
-    window.location.href="operacoes.html";
+    window.location.href="atividades-basico.html";
 
 
 }
