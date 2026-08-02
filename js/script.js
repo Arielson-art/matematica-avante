@@ -118,7 +118,6 @@ function acertou(){
 
         pontos++;
 
-    }
 
 
     document.getElementById("pontuacao").innerHTML =
