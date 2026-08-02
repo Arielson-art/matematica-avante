@@ -20,11 +20,23 @@
 
 <header>
 
+
 <h1>📘 Matemática Avante</h1>
 
 
-<button id="modoEscuro" type="button">
-🌙
+
+<button id="modoEscuro" type="button" class="icon-button">
+
+<i data-lucide="moon"></i>
+
+</button>
+
+
+
+<button id="botaoMenu" type="button" class="icon-button">
+
+<i data-lucide="menu"></i>
+
 </button>
 
 
@@ -32,10 +44,15 @@
 
 
 
+
+
 <section class="hero">
 
 
-<h2>Aprenda Matemática do Básico ao Avançado</h2>
+<h2>
+Aprenda Matemática do Básico ao Avançado
+</h2>
+
 
 
 <p>
@@ -44,25 +61,36 @@ Estude no seu ritmo com aulas, exercícios, simulados e professores especializad
 
 
 
+
 <button id="comecarAgora" type="button">
+
 Começar Agora
+
 </button>
+
 
 
 
 <div id="entradaNome" style="display:none;">
 
-<h3>Como podemos chamar você?</h3>
+
+<h3>
+Como podemos chamar você?
+</h3>
+
 
 
 <input 
-id="nomeUsuario" 
+id="nomeUsuario"
 placeholder="Digite seu nome"
 >
 
 
+
 <button id="salvarNome">
+
 Continuar
+
 </button>
 
 
@@ -70,15 +98,115 @@ Continuar
 
 
 
-</section>
+</section>      <!-- MENU LATERAL -->
+
+<div id="fundoMenu"></div>
+
+
+<div id="menuLateral">
+
+
+<h2>
+Menu
+</h2>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="user-round"></i>
+
+<span>Perfil</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="book-open"></i>
+
+<span>Matérias</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="clipboard-list"></i>
+
+<span>Atividades</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="graduation-cap"></i>
+
+<span>Professores</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="chart-column"></i>
+
+<span>Meu progresso</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="gem"></i>
+
+<span>Premium</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="credit-card"></i>
+
+<span>Planos e Assinaturas</span>
+
+</div>
+
+
+
+<div class="menu-item">
+
+<i data-lucide="settings"></i>
+
+<span>Configurações</span>
+
+</div>
+
+
+
+</div>
+
+
 
 
 
 <script src="js/script.js"></script>
 
+
 <script>
+
 lucide.createIcons();
+
 </script>
+
 
 
 </body>
