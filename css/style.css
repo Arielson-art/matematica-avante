@@ -469,3 +469,176 @@ header svg{
     height:23px;
 
 } 
+/* ================================
+   PÁGINA SOBRE
+================================ */
+
+
+.pagina-sobre{
+
+    background:linear-gradient(
+        180deg,
+        #0b1d3a,
+        #1E40AF
+    );
+
+    color:white;
+
+}
+
+
+
+
+.pagina-sobre header{
+
+    background:transparent;
+
+}
+
+
+
+
+
+.sobre-hero{
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+
+}
+
+
+
+
+
+.sobre-hero h2{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.sobre-hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:20px;
+
+}
+
+
+
+
+
+.sobre-conteudo{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    padding:40px 20px;
+
+}
+
+
+
+
+
+.card-sobre{
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    width:320px;
+
+    text-align:center;
+
+    transition:0.3s;
+
+}
+
+
+
+
+
+.card-sobre:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,0.18);
+
+}
+
+
+
+
+
+.card-sobre svg{
+
+    width:45px;
+
+    height:45px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.card-sobre h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.card-sobre p{
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+.card-sobre a{
+
+    color:#93c5fd;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+.card-sobre a:hover{
+
+    text-decoration:underline;
+
+}   
