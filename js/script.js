@@ -476,3 +476,30 @@ function proximaAula(){
 
 
 atualizarIcones();
+const botaoAluno = document.getElementById("botaoAluno");
+const botaoProfessor = document.getElementById("botaoProfessor");
+
+let tipoSelecionado = "";
+
+if(botaoAluno && botaoProfessor){
+
+    botaoAluno.addEventListener("click", function(){
+
+        tipoSelecionado = "aluno";
+
+        botaoAluno.classList.add("selecionado");
+        botaoProfessor.classList.remove("selecionado");
+
+    });
+
+
+    botaoProfessor.addEventListener("click", function(){
+
+        tipoSelecionado = "professor";
+
+        botaoProfessor.classList.add("selecionado");
+        botaoAluno.classList.remove("selecionado");
+
+    });
+
+}  
