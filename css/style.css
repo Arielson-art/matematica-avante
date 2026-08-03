@@ -1156,3 +1156,34 @@ header svg{
     max-width:220px;
 
 } 
+.botao-avatar{
+
+    display:inline-block;
+
+    margin:15px auto 0;
+
+    padding:10px 20px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    text-align:center;
+
+}
+
+.botao-avatar:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+} 
