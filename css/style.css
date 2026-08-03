@@ -1231,3 +1231,12 @@ transform: translateY(-2px);
 border-color: #4a90e2;
 
 }  
+.botao-tipo.selecionado{
+
+background: #4a90e2;
+
+color: white;
+
+border-color: #4a90e2;
+
+}   
