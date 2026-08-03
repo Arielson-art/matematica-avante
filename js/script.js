@@ -262,7 +262,13 @@ if(botaoSalvar){
 
         const nome = campoNome.value.trim();
 
+if(tipoSelecionado === ""){
 
+    alert("Escolha se você é aluno ou professor.");
+
+    return;
+
+}
 
 
         if(nome === ""){
@@ -282,7 +288,7 @@ if(botaoSalvar){
 
         localStorage.setItem("nomeUsuario", nome);
 
-
+localStorage.setItem("tipoUsuario", tipoSelecionado);
 
         window.location.href="materias.html";
 
