@@ -336,7 +336,7 @@ Tema
 
 
 
-<button>
+<button id="botaoSair" type="button">
 
 <i data-lucide="log-out"></i>
 
@@ -414,7 +414,22 @@ botaoAlterarAvatar.addEventListener("click", function(){
 
     uploadFoto.click();
 
-});  
+});       const botaoSair = document.getElementById("botaoSair");
+
+botaoSair.addEventListener("click", function(){
+
+    const confirmar = confirm("Tem certeza que deseja sair?");
+
+    if(!confirmar){
+        return;
+    }
+
+    localStorage.removeItem("nomeUsuario");
+    localStorage.removeItem("fotoPerfil");
+
+    window.location.href = "index.html";
+
+});
 </script>  
 </body>
 
