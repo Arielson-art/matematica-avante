@@ -1187,3 +1187,6 @@ header svg{
     transform:translateY(-2px);
 
 } 
+#uploadFoto{
+    display: none;
+}
