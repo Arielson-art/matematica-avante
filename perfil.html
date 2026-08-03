@@ -54,14 +54,14 @@ Perfil
 <div class="card-perfil identidade">
 
 
-
 <div class="avatar-area">
 
-
-<i data-lucide="user"></i>
-
+    <img id="fotoPerfil" src="" alt="Foto do perfil">
 
 </div>
+
+<input type="file" id="uploadFoto" accept="image/*">
+
 
 
 
@@ -375,7 +375,40 @@ lucide.createIcons();
 
 
 
+<script>
 
+const uploadFoto = document.getElementById("uploadFoto");
+const fotoPerfil = document.getElementById("fotoPerfil");
+const fotoSalva = localStorage.getItem("fotoPerfil");
+
+if(fotoSalva){
+
+    fotoPerfil.src = fotoSalva;
+
+} 
+uploadFoto.addEventListener("change", function(){
+
+    const arquivo = this.files[0];
+
+    if(!arquivo) return;
+
+    const leitor = new FileReader();
+
+   leitor.onload = function(e){
+
+    const imagem = e.target.result;
+
+    fotoPerfil.src = imagem;
+
+    localStorage.setItem("fotoPerfil", imagem);
+
+};
+
+    leitor.readAsDataURL(arquivo);
+
+});
+
+</script>  
 </body>
 
 </html>     
