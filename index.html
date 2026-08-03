@@ -20,9 +20,11 @@
 
 <header>
 
-
 <h1>📘 Matemática Avante</h1>
 
+<p id="mensagemBoasVindas">
+Bem-vindo!
+</p>
 
 
 <button id="modoEscuro" type="button" class="icon-button">
@@ -213,7 +215,25 @@ lucide.createIcons();
 </script>
 
 
+<script>
 
+const mensagem = document.getElementById("mensagemBoasVindas");
+
+
+if(mensagem){
+
+    const nome = localStorage.getItem("nomeUsuario");
+
+
+    if(nome){
+
+        mensagem.textContent = `Olá, ${nome}! 👋`;
+
+    }
+
+}
+
+</script>
 </body>
 
 </html>
