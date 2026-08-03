@@ -313,14 +313,13 @@ Editar perfil
 
 
 
-<button>
+<button id="botaoAlterarAvatar" type="button">
 
 <i data-lucide="image"></i>
 
 Alterar avatar
 
 </button>
-
 
 
 
@@ -383,8 +382,8 @@ lucide.createIcons();
 
 const uploadFoto = document.getElementById("uploadFoto");
 const fotoPerfil = document.getElementById("fotoPerfil");
+const botaoAlterarAvatar = document.getElementById("botaoAlterarAvatar");
 const fotoSalva = localStorage.getItem("fotoPerfil");
-
 if(fotoSalva){
 
     fotoPerfil.src = fotoSalva;
@@ -411,7 +410,11 @@ uploadFoto.addEventListener("change", function(){
     leitor.readAsDataURL(arquivo);
 
 });
+botaoAlterarAvatar.addEventListener("click", function(){
 
+    uploadFoto.click();
+
+});  
 </script>  
 </body>
 
