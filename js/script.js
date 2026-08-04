@@ -192,7 +192,6 @@ if(fundoMenu){
 
 
 
-
 // ================================
 // TELA INICIAL + NOME
 // ================================
@@ -213,7 +212,7 @@ const botaoSalvar = document.getElementById("salvarNome");
 if(botaoComecar){
 
 
-    botaoComeçar.addEventListener("click", function(){
+    botaoComecar.addEventListener("click", function(){
 
 
         const nomeSalvo = localStorage.getItem("nomeUsuario");
@@ -231,7 +230,6 @@ if(botaoComecar){
 
             botaoComecar.style.display="none";
 
-
             entradaNome.style.display="block";
 
 
@@ -241,9 +239,10 @@ if(botaoComecar){
     });
 
 
-}  // ================================
-// SALVAR NOME DO USUÁRIO
-// ================================
+}
+
+
+
 
 
 if(botaoSalvar){
@@ -252,16 +251,8 @@ if(botaoSalvar){
     botaoSalvar.addEventListener("click", function(){
 
 
-
         const nome = campoNome.value.trim();
 
-if(tipoSelecionado === ""){
-
-    alert("Escolha se você é aluno ou professor.");
-
-    return;
-
-}
 
 
         if(nome === ""){
@@ -277,11 +268,9 @@ if(tipoSelecionado === ""){
 
 
 
-
-
         localStorage.setItem("nomeUsuario", nome);
 
-localStorage.setItem("tipoUsuario", tipoSelecionado);
+
 
         window.location.href="inicio.html";
 
@@ -290,13 +279,7 @@ localStorage.setItem("tipoUsuario", tipoSelecionado);
     });
 
 
-
-}
-
-
-
-
-
+} 
 // ================================
 // SISTEMA DE QUESTÕES
 // ================================
