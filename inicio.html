@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Início - Matemática Avante</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+
+<body>   <header class="cabecalho-inicio">
+
+
+<h1>
+📘 Matemática Avante
+</h1>
+
+
+
+<a href="perfil.html" class="avatar-link">
+
+
+<img id="avatarInicio" src="" alt="Avatar do usuário">
+
+
+</a>
+
+
+
+</header>   <main class="inicio-container">
+
+
+
+<section class="boas-vindas">
+
+
+<h2 id="mensagemInicio">
+
+Olá! 👋
+
+</h2>
+
+
+
+<p>
+
+Pronto para continuar aprendendo matemática?
+
+</p>
+
+
+</section>
+
+
+
+
+
+<button id="continuarEstudando" type="button">
+
+🚀 Continuar estudando
+
+</button>
+
+
+
+
+
+
+<section class="atalhos">
+
+
+
+
+
+<a href="materias.html" class="card-inicio">
+
+
+<i data-lucide="book-open"></i>
+
+
+<h3>
+📚 Matérias
+</h3>
+
+
+<p>
+Ver conteúdos
+</p>
+
+
+</a>
+
+
+
+
+
+
+
+<a href="#" class="card-inicio">
+
+
+<i data-lucide="clipboard-list"></i>
+
+
+<h3>
+📝 Exercícios
+</h3>
+
+
+<p>
+Praticar
+</p>
+
+
+</a>
+
+
+
+
+
+
+
+<a href="professores.html" class="card-inicio">
+
+
+<i data-lucide="graduation-cap"></i>
+
+
+<h3>
+👨‍🏫 Professores
+</h3>
+
+
+<p>
+Encontrar ajuda
+</p>
+
+
+</a>
+
+
+
+
+</section>    <section class="sequencia">
+
+
+<h3>
+
+<span class="fogo-sequencia">
+
+🔥
+
+</span>
+
+Sequência de estudos
+
+</h3>
+
+
+
+
+<div class="dias-sequencia">
+
+
+<span>○</span>
+
+<span>○</span>
+
+<span>○</span>
+
+<span>○</span>
+
+<span>○</span>
+
+<span>○</span>
+
+<span>○</span>
+
+
+</div>
+
+
+
+<p>
+
+0 dias seguidos
+
+</p>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<script src="js/script.js"></script>
+
+
+
+
+<script>
+
+
+lucide.createIcons();
+
+
+
+const mensagemInicio = document.getElementById("mensagemInicio");
+
+const nomeUsuario = localStorage.getItem("nomeUsuario");
+
+
+
+if(mensagemInicio && nomeUsuario){
+
+
+    mensagemInicio.textContent = `Olá, ${nomeUsuario}! 👋`;
+
+
+}
+
+
+
+
+
+const avatarInicio = document.getElementById("avatarInicio");
+
+const fotoSalva = localStorage.getItem("fotoPerfil");
+
+
+
+if(avatarInicio && fotoSalva){
+
+
+    avatarInicio.src = fotoSalva;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>    
