@@ -224,7 +224,7 @@ if(botaoComecar){
       if(nomeSalvo){
 
 
-    window.location.href="inicio.html";
+    window.location.href="materias.html";
 
 
 }
@@ -292,7 +292,7 @@ if(tipoSelecionado === ""){
 
 localStorage.setItem("tipoUsuario", tipoSelecionado);
 
-        window.location.href="inicio.html";
+        window.location.href="materias.html";
 
 
 
