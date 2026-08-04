@@ -255,6 +255,19 @@ if(botaoSalvar){
 
 
 
+        if(tipoSelecionado === ""){
+
+
+            alert("Escolha se você é aluno ou professor.");
+
+
+            return;
+
+
+        }
+
+
+
         if(nome === ""){
 
 
@@ -271,6 +284,9 @@ if(botaoSalvar){
         localStorage.setItem("nomeUsuario", nome);
 
 
+        localStorage.setItem("tipoUsuario", tipoSelecionado);
+
+
 
         window.location.href="inicio.html";
 
@@ -279,7 +295,7 @@ if(botaoSalvar){
     });
 
 
-} 
+}
 // ================================
 // SISTEMA DE QUESTÕES
 // ================================
