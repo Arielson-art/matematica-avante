@@ -1726,3 +1726,51 @@ border-color: #4a90e2;
     font-size:18px;
 
 }   
+/* ================================
+   CABEÇALHO DA PÁGINA INICIAL
+================================ */
+
+
+.cabecalho-inicio{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px;
+
+}
+
+
+
+.cabecalho-inicio h1{
+
+    flex:1;
+
+    font-size:24px;
+
+}
+
+
+
+.icon-button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+}   
