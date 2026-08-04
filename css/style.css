@@ -1798,3 +1798,43 @@ border-color: #4a90e2;
     cursor:pointer;
 
 }   
+/* ================================
+   AVATAR PADRÃO
+================================ */
+
+
+.avatar-link{
+
+    position:relative;
+
+}
+
+
+
+#avatarPadrao{
+
+    position:absolute;
+
+    width:28px;
+
+    height:28px;
+
+    color:#777;
+
+}
+
+
+
+#avatarInicio[src]:not([src=""]){
+
+    display:block;
+
+}
+
+
+
+#avatarInicio[src=""]{
+
+    display:none;
+
+}  
