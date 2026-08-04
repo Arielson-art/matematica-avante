@@ -34,6 +34,8 @@
 
 <img id="avatarInicio" src="" alt="Avatar do usuário">
 
+<i id="avatarPadrao" data-lucide="user-round"></i>
+
 
 </a>
 
@@ -385,7 +387,14 @@ if(avatarInicio && fotoSalva){
 
 
 }
+const avatarPadrao = document.getElementById("avatarPadrao");
 
+
+if(fotoSalva && avatarPadrao){
+
+    avatarPadrao.style.display = "none";
+
+} 
 
 
 </script>
