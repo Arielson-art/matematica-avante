@@ -213,22 +213,17 @@ const botaoSalvar = document.getElementById("salvarNome");
 if(botaoComecar){
 
 
-    botaoComecar.addEventListener("click", function(){
-
+    botaoComeçar.addEventListener("click", function(){
 
 
         const nomeSalvo = localStorage.getItem("nomeUsuario");
 
 
 
-      if(nomeSalvo){
+        if(nomeSalvo){
 
 
-    window.location.href="materias.html";
-
-
-}
-
+            window.location.href="inicio.html";
 
 
         }else{
@@ -240,17 +235,13 @@ if(botaoComecar){
             entradaNome.style.display="block";
 
 
-
         }
-
-
 
 
     });
 
 
-
-}     // ================================
+}  // ================================
 // SALVAR NOME DO USUÁRIO
 // ================================
 
@@ -292,7 +283,7 @@ if(tipoSelecionado === ""){
 
 localStorage.setItem("tipoUsuario", tipoSelecionado);
 
-        window.location.href="materias.html";
+        window.location.href="inicio.html";
 
 
 
