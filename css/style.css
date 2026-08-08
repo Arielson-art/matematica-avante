@@ -3585,3 +3585,106 @@ border-color: #4a90e2;
     }
 
 }   
+/* ================================
+   NAVEGAÇÃO ENTRE QUESTÕES
+================================ */
+
+.botoes-navegacao-questao{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+
+.botoes-navegacao-questao button{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+.botao-anterior-questao{
+
+    background:#e8efff;
+
+    color:#1E3A8A;
+
+}
+
+
+.botao-anterior-questao:hover{
+
+    background:#dbe5ff;
+
+    transform:translateY(-2px);
+
+}
+
+
+.botao-proxima-questao{
+
+    margin-top:0;
+
+}
+
+
+.botoes-navegacao-questao button svg{
+
+    width:19px;
+
+    height:19px;
+
+}
+
+
+.modo-escuro .botao-anterior-questao{
+
+    background:#1d3b6d;
+
+    color:white;
+
+}
+
+
+.modo-escuro .botao-anterior-questao:hover{
+
+    background:#294b7d;
+
+}
+
+
+@media(max-width:600px){
+
+    .botoes-navegacao-questao{
+
+        flex-direction:column;
+
+    }
+
+}  
