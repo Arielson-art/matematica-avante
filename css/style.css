@@ -1916,3 +1916,71 @@ border-color: #4a90e2;
     }
 
 }  
+/* ================================
+   TÍTULO DAS OPERAÇÕES
+================================ */
+
+.titulo-operacoes{
+    text-align:center;
+    margin-top:60px;
+    margin-bottom:10px;
+}
+
+
+.titulo-operacoes h2{
+    display:inline-block;
+
+    font-size:34px;
+
+    color:white;
+
+    margin:0 0 10px;
+
+    font-weight:700;
+
+    position:relative;
+}
+
+
+.titulo-operacoes h2::after{
+    content:"";
+
+    display:block;
+
+    width:55px;
+    height:4px;
+
+    background:#FFD54F;
+
+    border-radius:10px;
+
+    margin:10px auto 0;
+}
+
+
+.titulo-operacoes p{
+    margin:0 auto;
+
+    font-size:17px;
+
+    color:white;
+
+    max-width:500px;
+
+    opacity:0.9;
+}
+
+
+.modo-escuro .titulo-operacoes h2{
+    color:#FFD54F;
+}
+
+
+.modo-escuro .titulo-operacoes p{
+    color:white;
+}
+
+
+.modo-escuro .titulo-operacoes h2::after{
+    background:#FFD54F;
+}  
