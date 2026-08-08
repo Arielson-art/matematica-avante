@@ -2726,3 +2726,181 @@ border-color: #4a90e2;
     }
 
 }  
+ /* ================================
+   PÁGINA DE ATIVIDADES
+================================ */
+
+.pagina-atividades{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:50px 20px 70px;
+
+}
+
+
+/* ================================
+   INTRODUÇÃO
+================================ */
+
+.atividades-introducao{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+
+.atividades-introducao h2{
+
+    font-size:36px;
+
+    color:#1E3A8A;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+.atividades-introducao p{
+
+    max-width:650px;
+
+    margin:0 auto;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+
+/* ================================
+   NÍVEIS
+================================ */
+
+.niveis-atividades{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+/* CARD DO NÍVEL */
+
+.nivel-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    width:100%;
+
+    padding:22px 25px;
+
+    background:#4169E1;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+    transition:0.3s;
+
+}
+
+
+.nivel-card:hover{
+
+    background:#294ec5;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,0.18);
+
+}
+
+
+/* ÍCONE */
+
+.nivel-icone{
+
+    width:58px;
+
+    height:58px;
+
+    flex-shrink:0;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.16);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.nivel-icone svg{
+
+    width:30px;
+
+    height:30px;
+
+    stroke-width:2.3;
+
+}
+
+
+/* TEXTO */
+
+.nivel-conteudo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.nivel-conteudo h3{
+
+    margin:0;
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+
+.nivel-conteudo span{
+
+    font-size:16px;
+
+    color:white;
+
+    opacity:0.9;
+
+} 
