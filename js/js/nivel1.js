@@ -2,7 +2,6 @@
 // ATIVIDADES - NÍVEL 1
 // ================================
 
-
 // ================================
 // QUESTÕES
 // ================================
@@ -79,7 +78,6 @@ const questoesNivel1 = [
 const chaveProgressoNivel1 =
     "nivel1Progresso";
 
-
 let questaoAtualNivel1 = 0;
 
 let pontuacaoNivel1 = 0;
@@ -98,8 +96,7 @@ function nivel1FoiConcluido(){
     return Object.keys(respostasNivel1).length
         >= questoesNivel1.length;
 
-}
-// ================================
+}    // ================================
 // SALVAR PROGRESSO
 // ================================
 
@@ -192,19 +189,24 @@ function carregarProgressoNivel1(){
 
     }
 
-}   
+}
+
+
 // ================================
 // MOSTRAR QUESTÃO
 // ================================
 
 function mostrarQuestaoNivel1(){
-if(nivel1FoiConcluido()){
 
-    finalizarNivel1();
+    if(nivel1FoiConcluido()){
 
-    return;
+        finalizarNivel1();
 
-} 
+        return;
+
+    }
+
+
     const questao =
         questoesNivel1[questaoAtualNivel1];
 
@@ -322,7 +324,6 @@ if(nivel1FoiConcluido()){
 
             alternativas.appendChild(botao);
 
-
         }
     );
 
@@ -354,9 +355,7 @@ if(nivel1FoiConcluido()){
         );
 
 
-        if(
-            respostaSalva.correta
-        ){
+        if(respostaSalva.correta){
 
             botoes[
                 respostaSalva.indice
@@ -446,7 +445,7 @@ if(nivel1FoiConcluido()){
 
 
     // ================================
-    // BOTÃO ANTERIOR
+    // BOTÃO QUESTÃO ANTERIOR
     // ================================
 
     const botaoAnterior =
@@ -455,23 +454,23 @@ if(nivel1FoiConcluido()){
         );
 
 
-   if(botaoAnterior){
+    if(botaoAnterior){
 
-    if(questaoAtualNivel1 === 0){
+        if(questaoAtualNivel1 === 0){
 
-        botaoAnterior.style.display = "none";
+            botaoAnterior.style.display =
+                "none";
 
-    }else{
+        }else{
 
-        botaoAnterior.style.display = "flex";
+            botaoAnterior.style.display =
+                "flex";
+
+        }
 
     }
 
-} 
-
-
-
-// ================================
+}   // ================================
 // RESPONDER QUESTÃO
 // ================================
 
@@ -607,7 +606,9 @@ function responderNivel(indice){
     ).textContent =
         pontuacaoNivel1;
 
-} 
+}
+
+
 // ================================
 // QUESTÃO ANTERIOR
 // ================================
@@ -624,6 +625,7 @@ if(botaoAnterior){
         "click",
         function(){
 
+            // Na primeira questão não faz nada
             if(questaoAtualNivel1 === 0){
 
                 return;
@@ -825,4 +827,4 @@ carregarProgressoNivel1();
 // INICIAR PÁGINA
 // ================================
 
-mostrarQuestaoNivel1(); 
+mostrarQuestaoNivel1();   
