@@ -2904,3 +2904,116 @@ border-color: #4a90e2;
     opacity:0.9;
 
 } 
+/* ================================
+   MODO ESCURO - ATIVIDADES
+================================ */
+
+.modo-escuro .atividades-introducao h2{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .atividades-introducao p{
+
+    color:#e5e7eb;
+
+}
+
+
+.modo-escuro .nivel-card{
+
+    background:#1E3A8A;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.30);
+
+}
+
+
+.modo-escuro .nivel-card:hover{
+
+    background:#294ec5;
+
+}
+
+
+.modo-escuro .nivel-icone{
+
+    background:rgba(255,255,255,0.10);
+
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media(max-width:700px){
+
+    .pagina-atividades{
+
+        padding:35px 15px 50px;
+
+    }
+
+
+    .atividades-introducao h2{
+
+        font-size:29px;
+
+    }
+
+
+    .atividades-introducao p{
+
+        font-size:16px;
+
+    }
+
+
+    .nivel-card{
+
+        padding:18px;
+
+        gap:15px;
+
+        border-radius:16px;
+
+    }
+
+
+    .nivel-icone{
+
+        width:50px;
+
+        height:50px;
+
+        border-radius:13px;
+
+    }
+
+
+    .nivel-icone svg{
+
+        width:26px;
+
+        height:26px;
+
+    }
+
+
+    .nivel-conteudo h3{
+
+        font-size:20px;
+
+    }
+
+
+    .nivel-conteudo span{
+
+        font-size:15px;
+
+    }
+
+}  
