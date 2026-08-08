@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nível 1 - Fundamentos</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <button id="voltarPagina" type="button" class="icon-button">
+
+        <i data-lucide="arrow-left"></i>
+
+    </button>
+
+
+    <h1>
+        🌱 Nível 1
+    </h1>
+
+
+    <button id="modoEscuro" type="button" class="icon-button">
+
+        <i data-lucide="moon"></i>
+
+    </button>
+
+
+    <button id="botaoMenu" type="button" class="icon-button">
+
+        <i data-lucide="menu"></i>
+
+    </button>
+
+</header>
+
+
+
+<main class="pagina-nivel">
+
+
+    <section class="nivel-introducao">
+
+        <div class="nivel-topo-icone">
+
+            <i data-lucide="sprout"></i>
+
+        </div>
+
+
+        <h2>
+            Fundamentos
+        </h2>
+
+
+        <p>
+            Comece pelos conceitos básicos e pratique
+            os primeiros conhecimentos da Matemática.
+        </p>
+
+    </section>      <!-- ÁREA DE ATIVIDADES -->
+
+    <section class="area-questoes">
+
+
+        <div class="cabecalho-questoes">
+
+            <div>
+
+                <span class="questao-label">
+                    QUESTÃO
+                </span>
+
+                <h2 id="numeroQuestao">
+                    1
+                </h2>
+
+            </div>
+
+
+            <div class="contador-questoes">
+
+                <span id="questaoAtual">
+                    1
+                </span>
+
+                /
+                
+                <span id="totalQuestoes">
+                    10
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BARRA DE PROGRESSO -->
+
+        <div class="barra-questoes">
+
+            <div
+                id="progressoQuestoes"
+                class="progresso-questoes"
+            ></div>
+
+        </div>
+
+
+
+        <!-- QUESTÃO -->
+
+        <div class="questao-nivel">
+
+            <h3 id="enunciadoQuestao">
+
+                Quanto é 2 + 3?
+
+            </h3>
+
+
+            <div
+                id="alternativasQuestao"
+                class="alternativas-nivel"
+            >
+
+
+                <button
+                    type="button"
+                    onclick="responderNivel(0)"
+                >
+                    5
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="responderNivel(1)"
+                >
+                    4
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="responderNivel(2)"
+                >
+                    6
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="responderNivel(3)"
+                >
+                    7
+                </button>
+
+
+            </div>
+
+
+            <p
+                id="resultadoQuestao"
+                class="resultado-questao"
+            ></p>
+
+        </div>
+
+
+
+        <!-- PONTUAÇÃO -->
+
+        <div class="pontuacao-nivel">
+
+            <span>
+                Pontuação
+            </span>
+
+            <strong id="pontuacaoNivel">
+                0
+            </strong>
+
+        </div>
+
+
+
+        <!-- BOTÃO PRÓXIMA -->
+
+        <button
+            id="proximaQuestao"
+            class="botao-proxima-questao"
+            type="button"
+        >
+
+            Próxima questão
+
+            <i data-lucide="arrow-right"></i>
+
+        </button>
+
+
+    </section>    </main>
+
+
+
+<!-- MENU LATERAL -->
+
+<div id="fundoMenu"></div>
+
+
+<div id="menuLateral">
+
+
+    <h2>
+        Menu
+    </h2>
+
+
+    <a href="perfil.html" class="menu-item">
+
+        <i data-lucide="user-round"></i>
+
+        <span>
+            Perfil
+        </span>
+
+    </a>
+
+
+    <a href="materias.html" class="menu-item">
+
+        <i data-lucide="book-open"></i>
+
+        <span>
+            Matérias
+        </span>
+
+    </a>
+
+
+    <a href="atividades.html" class="menu-item">
+
+        <i data-lucide="clipboard-list"></i>
+
+        <span>
+            Atividades
+        </span>
+
+    </a>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="graduation-cap"></i>
+
+        <span>
+            Professores
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="chart-column"></i>
+
+        <span>
+            Meu progresso
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="gem"></i>
+
+        <span>
+            Premium
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="credit-card"></i>
+
+        <span>
+            Planos e Assinaturas
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="settings"></i>
+
+        <span>
+            Configurações
+        </span>
+
+    </div>
+
+
+    <a href="sobre.html" class="menu-item">
+
+        <i data-lucide="info"></i>
+
+        <span>
+            Sobre
+        </span>
+
+    </a>
+
+
+</div>
+
+
+
+<!-- SCRIPTS -->
+
+<script src="js/script.js"></script>
+
+<script src="js/nivel1.js"></script>
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+
+</html>  
