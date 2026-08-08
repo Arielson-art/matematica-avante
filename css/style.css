@@ -1984,3 +1984,745 @@ border-color: #4a90e2;
 .modo-escuro .titulo-operacoes h2::after{
     background:#FFD54F;
 }  
+/* ================================
+   NOVO VISUAL - PÁGINA BÁSICO
+================================ */
+
+
+/* ÁREA PRINCIPAL */
+
+.pagina-basico{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:50px 20px 70px;
+
+}
+
+
+/* ================================
+   INTRODUÇÃO
+================================ */
+
+.basico-introducao{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+
+.basico-introducao h2{
+
+    font-size:36px;
+
+    color:#1E3A8A;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+.basico-introducao p{
+
+    max-width:650px;
+
+    margin:0 auto;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+
+/* ================================
+   CARDS DAS OPERAÇÕES
+================================ */
+
+.operacao-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 22px rgba(0,0,0,0.10);
+
+    border-left:5px solid #4169E1;
+
+    transition:0.3s;
+
+}
+
+
+.operacao-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,0.15);
+
+}
+
+
+/* TÍTULO DA OPERAÇÃO */
+
+.operacao-titulo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+
+.operacao-titulo svg{
+
+    width:28px;
+
+    height:28px;
+
+    color:#4169E1;
+
+    stroke-width:2.5;
+
+}
+
+
+.operacao-titulo h2{
+
+    margin:0;
+
+    font-size:25px;
+
+    color:#1E3A8A;
+
+}
+
+
+/* TEXTO */
+
+.operacao-card > p{
+
+    color:#555;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ================================
+   EXEMPLO DA OPERAÇÃO
+================================ */
+
+.exemplo-operacao{
+
+    margin-top:22px;
+
+    padding:18px;
+
+    background:#eef3ff;
+
+    border-radius:14px;
+
+}
+
+
+.exemplo-operacao span{
+
+    display:block;
+
+    color:#1E3A8A;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:0.5px;
+
+}
+
+
+.exemplo-operacao strong{
+
+    display:block;
+
+    font-size:25px;
+
+    color:#4169E1;
+
+    margin-bottom:8px;
+
+}
+
+
+.exemplo-operacao p{
+
+    margin:0;
+
+    color:#555;
+
+    line-height:1.5;
+
+}   /* ================================
+   EXERCÍCIOS - PÁGINA BÁSICO
+================================ */
+
+.exercicios-basico{
+
+    background:#f8faff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    margin-top:45px;
+
+    box-shadow:0 8px 22px rgba(0,0,0,0.08);
+
+}
+
+
+/* TÍTULO DOS EXERCÍCIOS */
+
+.titulo-exercicios{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:10px;
+
+}
+
+
+.titulo-exercicios svg{
+
+    width:30px;
+
+    height:30px;
+
+    color:#4169E1;
+
+}
+
+
+.titulo-exercicios h2{
+
+    margin:0;
+
+    font-size:30px;
+
+    color:#1E3A8A;
+
+}
+
+
+.subtitulo-exercicios{
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:16px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ================================
+   QUESTÕES
+================================ */
+
+.questao{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    margin-bottom:18px;
+
+    border:1px solid #e5e7eb;
+
+}
+
+
+.questao > p{
+
+    margin:0 0 16px;
+
+    font-size:18px;
+
+    color:#222;
+
+}
+
+
+.questao > p strong{
+
+    color:#1E3A8A;
+
+}
+
+
+/* ALTERNATIVAS */
+
+.alternativas{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.alternativas button{
+
+    min-width:100px;
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#4169E1;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.25s;
+
+}
+
+
+.alternativas button:hover{
+
+    background:#294ec5;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* RESPOSTA CORRETA */
+
+.alternativas button.resposta-correta{
+
+    background:#22c55e !important;
+
+    color:white;
+
+}
+
+
+/* RESPOSTA ERRADA */
+
+.alternativas button.resposta-errada{
+
+    background:#ef4444 !important;
+
+    color:white;
+
+}
+
+
+/* BOTÃO DESABILITADO */
+
+.alternativas button.resposta-bloqueada{
+
+    opacity:0.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* ================================
+   RESULTADO
+================================ */
+
+.resultado-exercicios{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+
+#pontuacao{
+
+    color:#1E3A8A;
+
+    font-size:23px;
+
+    margin:0 0 10px;
+
+}
+
+
+#resultado{
+
+    min-height:24px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+
+/* ================================
+   BOTÃO PRÓXIMA AULA
+================================ */
+
+.botao-proxima-aula{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin:30px auto 0;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:#4169E1;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+.botao-proxima-aula svg{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+
+.botao-proxima-aula:hover{
+
+    background:#294ec5;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 18px rgba(30,58,138,0.25);
+
+}  /* ================================
+   MODO ESCURO - PÁGINA BÁSICO
+================================ */
+
+.modo-escuro .pagina-basico{
+
+    color:white;
+
+}
+
+
+.modo-escuro .basico-introducao h2{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .basico-introducao p{
+
+    color:#e5e7eb;
+
+}
+
+
+/* CARDS DAS OPERAÇÕES */
+
+.modo-escuro .operacao-card{
+
+    background:#13294b;
+
+    border-left-color:#FFD54F;
+
+    box-shadow:0 8px 22px rgba(0,0,0,0.30);
+
+}
+
+
+.modo-escuro .operacao-titulo svg{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .operacao-titulo h2{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .operacao-card > p{
+
+    color:#e5e7eb;
+
+}
+
+
+/* EXEMPLOS */
+
+.modo-escuro .exemplo-operacao{
+
+    background:#1d3b6d;
+
+}
+
+
+.modo-escuro .exemplo-operacao span{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .exemplo-operacao strong{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .exemplo-operacao p{
+
+    color:#e5e7eb;
+
+}
+
+
+/* ================================
+   EXERCÍCIOS NO MODO ESCURO
+================================ */
+
+.modo-escuro .exercicios-basico{
+
+    background:#102442;
+
+    box-shadow:0 8px 22px rgba(0,0,0,0.30);
+
+}
+
+
+.modo-escuro .titulo-exercicios svg{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .titulo-exercicios h2{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro .subtitulo-exercicios{
+
+    color:#e5e7eb;
+
+}
+
+
+.modo-escuro .questao{
+
+    background:#13294b;
+
+    border-color:#29456f;
+
+}
+
+
+.modo-escuro .questao > p{
+
+    color:white;
+
+}
+
+
+.modo-escuro .questao > p strong{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro #pontuacao{
+
+    color:#FFD54F;
+
+}
+
+
+.modo-escuro #resultado{
+
+    color:white;
+
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media(max-width:700px){
+
+    .pagina-basico{
+
+        padding:35px 15px 50px;
+
+    }
+
+
+    .basico-introducao h2{
+
+        font-size:29px;
+
+    }
+
+
+    .basico-introducao p{
+
+        font-size:16px;
+
+    }
+
+
+    .operacao-card{
+
+        padding:22px;
+
+    }
+
+
+    .operacao-titulo h2{
+
+        font-size:23px;
+
+    }
+
+
+    .operacao-card > p{
+
+        font-size:16px;
+
+    }
+
+
+    .exemplo-operacao strong{
+
+        font-size:22px;
+
+    }
+
+
+    .exercicios-basico{
+
+        padding:20px 15px;
+
+    }
+
+
+    .titulo-exercicios h2{
+
+        font-size:26px;
+
+    }
+
+
+    .questao{
+
+        padding:18px;
+
+    }
+
+
+    .alternativas{
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .alternativas button{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
+
+    .botao-proxima-aula{
+
+        width:100%;
+
+    }
+
+}  
