@@ -1,439 +1,486 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <title>Básico da Matemática</title>
-
 
 <link rel="stylesheet" href="css/style.css">
 
-
 <script src="https://unpkg.com/lucide@latest"></script>
 
-
 </head>
-
 
 
 <body>
 
 
-
 <header>
 
+    <button id="voltarPagina" type="button" class="icon-button">
+        <i data-lucide="arrow-left"></i>
+    </button>
 
 
-<button id="voltarPagina" type="button" class="icon-button">
-
-<i data-lucide="arrow-left"></i>
-
-</button>
+    <h1>
+        ➕ Básico da Matemática
+    </h1>
 
 
+    <button id="modoEscuro" type="button" class="icon-button">
+        <i data-lucide="moon"></i>
+    </button>
 
 
-
-<h1>
-➕ Básico da Matemática
-</h1>
-
-
-
-
-
-<button id="modoEscuro" type="button" class="icon-button">
-
-<i data-lucide="moon"></i>
-
-</button>
-
-
-
-
-<button id="botaoMenu" type="button" class="icon-button">
-
-<i data-lucide="menu"></i>
-
-</button>
-
-
-
+    <button id="botaoMenu" type="button" class="icon-button">
+        <i data-lucide="menu"></i>
+    </button>
 
 </header>
 
 
 
+<main class="pagina-basico">
 
 
+    <!-- INTRODUÇÃO -->
 
-<section class="hero">
+    <section class="basico-introducao">
 
+        <h2>
+            Aprenda o básico da Matemática
+        </h2>
 
+        <p>
+            A matemática começa com quatro operações principais:
+            adição, subtração, multiplicação e divisão.
+        </p>
 
-<h2>
-Aprenda o básico da Matemática
-</h2>
+    </section>
 
 
 
+    <!-- ADIÇÃO -->
 
-<p>
-A matemática começa com quatro operações principais:
-adição, subtração, multiplicação e divisão.
-</p>
+    <section class="operacao-card">
 
+        <div class="operacao-titulo">
 
+            <i data-lucide="plus"></i>
 
+            <h2>
+                Adição
+            </h2>
 
+        </div>
 
-<h2>
-<i data-lucide="plus"></i>
-Adição
-</h2>
+        <p>
+            A adição é usada quando queremos juntar ou aumentar valores.
+            Ela mostra o resultado de colocar quantidades juntas.
+        </p>
 
+        <div class="exemplo-operacao">
 
+            <span>Exemplo</span>
 
-<p>
-A adição é usada quando queremos juntar ou aumentar valores.
-Ela mostra o resultado de colocar quantidades juntas.
+            <strong>
+                5 + 3 = 8
+            </strong>
 
-<br><br>
+            <p>
+                Isso significa que juntando 5 com mais 3, temos 8.
+            </p>
 
-Exemplo: 5 + 3 = 8
+        </div>
 
-<br>
+    </section>
 
-Isso significa que juntando 5 com mais 3, temos 8.
-</p>
 
 
+    <!-- SUBTRAÇÃO -->
 
+    <section class="operacao-card">
 
-<h2>
-<i data-lucide="minus"></i>
-Subtração
-</h2>
+        <div class="operacao-titulo">
 
+            <i data-lucide="minus"></i>
 
+            <h2>
+                Subtração
+            </h2>
 
-<p>
-A subtração é usada quando precisamos retirar uma quantidade
-ou descobrir a diferença entre dois valores.
+        </div>
 
-<br><br>
+        <p>
+            A subtração é usada quando precisamos retirar uma quantidade
+            ou descobrir a diferença entre dois valores.
+        </p>
 
-Exemplo: 10 - 4 = 6
+        <div class="exemplo-operacao">
 
-<br>
+            <span>Exemplo</span>
 
-Isso significa que, retirando 4 de 10, sobram 6.
-</p>
+            <strong>
+                10 - 4 = 6
+            </strong>
 
-<h2>
-<i data-lucide="x"></i>
-Multiplicação
-</h2>
+            <p>
+                Isso significa que, retirando 4 de 10, sobram 6.
+            </p>
 
-<p>
-A multiplicação é uma forma mais rápida de fazer uma soma repetida.
-Ela representa grupos com a mesma quantidade.
+        </div>
 
-<br><br>
+    </section>
 
-Exemplo: 3 × 4 = 12
 
-<br>
 
-Isso significa que temos 3 grupos de 4, formando 12 ao todo.
-</p>
+    <!-- MULTIPLICAÇÃO -->
 
+    <section class="operacao-card">
 
+        <div class="operacao-titulo">
 
-<h2>
-<i data-lucide="divide"></i>
-Divisão
-</h2>
+            <i data-lucide="x"></i>
 
+            <h2>
+                Multiplicação
+            </h2>
 
+        </div>
 
-<p>
-A divisão é usada para repartir uma quantidade em partes iguais
-ou descobrir quantas vezes um valor cabe dentro de outro.
+        <p>
+            A multiplicação é uma forma mais rápida de fazer uma soma repetida.
+            Ela representa grupos com a mesma quantidade.
+        </p>
 
-<br><br>
+        <div class="exemplo-operacao">
 
-Exemplo: 12 ÷ 3 = 4
+            <span>Exemplo</span>
 
-<br>
+            <strong>
+                3 × 4 = 12
+            </strong>
 
-Isso significa que dividindo 12 em 3 partes iguais,
-cada parte terá 4.
-</p>
+            <p>
+                Isso significa que temos 3 grupos de 4, formando 12 ao todo.
+            </p>
 
+        </div>
 
+    </section>
 
 
 
+    <!-- DIVISÃO -->
 
-<h2>
-📝 Exercícios
-</h2>
+    <section class="operacao-card">
 
+        <div class="operacao-titulo">
 
+            <i data-lucide="divide"></i>
 
+            <h2>
+                Divisão
+            </h2>
 
+        </div>
 
-<p>
-1) Quanto é 7 + 4?
-</p>
+        <p>
+            A divisão é usada para repartir uma quantidade em partes iguais
+            ou descobrir quantas vezes um valor cabe dentro de outro.
+        </p>
 
+        <div class="exemplo-operacao">
 
+            <span>Exemplo</span>
 
-<button onclick="responderQuestao(1,true,this)">
-11
-</button>
+            <strong>
+                12 ÷ 3 = 4
+            </strong>
 
+            <p>
+                Isso significa que dividindo 12 em 3 partes iguais,
+                cada parte terá 4.
+            </p>
 
-<button onclick="responderQuestao(1,false,this)">
-10
-</button>
+        </div>
 
+    </section>      <!-- EXERCÍCIOS -->
 
+    <section class="exercicios-basico">
 
+        <div class="titulo-exercicios">
 
+            <i data-lucide="clipboard-list"></i>
 
+            <h2>
+                Exercícios
+            </h2>
 
+        </div>
 
-<p>
-2) Quanto é 17 - 6?
-</p>
 
+        <p class="subtitulo-exercicios">
+            Teste o que você aprendeu.
+        </p>
 
 
-<button onclick="responderQuestao(2,true,this)">
-11
-</button>
 
+        <!-- QUESTÃO 1 -->
 
-<button onclick="responderQuestao(2,false,this)">
-12
-</button>
+        <div class="questao">
 
+            <p>
+                <strong>1.</strong> Quanto é 7 + 4?
+            </p>
 
+            <div class="alternativas">
 
+                <button onclick="responderQuestao(1,true,this)">
+                    11
+                </button>
 
+                <button onclick="responderQuestao(1,false,this)">
+                    10
+                </button>
 
+            </div>
 
+        </div>
 
-<p>
-3) Quanto é 6 × 4?
-</p>
 
 
+        <!-- QUESTÃO 2 -->
 
-<button onclick="responderQuestao(3,true,this)">
-24
-</button>
+        <div class="questao">
 
+            <p>
+                <strong>2.</strong> Quanto é 17 - 6?
+            </p>
 
-<button onclick="responderQuestao(3,false,this)">
-20
-</button>
+            <div class="alternativas">
 
+                <button onclick="responderQuestao(2,true,this)">
+                    11
+                </button>
 
+                <button onclick="responderQuestao(2,false,this)">
+                    12
+                </button>
 
+            </div>
 
+        </div>
 
 
 
-<p>
-4) Quanto é 14 ÷ 2?
-</p>
+        <!-- QUESTÃO 3 -->
 
+        <div class="questao">
 
+            <p>
+                <strong>3.</strong> Quanto é 6 × 4?
+            </p>
 
-<button onclick="responderQuestao(4,true,this)">
-7
-</button>
+            <div class="alternativas">
 
+                <button onclick="responderQuestao(3,true,this)">
+                    24
+                </button>
 
-<button onclick="responderQuestao(4,false,this)">
-8
-</button>
+                <button onclick="responderQuestao(3,false,this)">
+                    20
+                </button>
 
+            </div>
 
+        </div>
 
 
 
+        <!-- QUESTÃO 4 -->
 
-<h2 id="pontuacao">
+        <div class="questao">
 
-Pontuação: 0/4
+            <p>
+                <strong>4.</strong> Quanto é 14 ÷ 2?
+            </p>
 
-</h2>
+            <div class="alternativas">
 
+                <button onclick="responderQuestao(4,true,this)">
+                    7
+                </button>
 
+                <button onclick="responderQuestao(4,false,this)">
+                    8
+                </button>
 
+            </div>
 
-<p id="resultado"></p>      <button onclick="proximaAula()">
+        </div>
 
-Próxima Aula
 
-<i data-lucide="arrow-right"></i>
 
-</button>
+        <!-- RESULTADO -->
 
+        <div class="resultado-exercicios">
 
+            <h2 id="pontuacao">
+                Pontuação: 0/4
+            </h2>
 
+            <p id="resultado"></p>
 
-</section>
+        </div>
 
 
 
+        <!-- PRÓXIMA AULA -->
 
+        <button
+            class="botao-proxima-aula"
+            onclick="proximaAula()"
+        >
 
-<!-- MENU LATERAL -->
+            Próxima Aula
 
+            <i data-lucide="arrow-right"></i>
+
+        </button>
+
+    </section>
+
+</main>  <!-- MENU LATERAL -->
 
 <div id="fundoMenu"></div>
 
 
-
-
 <div id="menuLateral">
 
-
-<h2>
-Menu
-</h2>
-
+    <h2>
+        Menu
+    </h2>
 
 
+    <a href="perfil.html" class="menu-item">
 
-<a href="perfil.html" class="menu-item">
+        <i data-lucide="user-round"></i>
 
-<i data-lucide="user-round"></i>
+        <span>
+            Perfil
+        </span>
 
-<span>Perfil</span>
-
-</a>
-
-
-
-
-<a href="materias.html" class="menu-item">
-
-<i data-lucide="book-open"></i>
-
-<span>Matérias</span>
-
-</a>
+    </a>
 
 
+    <a href="materias.html" class="menu-item">
+
+        <i data-lucide="book-open"></i>
+
+        <span>
+            Matérias
+        </span>
+
+    </a>
 
 
-<div class="menu-item">
+    <div class="menu-item">
 
-<i data-lucide="clipboard-list"></i>
+        <i data-lucide="clipboard-list"></i>
 
-<span>Atividades</span>
+        <span>
+            Atividades
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="graduation-cap"></i>
+
+        <span>
+            Professores
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="chart-column"></i>
+
+        <span>
+            Meu progresso
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="gem"></i>
+
+        <span>
+            Premium
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="credit-card"></i>
+
+        <span>
+            Planos e Assinaturas
+        </span>
+
+    </div>
+
+
+    <div class="menu-item">
+
+        <i data-lucide="settings"></i>
+
+        <span>
+            Configurações
+        </span>
+
+    </div>
+
+
+    <a href="sobre.html" class="menu-item">
+
+        <i data-lucide="info"></i>
+
+        <span>
+            Sobre
+        </span>
+
+    </a>
 
 </div>
 
 
 
-
-<div class="menu-item">
-
-<i data-lucide="graduation-cap"></i>
-
-<span>Professores</span>
-
-</div>
-
-
-
-
-<div class="menu-item">
-
-<i data-lucide="chart-column"></i>
-
-<span>Meu progresso</span>
-
-</div>
-
-
-
-
-<div class="menu-item">
-
-<i data-lucide="gem"></i>
-
-<span>Premium</span>
-
-</div>
-
-
-
-
-<div class="menu-item">
-
-<i data-lucide="credit-card"></i>
-
-<span>Planos e Assinaturas</span>
-
-</div>
-
-
-
-
-<div class="menu-item">
-
-<i data-lucide="settings"></i>
-
-<span>Configurações</span>
-
-</div>
-
-<a href="sobre.html" class="menu-item">
-
-<i data-lucide="info"></i>
-
-<span>Sobre</span>
-
-</a> 
-
-
-</div>
-
-
-
-
-
-
+<!-- SCRIPTS -->
 
 <script src="js/script.js"></script>
 
 
-
-
 <script>
 
-lucide.createIcons();
+    lucide.createIcons();
 
 </script>
 
 
-
-
-
 </body>
 
-</html>     
+</html>  
