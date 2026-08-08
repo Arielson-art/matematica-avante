@@ -1838,3 +1838,81 @@ border-color: #4a90e2;
     display:none;
 
 }  
+/* ================================
+   OPERAÇÕES - PÁGINA BÁSICO
+================================ */
+
+.operacoes{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    max-width:900px;
+    margin:35px auto 0;
+}
+
+
+.operacoes button{
+    min-height:150px;
+
+    background:#4169e1;
+    color:white;
+
+    border:none;
+    border-radius:18px;
+
+    padding:25px 15px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+}
+
+
+.operacoes button svg{
+    width:38px;
+    height:38px;
+
+    stroke-width:2.5;
+
+    margin-bottom:5px;
+}
+
+
+.operacoes button:hover{
+    background:#294ec5;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,0.22);
+}
+
+
+@media(max-width:800px){
+
+    .operacoes{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .operacoes{
+        grid-template-columns:1fr;
+        max-width:350px;
+    }
+
+}  
