@@ -429,7 +429,158 @@ const questoesNivel1 = {
 
 ],  
 
-    3: [],
+   3: [
+
+    {
+        pergunta: "Qual é o valor de f(2) na função f(x) = x + 3?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "4", correta: false },
+            { texto: "6", correta: false },
+            { texto: "3", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 2: f(2) = 2 + 3 = 5."
+    },
+
+
+    {
+        pergunta: "Na função f(x) = x + 1, qual é o valor de f(4)?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "4", correta: false },
+            { texto: "3", correta: false },
+            { texto: "6", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 4: f(4) = 4 + 1 = 5."
+    },
+
+
+    {
+        pergunta: "Se f(x) = 2x, qual é o valor de f(3)?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "5", correta: false },
+            { texto: "3", correta: false },
+            { texto: "9", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 3: f(3) = 2 × 3 = 6."
+    },
+
+
+    {
+        pergunta: "Na função f(x) = x - 2, qual é o valor de f(5)?",
+
+        alternativas: [
+            { texto: "3", correta: true },
+            { texto: "2", correta: false },
+            { texto: "7", correta: false },
+            { texto: "5", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 5: f(5) = 5 - 2 = 3."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de f(0) na função f(x) = x + 7?",
+
+        alternativas: [
+            { texto: "7", correta: true },
+            { texto: "0", correta: false },
+            { texto: "1", correta: false },
+            { texto: "8", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 0: f(0) = 0 + 7 = 7."
+    },
+
+
+    {
+        pergunta: "Se f(x) = 3x, qual é o valor de f(2)?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "5", correta: false },
+            { texto: "3", correta: false },
+            { texto: "9", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 2: f(2) = 3 × 2 = 6."
+    },
+
+
+    {
+        pergunta: "Na função f(x) = x + 5, qual é o valor de f(1)?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "5", correta: false },
+            { texto: "4", correta: false },
+            { texto: "7", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 1: f(1) = 1 + 5 = 6."
+    },
+
+
+    {
+        pergunta: "Se f(x) = x - 1, qual é o valor de f(6)?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "6", correta: false },
+            { texto: "7", correta: false },
+            { texto: "4", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 6: f(6) = 6 - 1 = 5."
+    },
+
+
+    {
+        pergunta: "Se f(x) = 2x + 1, qual é o valor de f(2)?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "4", correta: false },
+            { texto: "3", correta: false },
+            { texto: "6", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 2: f(2) = 2 × 2 + 1 = 5."
+    },
+
+
+    {
+        pergunta: "Na função f(x) = x + 2, qual é o valor de f(3)?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "6", correta: false },
+            { texto: "4", correta: false },
+            { texto: "3", correta: false }
+        ],
+
+        explicacao:
+            "Substituindo x por 3: f(3) = 3 + 2 = 5."
+    }
+
+],   
 
     4: [],
 
