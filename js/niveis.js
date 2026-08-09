@@ -123,7 +123,158 @@ const fasesNivel1 = {
 
 const questoesNivel1 = {
 
-    1: [],
+   1: [
+
+    {
+        pergunta: "Quanto é 24 + 15?",
+
+        alternativas: [
+            { texto: "39", correta: true },
+            { texto: "38", correta: false },
+            { texto: "40", correta: false },
+            { texto: "41", correta: false }
+        ],
+
+        explicacao:
+            "24 + 15 = 39. Podemos somar primeiro as unidades: 4 + 5 = 9. Depois, as dezenas: 2 + 1 = 3."
+    },
+
+
+    {
+        pergunta: "Quanto é 57 - 23?",
+
+        alternativas: [
+            { texto: "34", correta: true },
+            { texto: "33", correta: false },
+            { texto: "35", correta: false },
+            { texto: "36", correta: false }
+        ],
+
+        explicacao:
+            "57 - 23 = 34. Subtraímos 20 de 57, obtendo 37, e depois subtraímos 3, chegando a 34."
+    },
+
+
+    {
+        pergunta: "Quanto é 7 × 6?",
+
+        alternativas: [
+            { texto: "42", correta: true },
+            { texto: "36", correta: false },
+            { texto: "48", correta: false },
+            { texto: "40", correta: false }
+        ],
+
+        explicacao:
+            "7 × 6 = 42. A multiplicação representa seis grupos de 7, ou sete grupos de 6."
+    },
+
+
+    {
+        pergunta: "Quanto é 48 ÷ 6?",
+
+        alternativas: [
+            { texto: "8", correta: true },
+            { texto: "6", correta: false },
+            { texto: "7", correta: false },
+            { texto: "9", correta: false }
+        ],
+
+        explicacao:
+            "48 ÷ 6 = 8, porque 6 × 8 = 48."
+    },
+
+
+    {
+        pergunta: "Quanto é 35 + 27?",
+
+        alternativas: [
+            { texto: "62", correta: true },
+            { texto: "61", correta: false },
+            { texto: "63", correta: false },
+            { texto: "64", correta: false }
+        ],
+
+        explicacao:
+            "35 + 27 = 62. Somamos 30 + 20 = 50 e 5 + 7 = 12. Então 50 + 12 = 62."
+    },
+
+
+    {
+        pergunta: "Quanto é 81 - 46?",
+
+        alternativas: [
+            { texto: "35", correta: true },
+            { texto: "34", correta: false },
+            { texto: "36", correta: false },
+            { texto: "37", correta: false }
+        ],
+
+        explicacao:
+            "81 - 46 = 35. Podemos fazer 81 - 40 = 41 e depois 41 - 6 = 35."
+    },
+
+
+    {
+        pergunta: "Quanto é 8 × 4?",
+
+        alternativas: [
+            { texto: "32", correta: true },
+            { texto: "28", correta: false },
+            { texto: "30", correta: false },
+            { texto: "36", correta: false }
+        ],
+
+        explicacao:
+            "8 × 4 = 32. Isso significa somar 8 quatro vezes: 8 + 8 + 8 + 8 = 32."
+    },
+
+
+    {
+        pergunta: "Quanto é 72 ÷ 9?",
+
+        alternativas: [
+            { texto: "8", correta: true },
+            { texto: "7", correta: false },
+            { texto: "9", correta: false },
+            { texto: "6", correta: false }
+        ],
+
+        explicacao:
+            "72 ÷ 9 = 8, porque 9 × 8 = 72."
+    },
+
+
+    {
+        pergunta: "Quanto é 18 + 26 - 10?",
+
+        alternativas: [
+            { texto: "34", correta: true },
+            { texto: "32", correta: false },
+            { texto: "36", correta: false },
+            { texto: "38", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro fazemos 18 + 26 = 44. Depois 44 - 10 = 34."
+    },
+
+
+    {
+        pergunta: "Quanto é 5 × 7 + 3?",
+
+        alternativas: [
+            { texto: "38", correta: true },
+            { texto: "35", correta: false },
+            { texto: "40", correta: false },
+            { texto: "42", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro fazemos a multiplicação: 5 × 7 = 35. Depois adicionamos 3: 35 + 3 = 38."
+    }
+
+], 
 
     2: [],
 
