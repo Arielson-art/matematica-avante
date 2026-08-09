@@ -1563,3 +1563,118 @@ header svg {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(30, 58, 138, 0.20);
 }   
+/* =====================================================
+   APRENDER-BASICO — RESPONSIVIDADE MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .pagina-basico {
+        width: 100%;
+        max-width: 100%;
+        padding: 35px 15px 50px;
+    }
+
+    .basico-introducao {
+        margin-bottom: 30px;
+    }
+
+    .basico-introducao h2 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .basico-introducao p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .operacao-card {
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 18px;
+    }
+
+    .operacao-titulo {
+        gap: 10px;
+    }
+
+    .operacao-titulo h2 {
+        font-size: 21px;
+    }
+
+    .operacao-card > p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .exemplo-operacao {
+        padding: 15px;
+        margin-top: 18px;
+    }
+
+    .exemplo-operacao strong {
+        font-size: 22px;
+    }
+
+    .exercicios-basico {
+        padding: 20px 15px;
+        margin-top: 30px;
+        border-radius: 18px;
+    }
+
+    .titulo-exercicios h2 {
+        font-size: 25px;
+    }
+
+    .subtitulo-exercicios {
+        font-size: 15px;
+    }
+
+    .questao {
+        padding: 18px 15px;
+        border-radius: 14px;
+    }
+
+    .questao > p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .alternativas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .alternativas button {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+
+    .botao-proxima-aula {
+        width: 100%;
+        padding: 14px 18px;
+    }
+
+    .operacoes {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .operacoes button {
+        min-height: 125px;
+        padding: 18px 10px;
+        font-size: 16px;
+        border-radius: 15px;
+    }
+
+    .operacoes button svg {
+        width: 32px;
+        height: 32px;
+    }
+} 
