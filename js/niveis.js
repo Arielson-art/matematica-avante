@@ -5,7 +5,7 @@
 
 
 // =====================================================
-// CONFIGURAÇÃO
+// CONFIGURAÇÃO GERAL
 // =====================================================
 
 const TOTAL_FASES = 10;
@@ -15,7 +15,20 @@ const CHAVE_PROGRESSO = "progressoNiveis";
 
 
 // =====================================================
-// CONFIGURAÇÃO DAS FASES DO NÍVEL 1
+// CONFIGURAÇÃO DAS FASES — NÍVEL 1
+// =====================================================
+//
+// Fases 1 a 4:
+// Conteúdo básico.
+//
+// Fases 5 a 8:
+// Repetem as matérias, mas com questões
+// um pouco mais difíceis.
+//
+// Fases 9 e 10:
+// Revisão e desafio final.
+//
+// Mantemos dificuldade fácil e média.
 // =====================================================
 
 const fasesNivel1 = {
@@ -71,39 +84,41 @@ const fasesNivel1 = {
     9: {
         nome: "Revisão mista",
         descricao: "Questões envolvendo diferentes conteúdos.",
-        dificuldade: "Média"
+        dificuldade: "Médio"
     },
 
     10: {
         nome: "Desafio final",
         descricao: "Questões mistas para concluir o nível.",
-        dificuldade: "Média"
+        dificuldade: "Médio"
     }
 
 };
 
 
 // =====================================================
-// BANCO DE QUESTÕES
+// BANCO DE QUESTÕES — NÍVEL 1
 // =====================================================
 //
-// Por enquanto deixamos a estrutura pronta.
-// As questões serão adicionadas depois.
+// Cada fase terá exatamente 10 questões.
 //
-// Cada questão terá:
+// Estrutura:
 //
 // {
-//     pergunta: "...",
+//     pergunta: "Quanto é 2 + 3?",
+//
 //     alternativas: [
-//         { texto: "...", correta: false },
-//         { texto: "...", correta: true },
-//         { texto: "...", correta: false },
-//         { texto: "...", correta: false }
+//         { texto: "4", correta: false },
+//         { texto: "5", correta: true },
+//         { texto: "6", correta: false },
+//         { texto: "7", correta: false }
 //     ],
-//     explicacao: "..."
+//
+//     explicacao: "Somamos 2 + 3 e obtemos 5."
 // }
 //
-// A ordem das alternativas será embaralhada pelo sistema.
+// As alternativas serão embaralhadas
+// automaticamente pelo sistema.
 // =====================================================
 
 const questoesNivel1 = {
@@ -149,12 +164,16 @@ let faseFinalizada = false;
 
 
 // =====================================================
-// LOCALSTORAGE
+// CARREGAR PROGRESSO
 // =====================================================
 
 function carregarProgresso() {
 
-    const salvo = localStorage.getItem(CHAVE_PROGRESSO);
+    const salvo =
+        localStorage.getItem(
+            CHAVE_PROGRESSO
+        );
+
 
     if (!salvo) {
 
@@ -164,9 +183,36 @@ function carregarProgresso() {
 
     }
 
+
     try {
 
-        return JSON.parse(salvo);
+        const dados =
+            JSON.parse(salvo);
+
+
+        if (
+            !dados ||
+            typeof dados !== "object"
+        ) {
+
+            return {
+                niveis: {}
+            };
+
+        }
+
+
+        if (
+            !dados.niveis ||
+            typeof dados.niveis !== "object"
+        ) {
+
+            dados.niveis = {};
+
+        }
+
+
+        return dados;
 
     } catch (erro) {
 
@@ -174,6 +220,7 @@ function carregarProgresso() {
             "Não foi possível carregar o progresso:",
             erro
         );
+
 
         return {
             niveis: {}
@@ -184,68 +231,121 @@ function carregarProgresso() {
 }
 
 
+// =====================================================
+// SALVAR PROGRESSO
+// =====================================================
+
 function salvarProgresso(dados) {
 
-    localStorage.setItem(
-        CHAVE_PROGRESSO,
-        JSON.stringify(dados)
-    );
+    try {
+
+        localStorage.setItem(
+            CHAVE_PROGRESSO,
+            JSON.stringify(dados)
+        );
+
+    } catch (erro) {
+
+        console.error(
+            "Não foi possível salvar o progresso:",
+            erro
+        );
+
+    }
 
 }
 
 
+// =====================================================
+// CRIAR E OBTER DADOS DO NÍVEL
+// =====================================================
+
 function obterDadosNivel(numeroNivel) {
 
-    const progresso = carregarProgresso();
+    const progresso =
+        carregarProgresso();
 
-    if (!progresso.niveis[numeroNivel]) {
+
+    if (
+        !progresso.niveis[numeroNivel]
+    ) {
 
         progresso.niveis[numeroNivel] = {
             fases: {}
         };
 
-        salvarProgresso(progresso);
+
+        salvarProgresso(
+            progresso
+        );
 
     }
+
 
     return progresso.niveis[numeroNivel];
 
 }
 
 
-function obterDadosFase(numeroNivel, numeroFase) {
+// =====================================================
+// CRIAR E OBTER DADOS DA FASE
+// =====================================================
 
-    const dadosNivel = obterDadosNivel(numeroNivel);
+function obterDadosFase(
+    numeroNivel,
+    numeroFase
+) {
 
-    if (!dadosNivel.fases[numeroFase]) {
+    const progresso =
+        carregarProgresso();
 
-        dadosNivel.fases[numeroFase] = {
 
-            concluida: false,
+    if (
+        !progresso.niveis[numeroNivel]
+    ) {
 
-            melhorResultado: 0,
-
-            questaoAtual: 1,
-
-            respostas: {},
-
-            acertos: 0,
-
-            erros: 0,
-
-            tempo: 0
-
+        progresso.niveis[numeroNivel] = {
+            fases: {}
         };
-
-        const progresso = carregarProgresso();
-
-        progresso.niveis[numeroNivel] = dadosNivel;
-
-        salvarProgresso(progresso);
 
     }
 
-    return dadosNivel.fases[numeroFase];
+
+    if (
+        !progresso.niveis[numeroNivel]
+            .fases
+            .hasOwnProperty(numeroFase)
+    ) {
+
+        progresso.niveis[numeroNivel]
+            .fases[numeroFase] = {
+
+                concluida: false,
+
+                melhorResultado: 0,
+
+                questaoAtual: 1,
+
+                respostas: {},
+
+                acertos: 0,
+
+                erros: 0,
+
+                tempo: 0
+
+            };
+
+
+        salvarProgresso(
+            progresso
+        );
+
+    }
+
+
+    return progresso.niveis[numeroNivel]
+        .fases[numeroFase];
 
 }
 
@@ -254,13 +354,18 @@ function obterDadosFase(numeroNivel, numeroFase) {
 // VERIFICAR SE A FASE ESTÁ DESBLOQUEADA
 // =====================================================
 
-function faseEstaDesbloqueada(numeroFase) {
+function faseEstaDesbloqueada(
+    numeroFase
+) {
 
-    if (numeroFase === 1) {
+    if (
+        numeroFase === 1
+    ) {
 
         return true;
 
     }
+
 
     const faseAnterior =
         obterDadosFase(
@@ -268,16 +373,19 @@ function faseEstaDesbloqueada(numeroFase) {
             numeroFase - 1
         );
 
+
     return faseAnterior.concluida;
 
 }
 
 
 // =====================================================
-// VERIFICAR SE A FASE ESTÁ CONCLUÍDA
+// VERIFICAR SE A FASE FOI CONCLUÍDA
 // =====================================================
 
-function faseFoiConcluida(numeroFase) {
+function faseFoiConcluida(
+    numeroFase
+) {
 
     const dados =
         obterDadosFase(
@@ -285,7 +393,8 @@ function faseFoiConcluida(numeroFase) {
             numeroFase
         );
 
-    return dados.concluida;
+
+    return dados.concluida === true;
 
 }
 
@@ -294,24 +403,27 @@ function faseFoiConcluida(numeroFase) {
 // OBTER QUESTÕES DA FASE
 // =====================================================
 
-function obterQuestoesDaFase(numeroFase) {
+function obterQuestoesDaFase(
+    numeroFase
+) {
 
-    return questoesNivel1[numeroFase] || [];
+    return (
+        questoesNivel1[numeroFase] || []
+    );
 
 }
 
 
 // =====================================================
-// EMBARALHAR ALTERNATIVAS
-// =====================================================
-//
-// Isso garante que a resposta correta não fique sempre
-// no mesmo botão.
+// EMBARALHAR ARRAY
 // =====================================================
 
 function embaralhar(array) {
 
-    const copia = [...array];
+    const copia = [
+        ...array
+    ];
+
 
     for (
         let i = copia.length - 1;
@@ -321,8 +433,10 @@ function embaralhar(array) {
 
         const j =
             Math.floor(
-                Math.random() * (i + 1)
+                Math.random() *
+                (i + 1)
             );
+
 
         [
             copia[i],
@@ -334,12 +448,10 @@ function embaralhar(array) {
 
     }
 
+
     return copia;
 
-}
-
-
-// =====================================================
+}    // =====================================================
 // ATUALIZAR INFORMAÇÕES DA FASE
 // =====================================================
 
@@ -348,11 +460,25 @@ function atualizarInformacoesFase() {
     const dadosFase =
         fasesNivel1[faseAtual];
 
+
+    if (!dadosFase) {
+
+        return;
+
+    }
+
+
     const nome =
-        document.getElementById("nomeFase");
+        document.getElementById(
+            "nomeFase"
+        );
+
 
     const descricao =
-        document.getElementById("descricaoFase");
+        document.getElementById(
+            "descricaoFase"
+        );
+
 
     if (nome) {
 
@@ -360,6 +486,7 @@ function atualizarInformacoesFase() {
             dadosFase.nome;
 
     }
+
 
     if (descricao) {
 
@@ -382,10 +509,12 @@ function atualizarProgressoVisual() {
             "progressoQuestao"
         );
 
+
     const barra =
         document.getElementById(
             "barraProgresso"
         );
+
 
     if (!texto || !barra) {
 
@@ -393,15 +522,22 @@ function atualizarProgressoVisual() {
 
     }
 
+
+    const quantidadeRespondida =
+        Object.keys(
+            respostas
+        ).length;
+
+
     texto.textContent =
-        questaoAtual +
+        quantidadeRespondida +
         "/" +
         TOTAL_QUESTOES;
 
 
     const porcentagem =
         (
-            questaoAtual /
+            quantidadeRespondida /
             TOTAL_QUESTOES
         ) * 100;
 
@@ -422,6 +558,7 @@ function atualizarNumeroQuestao() {
         document.getElementById(
             "numeroQuestao"
         );
+
 
     if (numero) {
 
@@ -450,13 +587,23 @@ function mostrarQuestao() {
             "textoQuestao"
         );
 
+
     const alternativas =
         document.getElementById(
             "alternativas"
         );
 
 
-    if (!textoQuestao || !alternativas) {
+    const explicacao =
+        document.getElementById(
+            "explicacaoErro"
+        );
+
+
+    if (
+        !textoQuestao ||
+        !alternativas
+    ) {
 
         return;
 
@@ -468,19 +615,35 @@ function mostrarQuestao() {
     atualizarProgressoVisual();
 
 
+    // Limpa a explicação da questão anterior.
+
+    if (explicacao) {
+
+        explicacao.hidden = true;
+
+        explicacao.textContent = "";
+
+    }
+
+
     const questao =
-        questoes[questaoAtual - 1];
+        questoes[
+            questaoAtual - 1
+        ];
 
 
-    // Caso as questões ainda não tenham
-    // sido cadastradas.
+    // =================================================
+    // CASO A QUESTÃO AINDA NÃO EXISTA
+    // =================================================
 
     if (!questao) {
 
         textoQuestao.textContent =
             "As questões desta fase serão adicionadas em breve.";
 
+
         alternativas.innerHTML = "";
+
 
         atualizarBotoesNavegacao();
 
@@ -489,12 +652,20 @@ function mostrarQuestao() {
     }
 
 
+    // =================================================
+    // MOSTRAR PERGUNTA
+    // =================================================
+
     textoQuestao.textContent =
         questao.pergunta;
 
 
     alternativas.innerHTML = "";
 
+
+    // =================================================
+    // EMBARALHAR ALTERNATIVAS
+    // =================================================
 
     const alternativasEmbaralhadas =
         embaralhar(
@@ -510,7 +681,9 @@ function mostrarQuestao() {
                     "button"
                 );
 
+
             botao.type = "button";
+
 
             botao.textContent =
                 alternativa.texto;
@@ -537,6 +710,31 @@ function mostrarQuestao() {
     );
 
 
+    // =================================================
+    // SE A QUESTÃO JÁ FOI RESPONDIDA
+    // =================================================
+
+    if (
+        respostas[questaoAtual] !== undefined
+    ) {
+
+        const botoes =
+            document.querySelectorAll(
+                "#alternativas button"
+            );
+
+
+        botoes.forEach(
+            function(botao) {
+
+                botao.disabled = true;
+
+            }
+        );
+
+    }
+
+
     atualizarBotoesNavegacao();
 
 }
@@ -551,6 +749,8 @@ function responderAlternativa(
     botao
 ) {
 
+    // Impede responder a mesma questão duas vezes.
+
     if (
         respostas[questaoAtual] !== undefined
     ) {
@@ -560,12 +760,15 @@ function responderAlternativa(
     }
 
 
+    // Guarda a resposta.
+
     respostas[questaoAtual] =
         alternativa.correta;
 
 
-    botao.disabled = true;
-
+    // =================================================
+    // BLOQUEAR TODAS AS ALTERNATIVAS
+    // =================================================
 
     const botoes =
         document.querySelectorAll(
@@ -582,7 +785,13 @@ function responderAlternativa(
     );
 
 
-    if (alternativa.correta) {
+    // =================================================
+    // MOSTRAR RESULTADO VISUAL
+    // =================================================
+
+    if (
+        alternativa.correta
+    ) {
 
         botao.classList.add(
             "resposta-correta"
@@ -595,14 +804,19 @@ function responderAlternativa(
         );
 
 
-        mostrarExplicacao(
-            alternativa
-        );
+        mostrarExplicacao();
 
     }
 
 
+    // =================================================
+    // SALVAR PROGRESSO
+    // =================================================
+
     salvarEstadoAtual();
+
+
+    atualizarProgressoVisual();
 
     atualizarBotoesNavegacao();
 
@@ -610,12 +824,10 @@ function responderAlternativa(
 
 
 // =====================================================
-// EXPLICAÇÃO DA QUESTÃO
+// MOSTRAR EXPLICAÇÃO APÓS ERRO
 // =====================================================
 
-function mostrarExplicacao(
-    alternativa
-) {
+function mostrarExplicacao() {
 
     const area =
         document.getElementById(
@@ -637,7 +849,9 @@ function mostrarExplicacao(
 
 
     const questao =
-        questoes[questaoAtual - 1];
+        questoes[
+            questaoAtual - 1
+        ];
 
 
     if (
@@ -648,6 +862,7 @@ function mostrarExplicacao(
         area.textContent =
             questao.explicacao;
 
+
         area.hidden = false;
 
     }
@@ -656,7 +871,7 @@ function mostrarExplicacao(
 
 
 // =====================================================
-// NAVEGAÇÃO
+// ATUALIZAR BOTÕES DE NAVEGAÇÃO
 // =====================================================
 
 function atualizarBotoesNavegacao() {
@@ -666,55 +881,60 @@ function atualizarBotoesNavegacao() {
             "questaoAnterior"
         );
 
+
     const proxima =
         document.getElementById(
             "proximaQuestao"
         );
 
 
-    if (!anterior || !proxima) {
+    if (
+        !anterior ||
+        !proxima
+    ) {
 
         return;
 
     }
 
 
-    // Questão 1 não possui botão anterior.
+    // =================================================
+    // BOTÃO QUESTÃO ANTERIOR
+    // =================================================
 
     anterior.hidden =
         questaoAtual === 1;
 
 
-    // Só permite avançar depois de responder.
+    // =================================================
+    // BOTÃO PRÓXIMA QUESTÃO
+    // =================================================
+    //
+    // Só pode avançar depois de responder.
+    //
 
     proxima.disabled =
         respostas[questaoAtual] === undefined;
 
 
-    // Questão 10 vira FINALIZAR.
+    // =================================================
+    // TEXTO DO BOTÃO
+    // =================================================
 
     const texto =
-        proxima.querySelector("span");
+        proxima.querySelector(
+            "span"
+        );
 
 
-    if (questaoAtual === TOTAL_QUESTOES) {
+    if (
+        questaoAtual === TOTAL_QUESTOES
+    ) {
 
         if (texto) {
 
             texto.textContent =
                 "Finalizar";
-
-        }
-
-        const icone =
-            proxima.querySelector("svg");
-
-        if (icone) {
-
-            icone.setAttribute(
-                "data-lucide",
-                "check"
-            );
 
         }
 
@@ -730,7 +950,15 @@ function atualizarBotoesNavegacao() {
     }
 
 
-    atualizarIcones();
+    // Atualiza os ícones Lucide.
+
+    if (
+        typeof atualizarIcones === "function"
+    ) {
+
+        atualizarIcones();
+
+    }
 
 }
 
@@ -741,7 +969,9 @@ function atualizarBotoesNavegacao() {
 
 function voltarQuestao() {
 
-    if (questaoAtual <= 1) {
+    if (
+        questaoAtual <= 1
+    ) {
 
         return;
 
@@ -750,7 +980,9 @@ function voltarQuestao() {
 
     questaoAtual--;
 
+
     salvarEstadoAtual();
+
 
     mostrarQuestao();
 
@@ -763,6 +995,8 @@ function voltarQuestao() {
 
 function avancarQuestao() {
 
+    // Não permite avançar sem responder.
+
     if (
         respostas[questaoAtual] === undefined
     ) {
@@ -771,6 +1005,9 @@ function avancarQuestao() {
 
     }
 
+
+    // Se for a última questão,
+    // finaliza a fase.
 
     if (
         questaoAtual === TOTAL_QUESTOES
@@ -785,7 +1022,9 @@ function avancarQuestao() {
 
     questaoAtual++;
 
+
     salvarEstadoAtual();
+
 
     mostrarQuestao();
 
@@ -802,6 +1041,10 @@ function salvarEstadoAtual() {
         carregarProgresso();
 
 
+    // =================================================
+    // GARANTIR QUE O NÍVEL EXISTE
+    // =================================================
+
     if (
         !progresso.niveis[nivelAtual]
     ) {
@@ -813,13 +1056,33 @@ function salvarEstadoAtual() {
     }
 
 
+    // =================================================
+    // GARANTIR QUE A FASE EXISTE
+    // =================================================
+
     if (
         !progresso.niveis[nivelAtual]
             .fases[faseAtual]
     ) {
 
         progresso.niveis[nivelAtual]
-            .fases[faseAtual] = {};
+            .fases[faseAtual] = {
+
+                concluida: false,
+
+                melhorResultado: 0,
+
+                questaoAtual: 1,
+
+                respostas: {},
+
+                acertos: 0,
+
+                erros: 0,
+
+                tempo: 0
+
+            };
 
     }
 
@@ -829,42 +1092,74 @@ function salvarEstadoAtual() {
             .fases[faseAtual];
 
 
+    // =================================================
+    // SALVAR QUESTÃO ATUAL
+    // =================================================
+
     dadosFase.questaoAtual =
         questaoAtual;
 
+
+    // =================================================
+    // SALVAR RESPOSTAS
+    // =================================================
 
     dadosFase.respostas =
         respostas;
 
 
-    dadosFase.acertos =
-        Object.values(respostas)
-            .filter(
-                resposta =>
-                    resposta === true
-            ).length;
+    // =================================================
+    // CALCULAR ACERTOS
+    // =================================================
 
+    dadosFase.acertos =
+        Object.values(
+            respostas
+        ).filter(
+            function(resposta) {
+
+                return resposta === true;
+
+            }
+        ).length;
+
+
+    // =================================================
+    // CALCULAR ERROS
+    // =================================================
 
     dadosFase.erros =
-        Object.values(respostas)
-            .filter(
-                resposta =>
-                    resposta === false
-            ).length;
+        Object.values(
+            respostas
+        ).filter(
+            function(resposta) {
+
+                return resposta === false;
+
+            }
+        ).length;
+
+
+    // =================================================
+    // SALVAR
+    // =================================================
+
+    progresso.niveis[nivelAtual]
+        .fases[faseAtual] =
+        dadosFase;
 
 
     salvarProgresso(
         progresso
     );
 
-}
-
-
-// =====================================================
+}   // =====================================================
 // INICIAR FASE
 // =====================================================
 
 function iniciarFase(numeroFase) {
+
+    // Verifica se o número da fase é válido.
 
     if (
         numeroFase < 1 ||
@@ -876,8 +1171,12 @@ function iniciarFase(numeroFase) {
     }
 
 
+    // Verifica se a fase está desbloqueada.
+
     if (
-        !faseEstaDesbloqueada(numeroFase)
+        !faseEstaDesbloqueada(
+            numeroFase
+        )
     ) {
 
         return;
@@ -885,9 +1184,13 @@ function iniciarFase(numeroFase) {
     }
 
 
+    // Define a fase atual.
+
     faseAtual =
         numeroFase;
 
+
+    // Carrega os dados salvos da fase.
 
     const dadosFase =
         obterDadosFase(
@@ -896,20 +1199,63 @@ function iniciarFase(numeroFase) {
         );
 
 
+    // Recupera a questão onde o aluno parou.
+
     questaoAtual =
         dadosFase.questaoAtual || 1;
 
+
+    // Recupera as respostas anteriores.
 
     respostas =
         dadosFase.respostas || {};
 
 
+    // Inicia o contador da fase.
+
     inicioFase =
         Date.now();
 
 
-    faseFinalizada = false;
+    faseFinalizada =
+        false;
 
+
+    // =================================================
+    // MOSTRAR ÁREA DA QUESTÃO
+    // =================================================
+
+    const areaQuestao =
+        document.getElementById(
+            "areaQuestao"
+        );
+
+
+    const resultado =
+        document.getElementById(
+            "resultadoFase"
+        );
+
+
+    if (areaQuestao) {
+
+        areaQuestao.hidden =
+            false;
+
+    }
+
+
+    if (resultado) {
+
+        resultado.hidden =
+            true;
+
+    }
+
+
+    // =================================================
+    // ATUALIZAR INTERFACE
+    // =================================================
 
     atualizarInformacoesFase();
 
@@ -924,39 +1270,68 @@ function iniciarFase(numeroFase) {
 
 function finalizarFase() {
 
-    if (faseFinalizada) {
+    // Evita finalizar a mesma fase duas vezes.
+
+    if (
+        faseFinalizada
+    ) {
 
         return;
 
     }
 
 
-    faseFinalizada = true;
+    faseFinalizada =
+        true;
 
+
+    // =================================================
+    // CALCULAR ACERTOS
+    // =================================================
 
     const acertos =
-        Object.values(respostas)
-            .filter(
-                resposta =>
-                    resposta === true
-            ).length;
+        Object.values(
+            respostas
+        ).filter(
+            function(resposta) {
 
+                return resposta === true;
+
+            }
+        ).length;
+
+
+    // =================================================
+    // CALCULAR ERROS
+    // =================================================
 
     const erros =
         TOTAL_QUESTOES -
         acertos;
 
 
+    // =================================================
+    // CALCULAR PORCENTAGEM
+    // =================================================
+
     const porcentagem =
-        (acertos /
-            TOTAL_QUESTOES) *
-        100;
+        (
+            acertos /
+            TOTAL_QUESTOES
+        ) * 100;
 
 
-    let tempo = 0;
+    // =================================================
+    // CALCULAR TEMPO
+    // =================================================
+
+    let tempo =
+        0;
 
 
-    if (inicioFase) {
+    if (
+        inicioFase
+    ) {
 
         tempo =
             Math.floor(
@@ -969,16 +1344,68 @@ function finalizarFase() {
     }
 
 
+    // =================================================
+    // CARREGAR PROGRESSO
+    // =================================================
+
     const progresso =
         carregarProgresso();
 
 
-    const dadosFase =
-        obterDadosFase(
-            nivelAtual,
-            faseAtual
-        );
+    // =================================================
+    // GARANTIR QUE O NÍVEL EXISTE
+    // =================================================
 
+    if (
+        !progresso.niveis[nivelAtual]
+    ) {
+
+        progresso.niveis[nivelAtual] = {
+            fases: {}
+        };
+
+    }
+
+
+    // =================================================
+    // GARANTIR QUE A FASE EXISTE
+    // =================================================
+
+    if (
+        !progresso.niveis[nivelAtual]
+            .fases[faseAtual]
+    ) {
+
+        progresso.niveis[nivelAtual]
+            .fases[faseAtual] = {
+
+                concluida: false,
+
+                melhorResultado: 0,
+
+                questaoAtual: 1,
+
+                respostas: {},
+
+                acertos: 0,
+
+                erros: 0,
+
+                tempo: 0
+
+            };
+
+    }
+
+
+    const dadosFase =
+        progresso.niveis[nivelAtual]
+            .fases[faseAtual];
+
+
+    // =================================================
+    // MARCAR FASE COMO CONCLUÍDA
+    // =================================================
 
     dadosFase.concluida =
         true;
@@ -1004,9 +1431,16 @@ function finalizarFase() {
         tempo;
 
 
+    // =================================================
+    // ATUALIZAR MELHOR RESULTADO
+    // =================================================
+
     if (
         acertos >
-        (dadosFase.melhorResultado || 0)
+        (
+            dadosFase.melhorResultado ||
+            0
+        )
     ) {
 
         dadosFase.melhorResultado =
@@ -1014,6 +1448,10 @@ function finalizarFase() {
 
     }
 
+
+    // =================================================
+    // SALVAR FASE
+    // =================================================
 
     progresso.niveis[nivelAtual]
         .fases[faseAtual] =
@@ -1024,6 +1462,10 @@ function finalizarFase() {
         progresso
     );
 
+
+    // =================================================
+    // MOSTRAR RESULTADO
+    // =================================================
 
     mostrarResultado(
         acertos,
@@ -1037,7 +1479,7 @@ function finalizarFase() {
 
 
 // =====================================================
-// MOSTRAR RESULTADO
+// MOSTRAR RESULTADO DA FASE
 // =====================================================
 
 function mostrarResultado(
@@ -1067,15 +1509,29 @@ function mostrarResultado(
     }
 
 
+    // =================================================
+    // ESCONDER QUESTÕES
+    // =================================================
+
     if (areaQuestao) {
 
-        areaQuestao.hidden = true;
+        areaQuestao.hidden =
+            true;
 
     }
 
 
-    resultado.hidden = false;
+    // =================================================
+    // MOSTRAR RESULTADO
+    // =================================================
 
+    resultado.hidden =
+        false;
+
+
+    // =================================================
+    // ELEMENTOS DO RESULTADO
+    // =================================================
 
     const elementoAcertos =
         document.getElementById(
@@ -1107,7 +1563,13 @@ function mostrarResultado(
         );
 
 
-    if (elementoAcertos) {
+    // =================================================
+    // PREENCHER RESULTADO
+    // =================================================
+
+    if (
+        elementoAcertos
+    ) {
 
         elementoAcertos.textContent =
             acertos;
@@ -1115,7 +1577,9 @@ function mostrarResultado(
     }
 
 
-    if (elementoErros) {
+    if (
+        elementoErros
+    ) {
 
         elementoErros.textContent =
             erros;
@@ -1123,23 +1587,33 @@ function mostrarResultado(
     }
 
 
-    if (elementoPorcentagem) {
+    if (
+        elementoPorcentagem
+    ) {
 
         elementoPorcentagem.textContent =
-            porcentagem + "%";
+            Math.round(
+                porcentagem
+            ) + "%";
 
     }
 
 
-    if (elementoTempo) {
+    if (
+        elementoTempo
+    ) {
 
         elementoTempo.textContent =
-            formatarTempo(tempo);
+            formatarTempo(
+                tempo
+            );
 
     }
 
 
-    if (elementoMelhor) {
+    if (
+        elementoMelhor
+    ) {
 
         elementoMelhor.textContent =
             melhorResultado +
@@ -1149,6 +1623,10 @@ function mostrarResultado(
     }
 
 
+    // =================================================
+    // MENSAGEM DE DESEMPENHO
+    // =================================================
+
     const mensagem =
         document.getElementById(
             "resultadoMensagem"
@@ -1157,17 +1635,23 @@ function mostrarResultado(
 
     if (mensagem) {
 
-        if (acertos === 10) {
+        if (
+            acertos === TOTAL_QUESTOES
+        ) {
 
             mensagem.textContent =
                 "Perfeito! Você acertou tudo!";
 
-        } else if (acertos >= 8) {
+        } else if (
+            acertos >= 8
+        ) {
 
             mensagem.textContent =
                 "Excelente resultado!";
 
-        } else if (acertos >= 6) {
+        } else if (
+            acertos >= 6
+        ) {
 
             mensagem.textContent =
                 "Muito bem! Continue praticando.";
@@ -1182,6 +1666,10 @@ function mostrarResultado(
     }
 
 
+    // =================================================
+    // BOTÃO PRÓXIMA FASE
+    // =================================================
+
     const proximaFase =
         document.getElementById(
             "proximaFase"
@@ -1190,15 +1678,32 @@ function mostrarResultado(
 
     if (proximaFase) {
 
-        proximaFase.style.display =
+        if (
             faseAtual < TOTAL_FASES
-                ? "flex"
-                : "none";
+        ) {
+
+            proximaFase.style.display =
+                "flex";
+
+        } else {
+
+            proximaFase.style.display =
+                "none";
+
+        }
 
     }
 
 
-    atualizarIcones();
+    // Atualizar ícones.
+
+    if (
+        typeof atualizarIcones === "function"
+    ) {
+
+        atualizarIcones();
+
+    }
 
 }
 
@@ -1207,7 +1712,9 @@ function mostrarResultado(
 // FORMATAR TEMPO
 // =====================================================
 
-function formatarTempo(segundos) {
+function formatarTempo(
+    segundos
+) {
 
     const minutos =
         Math.floor(
@@ -1220,9 +1727,11 @@ function formatarTempo(segundos) {
 
 
     return (
-        String(minutos).padStart(2, "0") +
+        String(minutos)
+            .padStart(2, "0") +
         ":" +
-        String(segundosRestantes).padStart(2, "0")
+        String(segundosRestantes)
+            .padStart(2, "0")
     );
 
 }
@@ -1234,19 +1743,34 @@ function formatarTempo(segundos) {
 
 function refazerFase() {
 
-    respostas = {};
+    // =================================================
+    // RESETAR ESTADO
+    // =================================================
 
-    questaoAtual = 1;
+    respostas =
+        {};
+
+    questaoAtual =
+        1;
 
     inicioFase =
         Date.now();
 
-    faseFinalizada = false;
+    faseFinalizada =
+        false;
 
+
+    // =================================================
+    // CARREGAR PROGRESSO
+    // =================================================
 
     const progresso =
         carregarProgresso();
 
+
+    // =================================================
+    // MANTER MELHOR RESULTADO
+    // =================================================
 
     if (
         progresso.niveis[nivelAtual] &&
@@ -1254,30 +1778,57 @@ function refazerFase() {
             .fases[faseAtual]
     ) {
 
-        const dados =
+        const dadosFase =
             progresso.niveis[nivelAtual]
                 .fases[faseAtual];
 
 
-        dados.questaoAtual = 1;
+        dadosFase.concluida =
+            false;
 
-        dados.respostas = {};
 
-        dados.acertos = 0;
+        dadosFase.questaoAtual =
+            1;
 
-        dados.erros = 0;
 
-        dados.tempo = 0;
+        dadosFase.respostas =
+            {};
 
-        // IMPORTANTE:
-        // melhorResultado não é apagado.
+
+        dadosFase.acertos =
+            0;
+
+
+        dadosFase.erros =
+            0;
+
+
+        dadosFase.tempo =
+            0;
+
+
+        // O melhor resultado NÃO é apagado.
+
+        progresso.niveis[nivelAtual]
+            .fases[faseAtual] =
+            dadosFase;
+
+
+        salvarProgresso(
+            progresso
+        );
 
     }
 
 
-    salvarProgresso(
-        progresso
-    );
+    // =================================================
+    // MOSTRAR FASE NOVAMENTE
+    // =================================================
+
+    const areaQuestao =
+        document.getElementById(
+            "areaQuestao"
+        );
 
 
     const resultado =
@@ -1286,32 +1837,27 @@ function refazerFase() {
         );
 
 
-    const areaQuestao =
-        document.getElementById(
-            "areaQuestao"
-        );
+    if (areaQuestao) {
+
+        areaQuestao.hidden =
+            false;
+
+    }
 
 
     if (resultado) {
 
-        resultado.hidden = true;
+        resultado.hidden =
+            true;
 
     }
 
 
-    if (areaQuestao) {
-
-        areaQuestao.hidden = false;
-
-    }
-
+    atualizarInformacoesFase();
 
     mostrarQuestao();
 
-}
-
-
-// =====================================================
+}    // =====================================================
 // PRÓXIMA FASE
 // =====================================================
 
@@ -1326,12 +1872,17 @@ function irParaProximaFase() {
     }
 
 
-    const proxima =
+    const proximaFase =
         faseAtual + 1;
 
 
+    // A próxima fase só pode ser acessada
+    // se a fase atual estiver concluída.
+
     if (
-        !faseEstaDesbloqueada(proxima)
+        !faseEstaDesbloqueada(
+            proximaFase
+        )
     ) {
 
         return;
@@ -1339,13 +1890,15 @@ function irParaProximaFase() {
     }
 
 
-    iniciarFase(proxima);
+    iniciarFase(
+        proximaFase
+    );
 
 }
 
 
 // =====================================================
-// MENU DE FASES
+// MENU LATERAL DE FASES
 // =====================================================
 
 function abrirMenuFases() {
@@ -1355,28 +1908,36 @@ function abrirMenuFases() {
             "menuFases"
         );
 
+
     const fundo =
         document.getElementById(
             "fundoMenuFases"
         );
 
 
-    if (!menu || !fundo) {
+    if (menu) {
 
-        return;
+        menu.classList.add(
+            "aberto"
+        );
 
     }
 
 
-    menu.classList.add("aberto");
+    if (fundo) {
 
-    fundo.classList.add("ativo");
+        fundo.classList.add(
+            "ativo"
+        );
 
-
-    renderizarFasesMenu();
+    }
 
 }
 
+
+// =====================================================
+// FECHAR MENU DE FASES
+// =====================================================
 
 function fecharMenuFases() {
 
@@ -1385,31 +1946,38 @@ function fecharMenuFases() {
             "menuFases"
         );
 
+
     const fundo =
         document.getElementById(
             "fundoMenuFases"
         );
 
 
-    if (!menu || !fundo) {
+    if (menu) {
 
-        return;
+        menu.classList.remove(
+            "aberto"
+        );
 
     }
 
 
-    menu.classList.remove("aberto");
+    if (fundo) {
 
-    fundo.classList.remove("ativo");
+        fundo.classList.remove(
+            "ativo"
+        );
+
+    }
 
 }
 
 
 // =====================================================
-// RENDERIZAR FASES NO MENU
+// CRIAR LISTA DE FASES
 // =====================================================
 
-function renderizarFasesMenu() {
+function atualizarListaFases() {
 
     const lista =
         document.getElementById(
@@ -1424,7 +1992,8 @@ function renderizarFasesMenu() {
     }
 
 
-    lista.innerHTML = "";
+    lista.innerHTML =
+        "";
 
 
     for (
@@ -1433,14 +2002,15 @@ function renderizarFasesMenu() {
         numero++
     ) {
 
-        const dados =
+        const dadosFase =
             fasesNivel1[numero];
 
 
-        const concluida =
-            faseFoiConcluida(
-                numero
-            );
+        if (!dadosFase) {
+
+            continue;
+
+        }
 
 
         const desbloqueada =
@@ -1449,22 +2019,33 @@ function renderizarFasesMenu() {
             );
 
 
-        const botao =
+        const concluida =
+            faseFoiConcluida(
+                numero
+            );
+
+
+        const item =
             document.createElement(
                 "button"
             );
 
 
-        botao.type = "button";
+        item.type =
+            "button";
 
 
-        botao.className =
+        item.className =
             "fase-menu-item";
 
 
+        // =================================================
+        // ESTADO DA FASE
+        // =================================================
+
         if (concluida) {
 
-            botao.classList.add(
+            item.classList.add(
                 "concluida"
             );
 
@@ -1475,7 +2056,7 @@ function renderizarFasesMenu() {
             numero === faseAtual
         ) {
 
-            botao.classList.add(
+            item.classList.add(
                 "atual"
             );
 
@@ -1484,63 +2065,85 @@ function renderizarFasesMenu() {
 
         if (!desbloqueada) {
 
-            botao.classList.add(
+            item.classList.add(
                 "bloqueada"
             );
-
-            botao.disabled = true;
 
         }
 
 
-        const icone =
-            concluida
-                ? "circle-check"
-                : desbloqueada
-                    ? "play-circle"
-                    : "lock";
+        // =================================================
+        // ÍCONE
+        // =================================================
+
+        let icone =
+            "lock";
 
 
-        botao.innerHTML = `
+        if (concluida) {
 
-            <div class="icone-fase">
+            icone =
+                "circle-check";
+
+        } else if (
+            desbloqueada
+        ) {
+
+            icone =
+                "play";
+
+        }
+
+
+        // =================================================
+        // TEXTO DA FASE
+        // =================================================
+
+        item.innerHTML = `
+
+            <span class="icone-fase">
 
                 <i data-lucide="${icone}"></i>
 
-            </div>
+            </span>
 
 
-            <div class="informacao-fase-menu">
+            <span class="informacao-fase-menu">
 
                 <strong>
                     Fase ${numero}
                 </strong>
 
                 <span>
-                    ${dados.nome}
+                    ${dadosFase.nome}
+                    • ${dadosFase.dificuldade}
                 </span>
 
-            </div>
+            </span>
 
 
-            <div class="estado-fase">
+            <span class="estado-fase">
 
-                ${
+                <i data-lucide="${
                     concluida
-                        ? '<i data-lucide="check"></i>'
-                        : !desbloqueada
-                            ? '<i data-lucide="lock"></i>'
-                            : '<i data-lucide="chevron-right"></i>'
-                }
+                        ? "check"
+                        : desbloqueada
+                            ? "chevron-right"
+                            : "lock"
+                }"></i>
 
-            </div>
+            </span>
 
         `;
 
 
+        // =================================================
+        // CLIQUE NA FASE
+        // =================================================
+
         if (desbloqueada) {
 
-            botao.addEventListener(
+            item.addEventListener(
                 "click",
                 function() {
 
@@ -1548,240 +2151,250 @@ function renderizarFasesMenu() {
                         numero
                     );
 
+
                     fecharMenuFases();
+
+
+                    atualizarListaFases();
 
                 }
             );
+
+        } else {
+
+            item.disabled =
+                true;
 
         }
 
 
         lista.appendChild(
-            botao
+            item
         );
 
     }
 
 
-    atualizarIcones();
+    // =================================================
+    // ATUALIZAR LUCIDE
+    // =================================================
+
+    if (
+        typeof atualizarIcones === "function"
+    ) {
+
+        atualizarIcones();
+
+    }
 
 }
 
 
 // =====================================================
-// CONTINUAR ESTUDANDO
+// CONFIGURAR EVENTOS DA PÁGINA
 // =====================================================
 
-function continuarEstudando() {
+function configurarEventosNivel1() {
 
-    const progresso =
-        carregarProgresso();
+    // =================================================
+    // BOTÃO QUESTÃO ANTERIOR
+    // =================================================
 
-
-    const nivel =
-        progresso.niveis[nivelAtual];
-
-
-    if (!nivel) {
-
-        iniciarFase(1);
-
-        return;
-
-    }
+    const botaoAnterior =
+        document.getElementById(
+            "questaoAnterior"
+        );
 
 
-    for (
-        let numero = 1;
-        numero <= TOTAL_FASES;
-        numero++
-    ) {
+    if (botaoAnterior) {
 
-        const fase =
-            nivel.fases[numero];
-
-
-        if (
-            fase &&
-            !fase.concluida &&
-            fase.respostas &&
-            Object.keys(
-                fase.respostas
-            ).length > 0
-        ) {
-
-            iniciarFase(
-                numero
-            );
-
-            return;
-
-        }
+        botaoAnterior.addEventListener(
+            "click",
+            voltarQuestao
+        );
 
     }
 
 
-    for (
-        let numero = 1;
-        numero <= TOTAL_FASES;
-        numero++
-    ) {
+    // =================================================
+    // BOTÃO PRÓXIMA QUESTÃO
+    // =================================================
 
-        if (
-            faseEstaDesbloqueada(
-                numero
-            ) &&
-            !faseFoiConcluida(
-                numero
-            )
-        ) {
+    const botaoProxima =
+        document.getElementById(
+            "proximaQuestao"
+        );
 
-            iniciarFase(
-                numero
-            );
 
-            return;
+    if (botaoProxima) {
 
-        }
+        botaoProxima.addEventListener(
+            "click",
+            avancarQuestao
+        );
 
     }
 
+
+    // =================================================
+    // BOTÃO REFAZER FASE
+    // =================================================
+
+    const botaoRefazer =
+        document.getElementById(
+            "refazerFase"
+        );
+
+
+    if (botaoRefazer) {
+
+        botaoRefazer.addEventListener(
+            "click",
+            refazerFase
+        );
+
+    }
+
+
+    // =================================================
+    // BOTÃO PRÓXIMA FASE
+    // =================================================
+
+    const botaoProximaFase =
+        document.getElementById(
+            "proximaFase"
+        );
+
+
+    if (botaoProximaFase) {
+
+        botaoProximaFase.addEventListener(
+            "click",
+            irParaProximaFase
+        );
+
+    }
+
+
+    // =================================================
+    // BOTÃO MENU DE FASES
+    // =================================================
+
+    const botaoMenu =
+        document.getElementById(
+            "botaoMenuFases"
+        );
+
+
+    if (botaoMenu) {
+
+        botaoMenu.addEventListener(
+            "click",
+            function() {
+
+                abrirMenuFases();
+
+                atualizarListaFases();
+
+            }
+        );
+
+    }
+
+
+    // =================================================
+    // BOTÃO FECHAR MENU
+    // =================================================
+
+    const botaoFechar =
+        document.getElementById(
+            "fecharMenuFases"
+        );
+
+
+    if (botaoFechar) {
+
+        botaoFechar.addEventListener(
+            "click",
+            fecharMenuFases
+        );
+
+    }
+
+
+    // =================================================
+    // FUNDO DO MENU
+    // =================================================
+
+    const fundo =
+        document.getElementById(
+            "fundoMenuFases"
+        );
+
+
+    if (fundo) {
+
+        fundo.addEventListener(
+            "click",
+            fecharMenuFases
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// INICIALIZAÇÃO DO NÍVEL 1
+// =====================================================
+
+function inicializarNivel1() {
+
+    // Configura os eventos.
+
+    configurarEventosNivel1();
+
+
+    // Cria a lista lateral.
+
+    atualizarListaFases();
+
+
+    // Inicia a primeira fase disponível.
 
     iniciarFase(
-        TOTAL_FASES
+        faseAtual
     );
+
+
+    // Atualiza os ícones.
+
+    if (
+        typeof atualizarIcones === "function"
+    ) {
+
+        atualizarIcones();
+
+    }
 
 }
 
 
 // =====================================================
-// EVENTOS
-// =====================================================
-
-const botaoAnterior =
-    document.getElementById(
-        "questaoAnterior"
-    );
-
-
-const botaoProxima =
-    document.getElementById(
-        "proximaQuestao"
-    );
-
-
-const botaoRefazer =
-    document.getElementById(
-        "refazerFase"
-    );
-
-
-const botaoProximaFase =
-    document.getElementById(
-        "proximaFase"
-    );
-
-
-const botaoMenuFases =
-    document.getElementById(
-        "botaoMenuFases"
-    );
-
-
-const fecharMenu =
-    document.getElementById(
-        "fecharMenuFases"
-    );
-
-
-const fundoMenu =
-    document.getElementById(
-        "fundoMenuFases"
-    );
-
-
-if (botaoAnterior) {
-
-    botaoAnterior.addEventListener(
-        "click",
-        voltarQuestao
-    );
-
-}
-
-
-if (botaoProxima) {
-
-    botaoProxima.addEventListener(
-        "click",
-        avancarQuestao
-    );
-
-}
-
-
-if (botaoRefazer) {
-
-    botaoRefazer.addEventListener(
-        "click",
-        refazerFase
-    );
-
-}
-
-
-if (botaoProximaFase) {
-
-    botaoProximaFase.addEventListener(
-        "click",
-        irParaProximaFase
-    );
-
-}
-
-
-if (botaoMenuFases) {
-
-    botaoMenuFases.addEventListener(
-        "click",
-        abrirMenuFases
-    );
-
-}
-
-
-if (fecharMenu) {
-
-    fecharMenu.addEventListener(
-        "click",
-        fecharMenuFases
-    );
-
-}
-
-
-if (fundoMenu) {
-
-    fundoMenu.addEventListener(
-        "click",
-        fecharMenuFases
-    );
-
-}
-
-
-// =====================================================
-// INICIALIZAÇÃO
+// INICIAR QUANDO O HTML ESTIVER PRONTO
 // =====================================================
 
 if (
-    document.body.contains(
-        document.getElementById(
-            "areaQuestao"
-        )
-    )
+    document.readyState === "loading"
 ) {
 
-    iniciarFase(1);
+    document.addEventListener(
+        "DOMContentLoaded",
+        inicializarNivel1
+    );
 
-}  
+} else {
+
+    inicializarNivel1();
+
+}   
