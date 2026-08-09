@@ -1,0 +1,815 @@
+/* =====================================================
+   NIVEL1.HTML — ESTRUTURA PRINCIPAL
+   ===================================================== */
+
+.pagina-nivel1 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px 20px 70px;
+}
+
+
+/* =====================================================
+   CABEÇALHO DO NÍVEL
+   ===================================================== */
+
+.cabecalho-nivel {
+    background: #1E3A8A;
+}
+
+.titulo-cabecalho-nivel {
+    flex: 1;
+    text-align: center;
+}
+
+.titulo-cabecalho-nivel span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 3px;
+}
+
+.titulo-cabecalho-nivel h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES DA FASE
+   ===================================================== */
+
+.informacoes-fase {
+    background: white;
+    border-radius: 22px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+.fase-identificacao {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.rotulo-fase {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #eef3ff;
+    color: #4169E1;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fase-identificacao h2 {
+    margin: 0 0 8px;
+    color: #1E3A8A;
+    font-size: 30px;
+}
+
+.fase-identificacao p {
+    margin: 0;
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   PROGRESSO DA FASE
+   ===================================================== */
+
+.progresso-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 9px;
+    color: #555;
+    font-size: 15px;
+}
+
+.progresso-texto strong {
+    color: #1E3A8A;
+    font-size: 16px;
+}
+
+.barra-progresso-fase {
+    width: 100%;
+    height: 13px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progresso-fase-atual {
+    width: 0%;
+    height: 100%;
+    background: #4169E1;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+
+/* =====================================================
+   ÁREA DA QUESTÃO
+   ===================================================== */
+
+.area-questao {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+.numero-questao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 28px;
+    color: #777;
+    font-size: 15px;
+}
+
+.numero-questao strong {
+    color: #1E3A8A;
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   CONTEÚDO DA QUESTÃO
+   ===================================================== */
+
+.questao-conteudo {
+    text-align: center;
+}
+
+#textoQuestao {
+    margin: 0 auto 30px;
+    max-width: 700px;
+    color: #222;
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   ALTERNATIVAS
+   ===================================================== */
+
+.alternativas-nivel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.alternativas-nivel button {
+    min-height: 65px;
+    padding: 14px 18px;
+    border: 2px solid #4169E1;
+    border-radius: 14px;
+    background: #4169E1;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.alternativas-nivel button:hover {
+    background: #294ec5;
+    border-color: #294ec5;
+    transform: translateY(-2px);
+}
+
+.alternativas-nivel button:disabled {
+    cursor: not-allowed;
+}
+
+.alternativas-nivel button.resposta-correta {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+}
+
+.alternativas-nivel button.resposta-errada {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+
+/* =====================================================
+   EXPLICAÇÃO APÓS ERRO
+   ===================================================== */
+
+.explicacao-erro {
+    max-width: 650px;
+    margin: 20px auto 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #fff7ed;
+    border-left: 4px solid #f59e0b;
+    color: #78350f;
+    text-align: left;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   NAVEGAÇÃO DAS QUESTÕES
+   ===================================================== */
+
+.navegacao-questao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.botao-navegacao {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.botao-navegacao svg {
+    width: 20px;
+    height: 20px;
+}
+
+.botao-anterior {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.botao-anterior:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+.botao-proxima {
+    margin-left: auto;
+    background: #1E3A8A;
+    color: white;
+}
+
+.botao-proxima:hover {
+    background: #294ec5;
+    transform: translateY(-2px);
+}
+
+.botao-proxima:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   RESULTADO DA FASE
+   ===================================================== */
+
+.resultado-fase {
+    background: white;
+    border-radius: 22px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+.resultado-icone {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #fff7cc;
+    color: #eab308;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado-icone svg {
+    width: 38px;
+    height: 38px;
+}
+
+.resultado-titulo {
+    display: block;
+    color: #4169E1;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#resultadoMensagem {
+    margin: 8px 0 28px;
+    color: #1E3A8A;
+    font-size: 30px;
+}
+
+
+/* =====================================================
+   RESUMO DO DESEMPENHO
+   ===================================================== */
+
+.resumo-desempenho {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.resultado-item {
+    min-height: 115px;
+    padding: 15px 10px;
+    border-radius: 15px;
+    background: #f8faff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.resultado-item svg {
+    width: 24px;
+    height: 24px;
+    color: #4169E1;
+}
+
+.resultado-item span {
+    color: #666;
+    font-size: 13px;
+}
+
+.resultado-item strong {
+    color: #1E3A8A;
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   AÇÕES DO RESULTADO
+   ===================================================== */
+
+.acoes-resultado {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.botao-resultado {
+    min-height: 50px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.botao-resultado svg {
+    width: 20px;
+    height: 20px;
+}
+
+.botao-resultado.principal {
+    background: #4169E1;
+    color: white;
+}
+
+.botao-resultado.principal:hover {
+    background: #294ec5;
+    transform: translateY(-2px);
+}
+
+.botao-resultado.secundario {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.botao-resultado.secundario:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   MENU LATERAL DE FASES
+   ===================================================== */
+
+#menuFases {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    padding: 25px 20px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+#menuFases.aberto {
+    right: 0;
+}
+
+#fundoMenuFases {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+    z-index: 900;
+    display: none;
+}
+
+#fundoMenuFases.ativo {
+    display: block;
+}
+
+
+/* =====================================================
+   CABEÇALHO DO MENU DE FASES
+   ===================================================== */
+
+.cabecalho-menu-fases {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.cabecalho-menu-fases span {
+    display: block;
+    color: #4169E1;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.cabecalho-menu-fases h2 {
+    margin: 0;
+    color: #1E3A8A;
+    font-size: 25px;
+}
+
+.cabecalho-menu-fases .icon-button {
+    background: #e5e7eb;
+    color: #333;
+}
+
+
+/* =====================================================
+   LISTA DE FASES
+   ===================================================== */
+
+.lista-fases {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fase-menu-item {
+    width: 100%;
+    min-height: 60px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 13px;
+    background: #f4f7ff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.fase-menu-item:hover {
+    background: #e8efff;
+    transform: translateX(-2px);
+}
+
+.fase-menu-item .icone-fase {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #4169E1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fase-menu-item .icone-fase svg {
+    width: 20px;
+    height: 20px;
+}
+
+.fase-menu-item .informacao-fase-menu {
+    flex: 1;
+}
+
+.fase-menu-item .informacao-fase-menu strong {
+    display: block;
+    color: #1E3A8A;
+    font-size: 15px;
+}
+
+.fase-menu-item .informacao-fase-menu span {
+    display: block;
+    margin-top: 3px;
+    color: #777;
+    font-size: 12px;
+}
+
+.fase-menu-item .estado-fase {
+    color: #999;
+}
+
+.fase-menu-item .estado-fase svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Fase concluída */
+
+.fase-menu-item.concluida .icone-fase {
+    background: #22c55e;
+}
+
+.fase-menu-item.concluida .estado-fase {
+    color: #22c55e;
+}
+
+
+/* Fase atual */
+
+.fase-menu-item.atual {
+    background: #eef3ff;
+    border: 2px solid #4169E1;
+}
+
+.fase-menu-item.atual .icone-fase {
+    background: #1E3A8A;
+}
+
+
+/* Fase bloqueada */
+
+.fase-menu-item.bloqueada {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.fase-menu-item.bloqueada:hover {
+    background: #f4f7ff;
+    transform: none;
+}
+
+.fase-menu-item.bloqueada .icone-fase {
+    background: #9ca3af;
+}
+
+
+/* =====================================================
+   MODO ESCURO
+   ===================================================== */
+
+.modo-escuro .informacoes-fase,
+.modo-escuro .area-questao,
+.modo-escuro .resultado-fase {
+    background: #13294b;
+    color: white;
+}
+
+.modo-escuro .fase-identificacao h2,
+.modo-escuro #resultadoMensagem {
+    color: #FFD54F;
+}
+
+.modo-escuro .fase-identificacao p,
+.modo-escuro .progresso-texto,
+.modo-escuro #textoQuestao {
+    color: #e5e7eb;
+}
+
+.modo-escuro .rotulo-fase {
+    background: #1d3b6d;
+    color: #FFD54F;
+}
+
+.modo-escuro .progresso-texto strong,
+.modo-escuro .numero-questao strong {
+    color: #FFD54F;
+}
+
+.modo-escuro .barra-progresso-fase {
+    background: #29456f;
+}
+
+.modo-escuro .progresso-fase-atual {
+    background: #FFD54F;
+}
+
+.modo-escuro .botao-anterior {
+    background: #29456f;
+    color: white;
+}
+
+.modo-escuro .botao-anterior:hover {
+    background: #35547f;
+}
+
+.modo-escuro .explicacao-erro {
+    background: #3b2a15;
+    border-left-color: #f59e0b;
+    color: #fde68a;
+}
+
+.modo-escuro .resultado-icone {
+    background: #3b3215;
+    color: #FFD54F;
+}
+
+.modo-escuro .resultado-titulo {
+    color: #FFD54F;
+}
+
+.modo-escuro .resultado-item {
+    background: #102442;
+}
+
+.modo-escuro .resultado-item svg {
+    color: #FFD54F;
+}
+
+.modo-escuro .resultado-item span {
+    color: #d1d5db;
+}
+
+.modo-escuro .resultado-item strong {
+    color: #FFD54F;
+}
+
+.modo-escuro .botao-resultado.secundario {
+    background: #29456f;
+    color: white;
+}
+
+.modo-escuro .botao-resultado.secundario:hover {
+    background: #35547f;
+}
+
+
+/* =====================================================
+   MENU DE FASES — MODO ESCURO
+   ===================================================== */
+
+.modo-escuro #menuFases {
+    background: #13294b;
+    color: white;
+}
+
+.modo-escuro .cabecalho-menu-fases span,
+.modo-escuro .cabecalho-menu-fases h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .cabecalho-menu-fases .icon-button {
+    background: #29456f;
+    color: white;
+}
+
+.modo-escuro .fase-menu-item {
+    background: #102442;
+    color: white;
+}
+
+.modo-escuro .fase-menu-item:hover {
+    background: #1d3b6d;
+}
+
+.modo-escuro .fase-menu-item .informacao-fase-menu strong {
+    color: white;
+}
+
+.modo-escuro .fase-menu-item .informacao-fase-menu span {
+    color: #d1d5db;
+}
+
+.modo-escuro .fase-menu-item.atual {
+    background: #1d3b6d;
+    border-color: #FFD54F;
+}
+
+.modo-escuro .fase-menu-item.concluida .icone-fase {
+    background: #22c55e;
+}
+
+.modo-escuro .fase-menu-item.bloqueada {
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .pagina-nivel1 {
+        padding: 25px 15px 50px;
+    }
+
+    .titulo-cabecalho-nivel h1 {
+        font-size: 20px;
+    }
+
+    .informacoes-fase {
+        padding: 22px 18px;
+    }
+
+    .fase-identificacao h2 {
+        font-size: 26px;
+    }
+
+    .fase-identificacao p {
+        font-size: 15px;
+    }
+
+    .area-questao {
+        padding: 22px 16px;
+    }
+
+    #textoQuestao {
+        font-size: 21px;
+    }
+
+    .alternativas-nivel {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .alternativas-nivel button {
+        min-height: 58px;
+    }
+
+    .navegacao-questao {
+        gap: 10px;
+    }
+
+    .botao-navegacao {
+        flex: 1;
+        padding: 11px 10px;
+        font-size: 14px;
+    }
+
+    .resumo-desempenho {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .resultado-item:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .acoes-resultado {
+        flex-direction: column;
+    }
+
+    .botao-resultado {
+        width: 100%;
+    }
+
+    #menuFases {
+        width: min(320px, 88vw);
+    }
+
+}  
