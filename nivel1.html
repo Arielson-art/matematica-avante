@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nível 1 - Matemática Avante</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/nivel1.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<header class="cabecalho-nivel">
+
+    <button id="voltarPagina" type="button" class="icon-button">
+
+        <i data-lucide="arrow-left"></i>
+
+    </button>
+
+
+    <div class="titulo-cabecalho-nivel">
+
+        <span>Nível 1</span>
+
+        <h1>Fundamentos</h1>
+
+    </div>
+
+
+    <button id="modoEscuro" type="button" class="icon-button">
+
+        <i data-lucide="moon"></i>
+
+    </button>
+
+
+    <button id="botaoMenuFases" type="button" class="icon-button">
+
+        <i data-lucide="list-ordered"></i>
+
+    </button>
+
+</header>
+
+
+
+<main class="pagina-nivel1">
+
+
+    <!-- ================================
+         INFORMAÇÕES DA FASE
+         ================================ -->
+
+    <section class="informacoes-fase">
+
+
+        <div class="fase-identificacao">
+
+            <span class="rotulo-fase">
+                Fase 1
+            </span>
+
+            <h2 id="nomeFase">
+                Básico da Matemática
+            </h2>
+
+            <p id="descricaoFase">
+                As quatro operações fundamentais.
+            </p>
+
+        </div>
+
+
+        <div class="progresso-fase">
+
+            <div class="progresso-texto">
+
+                <span>
+                    Progresso da fase
+                </span>
+
+                <strong id="progressoQuestao">
+                    0/10
+                </strong>
+
+            </div>
+
+
+            <div class="barra-progresso-fase">
+
+                <div
+                    id="barraProgresso"
+                    class="progresso-fase-atual">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================================
+         ÁREA DA QUESTÃO
+         ================================ -->
+
+    <section class="area-questao" id="areaQuestao">
+
+
+        <div class="numero-questao">
+
+            <span>
+                Questão
+            </span>
+
+            <strong id="numeroQuestao">
+                1
+            </strong>
+
+            <span>
+                de 10
+            </span>
+
+        </div>
+
+
+        <div class="questao-conteudo">
+
+            <p id="textoQuestao">
+                Carregando questão...
+            </p>
+
+
+            <div
+                id="alternativas"
+                class="alternativas-nivel">
+            </div>
+
+
+            <div
+                id="explicacaoErro"
+                class="explicacao-erro"
+                hidden>
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             NAVEGAÇÃO DAS QUESTÕES
+             ================================ -->
+
+        <div class="navegacao-questao">
+
+
+            <button
+                id="questaoAnterior"
+                type="button"
+                class="botao-navegacao botao-anterior"
+                hidden>
+
+                <i data-lucide="arrow-left"></i>
+
+                <span>
+                    Questão anterior
+                </span>
+
+            </button>
+
+
+
+            <button
+                id="proximaQuestao"
+                type="button"
+                class="botao-navegacao botao-proxima"
+                disabled>
+
+                <span>
+                    Próxima questão
+                </span>
+
+                <i data-lucide="arrow-right"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================================
+         RESULTADO DA FASE
+         ================================ -->
+
+    <section
+        id="resultadoFase"
+        class="resultado-fase"
+        hidden>
+
+
+        <div class="resultado-icone">
+
+            <i data-lucide="trophy"></i>
+
+        </div>
+
+
+        <span class="resultado-titulo">
+            Fase concluída!
+        </span>
+
+
+        <h2 id="resultadoMensagem">
+            Muito bem!
+        </h2>
+
+
+
+        <div class="resumo-desempenho">
+
+
+            <div class="resultado-item">
+
+                <i data-lucide="circle-check"></i>
+
+                <span>
+                    Acertos
+                </span>
+
+                <strong id="resultadoAcertos">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="resultado-item">
+
+                <i data-lucide="circle-x"></i>
+
+                <span>
+                    Erros
+                </span>
+
+                <strong id="resultadoErros">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="resultado-item">
+
+                <i data-lucide="chart-column"></i>
+
+                <span>
+                    Aproveitamento
+                </span>
+
+                <strong id="resultadoPorcentagem">
+                    0%
+                </strong>
+
+            </div>
+
+
+
+            <div class="resultado-item">
+
+                <i data-lucide="clock-3"></i>
+
+                <span>
+                    Tempo
+                </span>
+
+                <strong id="resultadoTempo">
+                    00:00
+                </strong>
+
+            </div>
+
+
+
+            <div class="resultado-item">
+
+                <i data-lucide="medal"></i>
+
+                <span>
+                    Melhor resultado
+                </span>
+
+                <strong id="melhorResultado">
+                    0/10
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="acoes-resultado">
+
+
+            <button
+                id="refazerFase"
+                type="button"
+                class="botao-resultado secundario">
+
+                <i data-lucide="rotate-ccw"></i>
+
+                <span>
+                    Refazer fase
+                </span>
+
+            </button>
+
+
+
+            <button
+                id="proximaFase"
+                type="button"
+                class="botao-resultado principal">
+
+                <span>
+                    Próxima fase
+                </span>
+
+                <i data-lucide="arrow-right"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================================
+     MENU LATERAL DAS FASES
+     ================================ -->
+
+<div id="fundoMenuFases"></div>
+
+
+<aside id="menuFases">
+
+
+    <div class="cabecalho-menu-fases">
+
+
+        <div>
+
+            <span>
+                Nível 1
+            </span>
+
+            <h2>
+                Fases
+            </h2>
+
+        </div>
+
+
+        <button
+            id="fecharMenuFases"
+            type="button"
+            class="icon-button">
+
+            <i data-lucide="x"></i>
+
+        </button>
+
+
+    </div>
+
+
+
+    <div id="listaFases" class="lista-fases">
+
+
+        <!--
+
+            As 10 fases serão preenchidas
+            pelo niveis.js.
+
+        -->
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- ================================
+     JAVASCRIPT
+     ================================ -->
+
+<script src="js/script.js"></script>
+
+<script src="js/niveis.js"></script>
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+
+</html>   
