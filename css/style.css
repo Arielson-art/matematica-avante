@@ -1337,3 +1337,229 @@ header svg {
 .modo-escuro .icon-button:hover {
     background: #1d3b6d;
 }   
+/* =====================================================
+   INDEX.HTML — ÁREA PRINCIPAL
+   ===================================================== */
+
+.hero {
+    min-height: calc(100vh - 85px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elementos decorativos sutis */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(65, 105, 225, 0.07);
+    top: -200px;
+    right: -160px;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(255, 213, 79, 0.08);
+    bottom: -170px;
+    left: -130px;
+    pointer-events: none;
+}
+
+/* Título principal */
+
+.hero h2 {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: #1E3A8A;
+    font-weight: 800;
+}
+
+/* Pequeno detalhe amarelo abaixo do título */
+
+.hero h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 5px;
+    margin: 22px auto 0;
+    border-radius: 10px;
+    background: #FFD54F;
+}
+
+/* Texto de apresentação */
+
+.hero > p {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 25px auto 32px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #555;
+}  /* =====================================================
+   INDEX.HTML — BOTÃO PRINCIPAL
+   ===================================================== */
+
+#comecarAgora {
+    position: relative;
+    z-index: 2;
+    min-width: 210px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 14px;
+    background: #4169E1;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+#comecarAgora:hover {
+    background: #294ec5;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(30, 58, 138, 0.25);
+}
+
+#comecarAgora:active {
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   INDEX.HTML — ÁREA DE ENTRADA DO NOME
+   ===================================================== */
+
+#entradaNome {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 470px);
+    margin-top: 35px;
+    padding: 30px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+#entradaNome h3 {
+    margin: 0 0 20px;
+    color: #1E3A8A;
+    font-size: 24px;
+}
+
+
+/* Campo de nome */
+
+#nomeUsuario {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    background: #f8faff;
+    color: #222;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#nomeUsuario::placeholder {
+    color: #999;
+}
+
+#nomeUsuario:focus {
+    border-color: #4169E1;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.12);
+}
+
+
+/* =====================================================
+   INDEX.HTML — TIPO DE USUÁRIO
+   ===================================================== */
+
+#entradaNome .tipo-usuario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0 0;
+}
+
+#entradaNome .botao-tipo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 12px;
+    margin: 0;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f8faff;
+    color: #1E3A8A;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#entradaNome .botao-tipo svg {
+    width: 21px;
+    height: 21px;
+}
+
+#entradaNome .botao-tipo:hover {
+    border-color: #4169E1;
+    background: #eef3ff;
+    transform: translateY(-2px);
+}
+
+#entradaNome .botao-tipo.selecionado {
+    background: #4169E1;
+    border-color: #4169E1;
+    color: white;
+}
+
+
+/* =====================================================
+   INDEX.HTML — CONTINUAR
+   ===================================================== */
+
+#salvarNome {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #1E3A8A;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#salvarNome:hover {
+    background: #294ec5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(30, 58, 138, 0.20);
+}   
