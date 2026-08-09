@@ -276,7 +276,158 @@ const questoesNivel1 = {
 
 ], 
 
-    2: [],
+    2: [
+
+    {
+        pergunta: "Quantos lados tem um triângulo?",
+
+        alternativas: [
+            { texto: "3", correta: true },
+            { texto: "4", correta: false },
+            { texto: "5", correta: false },
+            { texto: "6", correta: false }
+        ],
+
+        explicacao:
+            "Um triângulo é uma figura geométrica formada por 3 lados e 3 ângulos."
+    },
+
+
+    {
+        pergunta: "Quantos lados tem um quadrado?",
+
+        alternativas: [
+            { texto: "4", correta: true },
+            { texto: "3", correta: false },
+            { texto: "5", correta: false },
+            { texto: "6", correta: false }
+        ],
+
+        explicacao:
+            "Um quadrado possui 4 lados de mesma medida e 4 ângulos retos."
+    },
+
+
+    {
+        pergunta: "Qual figura possui 3 lados?",
+
+        alternativas: [
+            { texto: "Triângulo", correta: true },
+            { texto: "Quadrado", correta: false },
+            { texto: "Círculo", correta: false },
+            { texto: "Retângulo", correta: false }
+        ],
+
+        explicacao:
+            "O triângulo é a figura geométrica que possui exatamente 3 lados."
+    },
+
+
+    {
+        pergunta: "Quantos lados tem um pentágono?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "4", correta: false },
+            { texto: "6", correta: false },
+            { texto: "7", correta: false }
+        ],
+
+        explicacao:
+            "O prefixo 'penta' indica cinco. Portanto, um pentágono possui 5 lados."
+    },
+
+
+    {
+        pergunta: "Um quadrado possui lados de 5 cm. Qual é o seu perímetro?",
+
+        alternativas: [
+            { texto: "20 cm", correta: true },
+            { texto: "15 cm", correta: false },
+            { texto: "10 cm", correta: false },
+            { texto: "25 cm", correta: false }
+        ],
+
+        explicacao:
+            "O perímetro é a soma dos quatro lados. Então: 5 + 5 + 5 + 5 = 20 cm."
+    },
+
+
+    {
+        pergunta: "Qual figura geométrica não possui lados?",
+
+        alternativas: [
+            { texto: "Círculo", correta: true },
+            { texto: "Triângulo", correta: false },
+            { texto: "Quadrado", correta: false },
+            { texto: "Pentágono", correta: false }
+        ],
+
+        explicacao:
+            "O círculo não possui lados retos nem vértices."
+    },
+
+
+    {
+        pergunta: "Um retângulo tem 6 cm de comprimento e 3 cm de largura. Qual é o perímetro?",
+
+        alternativas: [
+            { texto: "18 cm", correta: true },
+            { texto: "12 cm", correta: false },
+            { texto: "9 cm", correta: false },
+            { texto: "20 cm", correta: false }
+        ],
+
+        explicacao:
+            "O perímetro do retângulo é 2 × (comprimento + largura). Então: 2 × (6 + 3) = 18 cm."
+    },
+
+
+    {
+        pergunta: "Quantos vértices possui um quadrado?",
+
+        alternativas: [
+            { texto: "4", correta: true },
+            { texto: "3", correta: false },
+            { texto: "5", correta: false },
+            { texto: "6", correta: false }
+        ],
+
+        explicacao:
+            "Um quadrado possui 4 vértices, um em cada encontro de seus lados."
+    },
+
+
+    {
+        pergunta: "Qual destas figuras possui quatro lados?",
+
+        alternativas: [
+            { texto: "Retângulo", correta: true },
+            { texto: "Triângulo", correta: false },
+            { texto: "Pentágono", correta: false },
+            { texto: "Círculo", correta: false }
+        ],
+
+        explicacao:
+            "O retângulo é um quadrilátero, portanto possui 4 lados."
+    },
+
+
+    {
+        pergunta: "Um quadrado tem lado de 4 cm. Qual é o seu perímetro?",
+
+        alternativas: [
+            { texto: "16 cm", correta: true },
+            { texto: "12 cm", correta: false },
+            { texto: "8 cm", correta: false },
+            { texto: "20 cm", correta: false }
+        ],
+
+        explicacao:
+            "Como o quadrado possui quatro lados iguais: 4 × 4 = 16 cm."
+    }
+
+],  
 
     3: [],
 
