@@ -1,3020 +1,1339 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f8ff;
-    color:#222;
-    transition:0.3s;
-    overflow-x:hidden;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8ff;
+    color: #222;
+    transition: 0.3s;
+    overflow-x: hidden;
 }
 
-
-/* CABEÇALHO */
-
-header{
-    background:#1E3A8A;
-    color:white;
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
+header {
+    background: #1E3A8A;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
 }
 
-
-header h1{
-    font-size:28px;
-    flex:1;
-    text-align:center;
+header h1 {
+    font-size: 28px;
+    flex: 1;
+    text-align: center;
 }
 
-
-/* BOTÕES DO CABEÇALHO */
-
-header button{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    border:none;
-    background:#0b1d3a;
-    color:white;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:0.3s;
+header button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #0b1d3a;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
 }
 
-
-header button:hover{
-    transform:scale(1.1);
+header button:hover {
+    transform: scale(1.1);
 }
 
-
-header svg{
-    width:22px;
-    height:22px;
+header svg {
+    width: 22px;
+    height: 22px;
 }
 
-
-
-/* ÁREA PRINCIPAL */
-
-.hero{
-    text-align:center;
-    padding:80px 20px;
+.hero {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-
-.hero h2{
-    font-size:40px;
-    color:#1E3A8A;
+.hero h2 {
+    font-size: 32px;
+    color: #1E3A8A;
 }
 
-
-.hero p{
-    margin:20px auto;
-    max-width:700px;
-    font-size:20px;
+.hero p {
+    margin: 20px auto;
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-
-
-/* BOTÕES GERAIS */
-
-.hero button{
-    background:#1E3A8A;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:10px;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
+.hero button {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-.hero button:hover{
-    background:#294ec5;
-}  /* BOTÕES DE MATÉRIAS */
-
-.materias{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:40px;
+.hero button:hover {
+    background: #294ec5;
+    transform: translateY(-3px);
 }
 
-
-.materias button{
-    background:#1E3A8A;
-    color:white;
-    border:none;
-    padding:20px;
-    border-radius:10px;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
+.materias {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
-
-.materias button:hover{
-    background:#294ec5;
-    transform:scale(1.05);
+.materias button {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-
-
-/* CAIXA DE NOME */
-
-#entradaNome{
-    margin-top:30px;
+.materias button:hover {
+    background: #294ec5;
+    transform: scale(1.05);
 }
 
-
-#nomeUsuario{
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:16px;
+#entradaNome {
+    margin-top: 30px;
 }
 
-
-
-/* MENU LATERAL */
-
-#menuLateral{
-
-    position:fixed;
-    top:0;
-    right:-320px;
-
-    width:300px;
-    height:100vh;
-
-    background:white;
-    z-index:1000;
-
-    padding:30px 20px;
-
-    box-shadow:-5px 0 20px rgba(0,0,0,0.2);
-
-    transition:0.3s;
-
+#nomeUsuario {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
-
-#menuLateral.aberto{
-
-    right:0;
-
+#menuLateral {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    padding: 30px 20px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 
-
-
-#menuLateral h2{
-
-    color:#1E3A8A;
-    margin-bottom:30px;
-
+#menuLateral.aberto {
+    right: 0;
+    animation: aparecerMenu 0.3s;
 }
 
-
-
-.menu-item{
-
-    display:flex;
-    align-items:center;
-    gap:15px;
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:10px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    color:#222;
-
+#menuLateral h2 {
+    color: #1E3A8A;
+    margin-bottom: 30px;
 }
 
-
-
-.menu-item:hover{
-
-    background:#e8efff;
-
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #222;
 }
 
-
-
-.menu-item svg{
-
-    width:22px;
-    height:22px;
-
-}     /* FUNDO QUANDO MENU ABERTO */
-
-#fundoMenu{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,0.35);
-
-    backdrop-filter:blur(5px);
-
-    z-index:900;
-
-    display:none;
-
+.menu-item:hover {
+    background: #e8efff;
 }
 
-
-#fundoMenu.ativo{
-
-    display:block;
-
+.menu-item svg {
+    width: 22px;
+    height: 22px;
 }
 
-
-
-/* MODO ESCURO */
-
-.modo-escuro{
-
-    background:#0b1d3a;
-    color:white;
-
+#fundoMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+    z-index: 900;
+    display: none;
 }
 
-
-
-.modo-escuro .hero h2{
-
-    color:#FFD54F;
-
+#fundoMenu.ativo {
+    display: block;
 }
 
-
-
-.modo-escuro .hero p{
-
-    color:white;
-
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-
-/* MENU NO MODO ESCURO */
-
-.modo-escuro #menuLateral{
-
-    background:#13294b;
-
-    color:white;
-
+.icon-button svg {
+    width: 23px;
+    height: 23px;
 }
 
-
-
-.modo-escuro #menuLateral h2{
-
-    color:#FFD54F;
-
+#modoEscuro {
+    font-size: 20px;
 }
 
-
-
-.modo-escuro .menu-item{
-
-    color:white;
-
+#voltarPagina svg {
+    width: 22px;
+    height: 22px;
 }
 
-
-
-.modo-escuro .menu-item:hover{
-
-    background:#1d3b6d;
-
+.resposta-bloqueada {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
-
-
-/* BOTÃO LUA */
-
-#modoEscuro{
-
-    font-size:20px;
-
+.resposta-correta {
+    background: #22c55e !important;
 }
 
-
-
-/* BOTÃO VOLTAR */
-
-#voltarPagina svg{
-
-    width:22px;
-    height:22px;
-
+.resposta-errada {
+    background: #ef4444 !important;
 }
 
+#pontuacao {
+    margin-top: 30px;
+}
 
-
-/* ANIMAÇÕES */
-
-@keyframes aparecerMenu{
-
-    from{
-
-        opacity:0;
-
-        transform:translateX(50px);
-
+@keyframes aparecerMenu {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
     }
 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-    to{
+.modo-escuro {
+    background: #0b1d3a;
+    color: white;
+}
 
-        opacity:1;
+.modo-escuro .hero h2 {
+    color: #FFD54F;
+}
 
-        transform:translateX(0);
+.modo-escuro .hero p {
+    color: white;
+}
 
+.modo-escuro #menuLateral {
+    background: #13294b;
+    color: white;
+}
+
+.modo-escuro #menuLateral h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .menu-item {
+    color: white;
+}
+
+.modo-escuro .menu-item:hover {
+    background: #1d3b6d;
+}
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 22px;
     }
 
-}
-
-
-
-#menuLateral.aberto{
-
-    animation:aparecerMenu 0.3s;
-
-}      /* RESPONSIVIDADE */
-
-@media(max-width:700px){
-
-    header h1{
-
-        font-size:22px;
-
+    .hero {
+        padding: 40px 15px;
     }
 
-
-    .hero{
-
-        padding:50px 15px;
-
+    .hero h2 {
+        font-size: 30px;
     }
 
-
-    .hero h2{
-
-        font-size:30px;
-
+    .hero p {
+        font-size: 17px;
     }
 
-
-    .hero p{
-
-        font-size:17px;
-
+    #menuLateral {
+        width: 280px;
     }
-
-
-    #menuLateral{
-
-        width:280px;
-
-    }
-
-}
-
-
-
-/* EXERCÍCIOS */
-
-.resposta-bloqueada{
-
-    opacity:0.6;
-
-    cursor:not-allowed;
-
-}
-
-
-
-.resposta-correta{
-
-    background:#22c55e !important;
-
-}
-
-
-
-.resposta-errada{
-
-    background:#ef4444 !important;
-
-}
-
-
-
-/* PROGRESSO */
-
-#pontuacao{
-
-    margin-top:30px;
-
-}
-
-
-
-/* BOTÕES DE ÍCONES */
-
-.icon-button{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-
-.icon-button svg{
-
-    width:23px;
-
-    height:23px;
-
-} 
-/* ================================
-   PÁGINA SOBRE
-================================ */
-
-
-.pagina-sobre{
-
-    background:linear-gradient(
+}    .pagina-sobre {
+    background: linear-gradient(
         180deg,
         #0b1d3a,
         #1E40AF
     );
-
-    color:white;
-
+    color: white;
 }
 
-
-
-
-.pagina-sobre header{
-
-    background:transparent;
-
+.pagina-sobre header {
+    background: transparent;
 }
 
-
-
-
-
-.sobre-hero{
-
-    text-align:center;
-
-    padding:70px 20px 40px;
-
+.sobre-hero {
+    text-align: center;
+    padding: 70px 20px 40px;
 }
 
-
-
-
-
-.sobre-hero h2{
-
-    font-size:42px;
-
-    margin-bottom:20px;
-
+.sobre-hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
 }
 
-
-
-
-
-.sobre-hero p{
-
-    max-width:700px;
-
-    margin:auto;
-
-    font-size:20px;
-
+.sobre-hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.6;
 }
 
-
-
-
-
-.sobre-conteudo{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:25px;
-
-    padding:40px 20px;
-
+.sobre-conteudo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
 }
 
-
-
-
-
-.card-sobre{
-
-    background:rgba(255,255,255,0.12);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:20px;
-
-    padding:30px;
-
-    width:320px;
-
-    text-align:center;
-
-    transition:0.3s;
-
+.card-sobre {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    transition: 0.3s;
 }
 
-
-
-
-
-.card-sobre:hover{
-
-    transform:translateY(-8px);
-
-    background:rgba(255,255,255,0.18);
-
+.card-sobre:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.18);
 }
 
-
-
-
-
-.card-sobre svg{
-
-    width:45px;
-
-    height:45px;
-
-    margin-bottom:15px;
-
+.card-sobre svg {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
 }
 
-
-
-
-
-.card-sobre h2{
-
-    margin-bottom:15px;
-
+.card-sobre h2 {
+    margin-bottom: 15px;
 }
 
-
-
-
-
-.card-sobre p{
-
-    line-height:1.6;
-
+.card-sobre p {
+    line-height: 1.6;
 }
 
-
-
-
-
-.card-sobre a{
-
-    color:#93c5fd;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
+.card-sobre a {
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-
-
-
-
-.card-sobre a:hover{
-
-    text-decoration:underline;
-
-}   
-/* ================================
-   MELHORIAS PÁGINA BÁSICO
-================================ */
-
-
-.hero{
-
-    padding:50px 20px;
-
+.card-sobre a:hover {
+    text-decoration: underline;
 }
 
-
-
-.hero h2{
-
-    font-size:32px;
-
+.pagina-basico {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px 70px;
 }
 
-
-
-.hero p{
-
-    font-size:18px;
-
-    line-height:1.6;
-
-}     /* Cards de conteúdo da página Básico */
-
-
-.hero h2:nth-of-type(n+2){
-
-    margin-top:45px;
-
-    background:rgba(255,255,255,0.12);
-
-    color:#d97706;
-
-    padding:20px;
-
-    border-radius:18px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.18);
-
+.basico-introducao {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-
-
-.hero h2:nth-of-type(n+2)::first-letter{
-
-    font-size:40px;
-
+.basico-introducao h2 {
+    font-size: 36px;
+    color: #1E3A8A;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
-
-
-.hero h2:nth-of-type(n+2)+p{
-
-    background:rgba(255,255,255,0.08);
-
-    padding:20px;
-
-    border-radius:0 0 18px 18px;
-
-    margin-top:-15px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-
-}     /* Área de exercícios - Página Básico */
-
-
-.hero h2:last-of-type{
-
-    background:#1E3A8A;
-
-    color:white;
-
-    padding:20px;
-
-    border-radius:18px;
-
-    margin-top:50px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
-
+.basico-introducao p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
 }
 
-
-
-
-.hero p:has(+ button){
-
-    background:rgba(255,255,255,0.12);
-
-    padding:15px;
-
-    border-radius:12px;
-
-    margin-top:20px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-
+.operacao-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+    border-left: 5px solid #4169E1;
+    transition: 0.3s;
 }
 
-
-
-
-.hero button{
-
-    box-shadow:0 5px 12px rgba(0,0,0,0.15);
-
+.operacao-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-
-
-
-.hero button:hover{
-
-    transform:translateY(-3px);
-
-}      /* Botão próxima aula - Página Básico */
-
-
-.hero button:last-child{
-
-    background:#1E3A8A;
-
-    color:white;
-
-    padding:16px 35px;
-
-    border-radius:15px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    border:none;
-
-    cursor:pointer;
-
-    margin-top:35px;
-
-    transition:0.3s;
-
-    box-shadow:0 8px 20px rgba(30,58,138,0.3);
-
+.operacao-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
 }
 
-
-
-
-.hero button:last-child:hover{
-
-    background:#294ec5;
-
-    transform:translateY(-5px);
-
-}    
-/* Ícones das operações - Página Básico */
-
-
-.hero h2 svg{
-
-    width:32px;
-
-    height:32px;
-
-    vertical-align:middle;
-
-    margin-right:10px;
-
-    stroke-width:2.5;
-
-}
-/* ================================
-   PÁGINA PERFIL
-================================ */
-
-
-.perfil-container{
-
-    max-width:900px;
-
-    margin:30px auto;
-
-    padding:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:25px;
-
+.operacao-titulo svg {
+    width: 28px;
+    height: 28px;
+    color: #4169E1;
+    stroke-width: 2.5;
 }
 
-
-
-.card-perfil{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.12);
-
+.operacao-titulo h2 {
+    margin: 0;
+    font-size: 25px;
+    color: #1E3A8A;
 }
 
-
-
-.card-perfil h2{
-
-    font-size:22px;
-
-    color:#1E3A8A;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin-bottom:20px;
-
-}       /* Avatar e identidade */
-
-
-.avatar-area{
-
-    width:110px;
-
-    height:110px;
-
-    border-radius:50%;
-
-    background:#1E3A8A;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin:0 auto 20px;
-
+.operacao-card > p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
 }
 
-
-
-.avatar-area svg{
-
-    width:55px;
-
-    height:55px;
-
-    color:#f59e0b;
-
+.exemplo-operacao {
+    margin-top: 22px;
+    padding: 18px;
+    background: #eef3ff;
+    border-radius: 14px;
 }
 
-
-
-
-
-.identidade h3{
-
-    text-align:center;
-
-    font-size:24px;
-
-    color:#333;
-
-    margin-bottom:15px;
-
+.exemplo-operacao span {
+    display: block;
+    color: #1E3A8A;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-
-
-
-
-.identidade p{
-
-    text-align:center;
-
-    color:#555;
-
-    font-size:16px;
-
-}      /* Progresso do aluno */
-
-
-.progresso{
-
-    border-left:5px solid #f59e0b;
-
+.exemplo-operacao strong {
+    display: block;
+    font-size: 25px;
+    color: #4169E1;
+    margin-bottom: 8px;
 }
 
-
-
-
-
-.barra-progresso{
-
-    width:100%;
-
-    height:14px;
-
-    background:#e5e7eb;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin:20px 0;
-
+.exemplo-operacao p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
 }
 
-
-
-
-
-.progresso-atual{
-
-    width:0%;
-
-    height:100%;
-
-    background:#1E3A8A;
-
-    border-radius:20px;
-
+.exercicios-basico {
+    background: #f8faff;
+    border-radius: 22px;
+    padding: 30px;
+    margin-top: 45px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
-
-
-
-
-.progresso p{
-
-    margin:12px 0;
-
-    color:#555;
-
-    font-size:16px;
-
+.titulo-exercicios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-
-
-
-
-.progresso span{
-
-    font-weight:bold;
-
-    color:#1E3A8A;
-
-}        /* Evolução do aluno */
-
-
-.evolucao{
-
-    border-left:5px solid #f59e0b;
-
+.titulo-exercicios svg {
+    width: 30px;
+    height: 30px;
+    color: #4169E1;
 }
 
-
-
-
-
-.evolucao p{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:12px 0;
-
-    border-bottom:1px solid #e5e7eb;
-
-    color:#555;
-
-    font-size:16px;
-
+.titulo-exercicios h2 {
+    margin: 0;
+    font-size: 30px;
+    color: #1E3A8A;
 }
 
-
-
-
-
-.evolucao span{
-
-    font-weight:bold;
-
-    color:#1E3A8A;
-
-}       /* Configurações do perfil */
-
-
-.configuracoes{
-
-    border-left:5px solid #f59e0b;
-
+.subtitulo-exercicios {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 30px;
 }
 
-
-
-
-
-.configuracoes button{
-
-    width:100%;
-
-    padding:14px;
-
-    margin-top:12px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:#1E3A8A;
-
-    color:white;
-
-    font-size:16px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
+.questao {
+    background: white;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid #e5e7eb;
 }
 
-
-
-
-
-.configuracoes button svg{
-
-    width:20px;
-
-    height:20px;
-
+.questao > p {
+    margin: 0 0 16px;
+    font-size: 18px;
+    color: #222;
 }
 
-
-
-
-
-.configuracoes button:hover{
-
-    background:#294ec5;
-
-    transform:translateY(-3px);
-
-}  
-/* Avatar do perfil */
-
-.avatar-area{
-
-    width:130px;
-
-    height:130px;
-
-    margin:0 auto 20px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    border:4px solid #f59e0b;
-
-    background:#eef2ff;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+.questao > p strong {
+    color: #1E3A8A;
 }
 
-.avatar-area img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
+.alternativas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-#uploadFoto{
-
-    display:block;
-
-    margin:15px auto;
-
-    max-width:220px;
-
-} 
-.botao-avatar{
-
-    display:inline-block;
-
-    margin:15px auto 0;
-
-    padding:10px 20px;
-
-    background:#2563eb;
-
-    color:#fff;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    transition:.3s;
-
-    text-align:center;
-
+.alternativas button {
+    min-width: 100px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #4169E1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
 }
 
-.botao-avatar:hover{
+.alternativas button:hover {
+    background: #294ec5;
+    transform: translateY(-2px);
+}
 
-    background:#1d4ed8;
+.alternativas button.resposta-correta {
+    background: #22c55e !important;
+    color: white;
+}
 
-    transform:translateY(-2px);
+.alternativas button.resposta-errada {
+    background: #ef4444 !important;
+    color: white;
+}
 
-} 
-#uploadFoto{
+.alternativas button.resposta-bloqueada {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.resultado-exercicios {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#pontuacao {
+    color: #1E3A8A;
+    font-size: 23px;
+    margin: 0 0 10px;
+}
+
+#resultado {
+    min-height: 24px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.botao-proxima-aula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto 0;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 13px;
+    background: #4169E1;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-proxima-aula svg {
+    width: 20px;
+    height: 20px;
+}
+
+.botao-proxima-aula:hover {
+    background: #294ec5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(30, 58, 138, 0.25);
+}  .modo-escuro .pagina-basico {
+    color: white;
+}
+
+.modo-escuro .basico-introducao h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .basico-introducao p {
+    color: #e5e7eb;
+}
+
+.modo-escuro .operacao-card {
+    background: #13294b;
+    border-left-color: #FFD54F;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.30);
+}
+
+.modo-escuro .operacao-titulo svg {
+    color: #FFD54F;
+}
+
+.modo-escuro .operacao-titulo h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .operacao-card > p {
+    color: #e5e7eb;
+}
+
+.modo-escuro .exemplo-operacao {
+    background: #1d3b6d;
+}
+
+.modo-escuro .exemplo-operacao span {
+    color: #FFD54F;
+}
+
+.modo-escuro .exemplo-operacao strong {
+    color: #FFD54F;
+}
+
+.modo-escuro .exemplo-operacao p {
+    color: #e5e7eb;
+}
+
+.modo-escuro .exercicios-basico {
+    background: #102442;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.30);
+}
+
+.modo-escuro .titulo-exercicios svg {
+    color: #FFD54F;
+}
+
+.modo-escuro .titulo-exercicios h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .subtitulo-exercicios {
+    color: #e5e7eb;
+}
+
+.modo-escuro .questao {
+    background: #13294b;
+    border-color: #29456f;
+}
+
+.modo-escuro .questao > p {
+    color: white;
+}
+
+.modo-escuro .questao > p strong {
+    color: #FFD54F;
+}
+
+.modo-escuro #pontuacao {
+    color: #FFD54F;
+}
+
+.modo-escuro #resultado {
+    color: white;
+}
+
+.titulo-operacoes {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.titulo-operacoes h2 {
+    display: inline-block;
+    font-size: 34px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 700;
+    position: relative;
+}
+
+.titulo-operacoes h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    background: #FFD54F;
+    border-radius: 10px;
+    margin: 10px auto 0;
+}
+
+.titulo-operacoes p {
+    margin: 0 auto;
+    font-size: 17px;
+    color: white;
+    max-width: 500px;
+    opacity: 0.9;
+}
+
+.modo-escuro .titulo-operacoes h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .titulo-operacoes p {
+    color: white;
+}
+
+.modo-escuro .titulo-operacoes h2::after {
+    background: #FFD54F;
+}
+
+.operacoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 35px auto 0;
+}
+
+.operacoes button {
+    min-height: 150px;
+    background: #4169e1;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    padding: 25px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.operacoes button svg {
+    width: 38px;
+    height: 38px;
+    stroke-width: 2.5;
+    margin-bottom: 5px;
+}
+
+.operacoes button:hover {
+    background: #294ec5;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
+}
+
+.pagina-atividades {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px 70px;
+}
+
+.atividades-introducao {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.atividades-introducao h2 {
+    font-size: 36px;
+    color: #1E3A8A;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.atividades-introducao p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.niveis-atividades {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.nivel-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 22px 25px;
+    background: #4169E1;
+    color: white;
+    text-decoration: none;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.nivel-card:hover {
+    background: #294ec5;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.nivel-icone {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nivel-icone svg {
+    width: 30px;
+    height: 30px;
+    stroke-width: 2.3;
+}
+
+.nivel-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nivel-conteudo h3 {
+    margin: 0;
+    font-size: 22px;
+    color: white;
+}
+
+.nivel-conteudo span {
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
+}
+
+.modo-escuro .atividades-introducao h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .atividades-introducao p {
+    color: #e5e7eb;
+}
+
+.modo-escuro .nivel-card {
+    background: #1E3A8A;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
+}
+
+.modo-escuro .nivel-card:hover {
+    background: #294ec5;
+}
+
+.modo-escuro .nivel-icone {
+    background: rgba(255, 255, 255, 0.10);
+}   .perfil-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card-perfil {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-perfil h2 {
+    font-size: 22px;
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar-area {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #f59e0b;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-area svg {
+    width: 55px;
+    height: 55px;
+    color: #f59e0b;
+}
+
+.avatar-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.identidade h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.identidade p {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+}
+
+#uploadFoto {
     display: none;
 }
-.tipo-usuario{
 
-display: flex;
+.botao-avatar {
+    display: inline-block;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+}
 
-flex-direction: column;
+.botao-avatar:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
 
-gap: 12px;
+.tipo-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
-margin-top: 20px;
+.botao-tipo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
 
-margin-bottom: 20px;
+.botao-tipo:hover {
+    transform: translateY(-2px);
+    border-color: #4a90e2;
+}
 
-}   .botao-tipo{
+.botao-tipo.selecionado {
+    background: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+}
 
-display: flex;
+.progresso {
+    border-left: 5px solid #f59e0b;
+}
 
-align-items: center;
+.barra-progresso {
+    width: 100%;
+    height: 14px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+}
 
-gap: 10px;
+.progresso-atual {
+    width: 0%;
+    height: 100%;
+    background: #1E3A8A;
+    border-radius: 20px;
+}
 
-padding: 14px;
+.progresso p {
+    margin: 12px 0;
+    color: #555;
+    font-size: 16px;
+}
 
-border-radius: 12px;
+.progresso span {
+    font-weight: bold;
+    color: #1E3A8A;
+}
 
-border: 2px solid #ddd;
+.evolucao {
+    border-left: 5px solid #f59e0b;
+}
 
-background: white;
+.evolucao p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #555;
+    font-size: 16px;
+}
 
-cursor: pointer;
+.evolucao span {
+    font-weight: bold;
+    color: #1E3A8A;
+}
 
-font-size: 16px;
+.configuracoes {
+    border-left: 5px solid #f59e0b;
+}
 
-transition: 0.2s;
+.configuracoes button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 14px;
+    background: #1E3A8A;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-}   .botao-tipo:hover{
+.configuracoes button svg {
+    width: 20px;
+    height: 20px;
+}
 
-transform: translateY(-2px);
+.configuracoes button:hover {
+    background: #294ec5;
+    transform: translateY(-3px);
+}
 
-border-color: #4a90e2;
+.modo-escuro .card-perfil {
+    background: #13294b;
+    color: white;
+}
 
-}  
-.botao-tipo.selecionado{
+.modo-escuro .card-perfil h2 {
+    color: #FFD54F;
+}
 
-background: #4a90e2;
+.modo-escuro .identidade h3 {
+    color: white;
+}
 
-color: white;
+.modo-escuro .identidade p {
+    color: #e5e7eb;
+}
 
-border-color: #4a90e2;
+.modo-escuro .progresso p,
+.modo-escuro .evolucao p {
+    color: #e5e7eb;
+}
 
+.modo-escuro .progresso span,
+.modo-escuro .evolucao span {
+    color: #FFD54F;
+}
+
+.modo-escuro .barra-progresso {
+    background: #29456f;
+}
+
+.modo-escuro .progresso-atual {
+    background: #FFD54F;
+}
+
+.modo-escuro .botao-tipo {
+    background: #13294b;
+    color: white;
+    border-color: #29456f;
+}
+
+.modo-escuro .botao-tipo:hover {
+    border-color: #FFD54F;
+}
+
+.modo-escuro .botao-tipo.selecionado {
+    background: #4a90e2;
+    border-color: #4a90e2;
+    color: white;
+}   .cabecalho-inicio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.cabecalho-inicio h1 {
+    flex: 1;
+    font-size: 24px;
+}
+
+.avatar-link {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#avatarPadrao {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    color: #777;
+}
+
+#avatarInicio[src]:not([src=""]) {
+    display: block;
+}
+
+#avatarInicio[src=""] {
+    display: none;
+}
+
+.inicio-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px;
+}
+
+.boas-vindas {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.boas-vindas h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.boas-vindas p {
+    font-size: 16px;
+}
+
+#continuarEstudando {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    background-color: #4169e1;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#continuarEstudando:hover {
+    opacity: 0.9;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.atalhos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.card-inicio {
+    text-decoration: none;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #4169e1;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    min-height: 150px;
+    transition: 0.3s;
+}
+
+.card-inicio:hover {
+    transform: translateY(-5px);
+    opacity: 0.9;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card-inicio i {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 12px;
+}
+
+.card-inicio h3 {
+    margin: 5px 0;
+    color: white;
+    font-size: 20px;
+}
+
+.card-inicio p {
+    margin: 0;
+    color: white;
+    opacity: 0.9;
+}
+
+.sequencia {
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.sequencia h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.fogo-sequencia {
+    filter: grayscale(1);
+    opacity: 0.4;
+}
+
+.dias-sequencia {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.dias-sequencia span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 18px;
+}
+
+.modo-escuro .inicio-container {
+    color: white;
+}
+
+.modo-escuro .boas-vindas h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .boas-vindas p {
+    color: #e5e7eb;
+}
+
+.modo-escuro .sequencia {
+    background: #13294b;
+    color: white;
+}
+
+.modo-escuro .dias-sequencia span {
+    background: #29456f;
+    color: #d1d5db;
+}
+
+.modo-escuro .avatar-link {
+    background: #29456f;
+}
+
+.icon-button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon-button svg {
+    width: 23px;
+    height: 23px;
+}
+
+.modo-escuro .icon-button {
+    background: #13294b;
+    color: white;
+}
+
+.modo-escuro .icon-button:hover {
+    background: #1d3b6d;
 }   
-/* ================================
-   PÁGINA INICIAL
-================================ */
-
-
-.cabecalho-inicio{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:20px;
-
-}
-
-
-
-.avatar-link{
-
-    width:45px;
-
-    height:45px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    display:block;
-
-}
-
-
-
-.avatar-link img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-
-.inicio-container{
-
-    max-width:900px;
-
-    margin:auto;
-
-    padding:25px;
-
-}   /* ================================
-   BOAS-VINDAS
-================================ */
-
-
-.boas-vindas{
-
-    margin-top:30px;
-
-    margin-bottom:25px;
-
-}
-
-
-
-.boas-vindas h2{
-
-    font-size:28px;
-
-    margin-bottom:10px;
-
-}
-
-
-
-.boas-vindas p{
-
-    font-size:16px;
-
-}
-
-
-
-
-
-/* ================================
-   BOTÃO CONTINUAR ESTUDANDO
-================================ */
-
-
-#continuarEstudando{
-
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:15px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    margin-bottom:30px;
-
-}   /* ================================
-   CARDS DE ACESSO
-================================ */
-
-
-.atalhos{
-
-    display:grid;
-
-    grid-template-columns:repeat(2, 1fr);
-
-    gap:20px;
-
-    margin-bottom:35px;
-
-}
-
-
-
-
-.card-inicio{
-
-    text-decoration:none;
-
-    padding:25px;
-
-    border-radius:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-}
-
-
-
-
-.card-inicio i{
-
-    width:35px;
-
-    height:35px;
-
-    margin-bottom:12px;
-
-}
-
-
-
-
-.card-inicio h3{
-
-    margin:5px 0;
-
-}
-
-
-
-
-.card-inicio p{
-
-    margin:0;
-
-}    /* ================================
-   SEQUÊNCIA DE ESTUDOS
-================================ */
-
-
-.sequencia{
-
-    text-align:center;
-
-    margin-top:20px;
-
-    padding:20px;
-
-}
-
-
-
-.sequencia h3{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-
-
-.fogo-sequencia{
-
-    filter:grayscale(1);
-
-    opacity:0.5;
-
-}
-
-
-
-.dias-sequencia{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin:15px 0;
-
-}
-
-
-
-.dias-sequencia span{
-
-    font-size:28px;
-
-}
-
-
-
-
-
-/* ================================
-   RESPONSIVO CELULAR
-================================ */
-
-
-@media(max-width:600px){
-
-
-    .atalhos{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .boas-vindas h2{
-
-        font-size:24px;
-
-    }
-
-
-}   
-/* ================================
-   CORES DOS CARDS DA INICIAL
-================================ */
-
-
-.card-inicio{
-
-    background-color:#4169e1;
-
-    color:white;
-
-    transition:0.3s;
-
-}
-
-
-
-.card-inicio:hover{
-
-    transform:translateY(-5px);
-
-    opacity:0.9;
-
-}
-
-
-
-/* ================================
-   BOTÃO CONTINUAR ESTUDANDO
-================================ */
-
-
-#continuarEstudando{
-
-    background-color:#4169e1;
-
-    color:white;
-
-}
-
-
-
-#continuarEstudando:hover{
-
-    opacity:0.9;
-
-}     /* ================================
-   MELHORANDO CARDS DA INICIAL
-================================ */
-
-
-.card-inicio{
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-
-    min-height:150px;
-
-}
-
-
-
-.card-inicio h3{
-
-    color:white;
-
-    font-size:20px;
-
-}
-
-
-
-.card-inicio p{
-
-    color:white;
-
-    opacity:0.9;
-
-}
-
-
-
-
-#continuarEstudando{
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-
-    font-weight:bold;
-
-}
-
-
-
-#continuarEstudando:hover,
-.card-inicio:hover{
-
-    box-shadow:0 12px 25px rgba(0,0,0,0.25);
-
-}   /* ================================
-   AVATAR DA PÁGINA INICIAL
-================================ */
-
-
-.avatar-link{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    background:#d9d9d9;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-
-.avatar-link img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-
-.avatar-link{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    background:#d9d9d9;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-
-.avatar-link img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}   
-
-}     /* ================================
-   SEQUÊNCIA DIÁRIA
-================================ */
-
-
-.sequencia{
-
-    background:#f5f5f5;
-
-    border-radius:20px;
-
-    padding:20px;
-
-    margin-top:30px;
-
-    text-align:center;
-
-}
-
-
-
-.sequencia h3{
-
-    font-size:20px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.fogo-sequencia{
-
-    filter:grayscale(1);
-
-    opacity:0.4;
-
-}
-
-
-
-.dias-sequencia{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-}
-
-
-
-.dias-sequencia span{
-
-    width:30px;
-
-    height:30px;
-
-    border-radius:50%;
-
-    background:#dcdcdc;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#999;
-
-    font-size:18px;
-
-}   
-/* ================================
-   CABEÇALHO DA PÁGINA INICIAL
-================================ */
-
-
-.cabecalho-inicio{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:20px;
-
-}
-
-
-
-.cabecalho-inicio h1{
-
-    flex:1;
-
-    font-size:24px;
-
-}
-
-
-
-.icon-button{
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    cursor:pointer;
-
-}   
-/* ================================
-   AVATAR PADRÃO
-================================ */
-
-
-.avatar-link{
-
-    position:relative;
-
-}
-
-
-
-#avatarPadrao{
-
-    position:absolute;
-
-    width:28px;
-
-    height:28px;
-
-    color:#777;
-
-}
-
-
-
-#avatarInicio[src]:not([src=""]){
-
-    display:block;
-
-}
-
-
-
-#avatarInicio[src=""]{
-
-    display:none;
-
-}  
-/* ================================
-   OPERAÇÕES - PÁGINA BÁSICO
-================================ */
-
-.operacoes{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:20px;
-    max-width:900px;
-    margin:35px auto 0;
-}
-
-
-.operacoes button{
-    min-height:150px;
-
-    background:#4169e1;
-    color:white;
-
-    border:none;
-    border-radius:18px;
-
-    padding:25px 15px;
-
-    font-size:18px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-
-    transition:0.3s;
-}
-
-
-.operacoes button svg{
-    width:38px;
-    height:38px;
-
-    stroke-width:2.5;
-
-    margin-bottom:5px;
-}
-
-
-.operacoes button:hover{
-    background:#294ec5;
-
-    transform:translateY(-5px);
-
-    box-shadow:0 12px 25px rgba(0,0,0,0.22);
-}
-
-
-@media(max-width:800px){
-
-    .operacoes{
-        grid-template-columns:repeat(2, 1fr);
-    }
-
-}
-
-
-@media(max-width:500px){
-
-    .operacoes{
-        grid-template-columns:1fr;
-        max-width:350px;
-    }
-
-}  
-/* ================================
-   TÍTULO DAS OPERAÇÕES
-================================ */
-
-.titulo-operacoes{
-    text-align:center;
-    margin-top:60px;
-    margin-bottom:10px;
-}
-
-
-.titulo-operacoes h2{
-    display:inline-block;
-
-    font-size:34px;
-
-    color:white;
-
-    margin:0 0 10px;
-
-    font-weight:700;
-
-    position:relative;
-}
-
-
-.titulo-operacoes h2::after{
-    content:"";
-
-    display:block;
-
-    width:55px;
-    height:4px;
-
-    background:#FFD54F;
-
-    border-radius:10px;
-
-    margin:10px auto 0;
-}
-
-
-.titulo-operacoes p{
-    margin:0 auto;
-
-    font-size:17px;
-
-    color:white;
-
-    max-width:500px;
-
-    opacity:0.9;
-}
-
-
-.modo-escuro .titulo-operacoes h2{
-    color:#FFD54F;
-}
-
-
-.modo-escuro .titulo-operacoes p{
-    color:white;
-}
-
-
-.modo-escuro .titulo-operacoes h2::after{
-    background:#FFD54F;
-}  
-/* ================================
-   NOVO VISUAL - PÁGINA BÁSICO
-================================ */
-
-
-/* ÁREA PRINCIPAL */
-
-.pagina-basico{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-    padding:50px 20px 70px;
-
-}
-
-
-/* ================================
-   INTRODUÇÃO
-================================ */
-
-.basico-introducao{
-
-    text-align:center;
-
-    margin-bottom:45px;
-
-}
-
-
-.basico-introducao h2{
-
-    font-size:36px;
-
-    color:#1E3A8A;
-
-    margin-bottom:15px;
-
-    font-weight:700;
-
-}
-
-
-.basico-introducao p{
-
-    max-width:650px;
-
-    margin:0 auto;
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    color:#555;
-
-}
-
-
-/* ================================
-   CARDS DAS OPERAÇÕES
-================================ */
-
-.operacao-card{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:28px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 8px 22px rgba(0,0,0,0.10);
-
-    border-left:5px solid #4169E1;
-
-    transition:0.3s;
-
-}
-
-
-.operacao-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 12px 28px rgba(0,0,0,0.15);
-
-}
-
-
-/* TÍTULO DA OPERAÇÃO */
-
-.operacao-titulo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-bottom:15px;
-
-}
-
-
-.operacao-titulo svg{
-
-    width:28px;
-
-    height:28px;
-
-    color:#4169E1;
-
-    stroke-width:2.5;
-
-}
-
-
-.operacao-titulo h2{
-
-    margin:0;
-
-    font-size:25px;
-
-    color:#1E3A8A;
-
-}
-
-
-/* TEXTO */
-
-.operacao-card > p{
-
-    color:#555;
-
-    font-size:17px;
-
-    line-height:1.7;
-
-    margin:0;
-
-}
-
-
-/* ================================
-   EXEMPLO DA OPERAÇÃO
-================================ */
-
-.exemplo-operacao{
-
-    margin-top:22px;
-
-    padding:18px;
-
-    background:#eef3ff;
-
-    border-radius:14px;
-
-}
-
-
-.exemplo-operacao span{
-
-    display:block;
-
-    color:#1E3A8A;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    margin-bottom:8px;
-
-    text-transform:uppercase;
-
-    letter-spacing:0.5px;
-
-}
-
-
-.exemplo-operacao strong{
-
-    display:block;
-
-    font-size:25px;
-
-    color:#4169E1;
-
-    margin-bottom:8px;
-
-}
-
-
-.exemplo-operacao p{
-
-    margin:0;
-
-    color:#555;
-
-    line-height:1.5;
-
-}   /* ================================
-   EXERCÍCIOS - PÁGINA BÁSICO
-================================ */
-
-.exercicios-basico{
-
-    background:#f8faff;
-
-    border-radius:22px;
-
-    padding:30px;
-
-    margin-top:45px;
-
-    box-shadow:0 8px 22px rgba(0,0,0,0.08);
-
-}
-
-
-/* TÍTULO DOS EXERCÍCIOS */
-
-.titulo-exercicios{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-bottom:10px;
-
-}
-
-
-.titulo-exercicios svg{
-
-    width:30px;
-
-    height:30px;
-
-    color:#4169E1;
-
-}
-
-
-.titulo-exercicios h2{
-
-    margin:0;
-
-    font-size:30px;
-
-    color:#1E3A8A;
-
-}
-
-
-.subtitulo-exercicios{
-
-    text-align:center;
-
-    color:#555;
-
-    font-size:16px;
-
-    margin-bottom:30px;
-
-}
-
-
-/* ================================
-   QUESTÕES
-================================ */
-
-.questao{
-
-    background:white;
-
-    border-radius:16px;
-
-    padding:22px;
-
-    margin-bottom:18px;
-
-    border:1px solid #e5e7eb;
-
-}
-
-
-.questao > p{
-
-    margin:0 0 16px;
-
-    font-size:18px;
-
-    color:#222;
-
-}
-
-
-.questao > p strong{
-
-    color:#1E3A8A;
-
-}
-
-
-/* ALTERNATIVAS */
-
-.alternativas{
-
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
-}
-
-
-.alternativas button{
-
-    min-width:100px;
-
-    padding:12px 24px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#4169E1;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.25s;
-
-}
-
-
-.alternativas button:hover{
-
-    background:#294ec5;
-
-    transform:translateY(-2px);
-
-}
-
-
-/* RESPOSTA CORRETA */
-
-.alternativas button.resposta-correta{
-
-    background:#22c55e !important;
-
-    color:white;
-
-}
-
-
-/* RESPOSTA ERRADA */
-
-.alternativas button.resposta-errada{
-
-    background:#ef4444 !important;
-
-    color:white;
-
-}
-
-
-/* BOTÃO DESABILITADO */
-
-.alternativas button.resposta-bloqueada{
-
-    opacity:0.6;
-
-    cursor:not-allowed;
-
-    transform:none;
-
-}
-
-
-/* ================================
-   RESULTADO
-================================ */
-
-.resultado-exercicios{
-
-    text-align:center;
-
-    margin-top:30px;
-
-}
-
-
-#pontuacao{
-
-    color:#1E3A8A;
-
-    font-size:23px;
-
-    margin:0 0 10px;
-
-}
-
-
-#resultado{
-
-    min-height:24px;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-}
-
-
-/* ================================
-   BOTÃO PRÓXIMA AULA
-================================ */
-
-.botao-proxima-aula{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin:30px auto 0;
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:13px;
-
-    background:#4169E1;
-
-    color:white;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-}
-
-
-.botao-proxima-aula svg{
-
-    width:20px;
-
-    height:20px;
-
-}
-
-
-.botao-proxima-aula:hover{
-
-    background:#294ec5;
-
-    transform:translateY(-3px);
-
-    box-shadow:0 8px 18px rgba(30,58,138,0.25);
-
-}  /* ================================
-   MODO ESCURO - PÁGINA BÁSICO
-================================ */
-
-.modo-escuro .pagina-basico{
-
-    color:white;
-
-}
-
-
-.modo-escuro .basico-introducao h2{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .basico-introducao p{
-
-    color:#e5e7eb;
-
-}
-
-
-/* CARDS DAS OPERAÇÕES */
-
-.modo-escuro .operacao-card{
-
-    background:#13294b;
-
-    border-left-color:#FFD54F;
-
-    box-shadow:0 8px 22px rgba(0,0,0,0.30);
-
-}
-
-
-.modo-escuro .operacao-titulo svg{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .operacao-titulo h2{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .operacao-card > p{
-
-    color:#e5e7eb;
-
-}
-
-
-/* EXEMPLOS */
-
-.modo-escuro .exemplo-operacao{
-
-    background:#1d3b6d;
-
-}
-
-
-.modo-escuro .exemplo-operacao span{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .exemplo-operacao strong{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .exemplo-operacao p{
-
-    color:#e5e7eb;
-
-}
-
-
-/* ================================
-   EXERCÍCIOS NO MODO ESCURO
-================================ */
-
-.modo-escuro .exercicios-basico{
-
-    background:#102442;
-
-    box-shadow:0 8px 22px rgba(0,0,0,0.30);
-
-}
-
-
-.modo-escuro .titulo-exercicios svg{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .titulo-exercicios h2{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .subtitulo-exercicios{
-
-    color:#e5e7eb;
-
-}
-
-
-.modo-escuro .questao{
-
-    background:#13294b;
-
-    border-color:#29456f;
-
-}
-
-
-.modo-escuro .questao > p{
-
-    color:white;
-
-}
-
-
-.modo-escuro .questao > p strong{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro #pontuacao{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro #resultado{
-
-    color:white;
-
-}
-
-
-/* ================================
-   RESPONSIVIDADE
-================================ */
-
-@media(max-width:700px){
-
-    .pagina-basico{
-
-        padding:35px 15px 50px;
-
-    }
-
-
-    .basico-introducao h2{
-
-        font-size:29px;
-
-    }
-
-
-    .basico-introducao p{
-
-        font-size:16px;
-
-    }
-
-
-    .operacao-card{
-
-        padding:22px;
-
-    }
-
-
-    .operacao-titulo h2{
-
-        font-size:23px;
-
-    }
-
-
-    .operacao-card > p{
-
-        font-size:16px;
-
-    }
-
-
-    .exemplo-operacao strong{
-
-        font-size:22px;
-
-    }
-
-
-    .exercicios-basico{
-
-        padding:20px 15px;
-
-    }
-
-
-    .titulo-exercicios h2{
-
-        font-size:26px;
-
-    }
-
-
-    .questao{
-
-        padding:18px;
-
-    }
-
-
-    .alternativas{
-
-        display:grid;
-
-        grid-template-columns:1fr 1fr;
-
-    }
-
-
-    .alternativas button{
-
-        width:100%;
-
-        min-width:0;
-
-    }
-
-
-    .botao-proxima-aula{
-
-        width:100%;
-
-    }
-
-}  
- /* ================================
-   PÁGINA DE ATIVIDADES
-================================ */
-
-.pagina-atividades{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-    padding:50px 20px 70px;
-
-}
-
-
-/* ================================
-   INTRODUÇÃO
-================================ */
-
-.atividades-introducao{
-
-    text-align:center;
-
-    margin-bottom:45px;
-
-}
-
-
-.atividades-introducao h2{
-
-    font-size:36px;
-
-    color:#1E3A8A;
-
-    margin-bottom:15px;
-
-    font-weight:700;
-
-}
-
-
-.atividades-introducao p{
-
-    max-width:650px;
-
-    margin:0 auto;
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    color:#555;
-
-}
-
-
-/* ================================
-   NÍVEIS
-================================ */
-
-.niveis-atividades{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-
-
-/* CARD DO NÍVEL */
-
-.nivel-card{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:20px;
-
-    width:100%;
-
-    padding:22px 25px;
-
-    background:#4169E1;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:18px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.12);
-
-    transition:0.3s;
-
-}
-
-
-.nivel-card:hover{
-
-    background:#294ec5;
-
-    transform:translateY(-4px);
-
-    box-shadow:0 12px 25px rgba(0,0,0,0.18);
-
-}
-
-
-/* ÍCONE */
-
-.nivel-icone{
-
-    width:58px;
-
-    height:58px;
-
-    flex-shrink:0;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,0.16);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-.nivel-icone svg{
-
-    width:30px;
-
-    height:30px;
-
-    stroke-width:2.3;
-
-}
-
-
-/* TEXTO */
-
-.nivel-conteudo{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:5px;
-
-}
-
-
-.nivel-conteudo h3{
-
-    margin:0;
-
-    font-size:22px;
-
-    color:white;
-
-}
-
-
-.nivel-conteudo span{
-
-    font-size:16px;
-
-    color:white;
-
-    opacity:0.9;
-
-} 
-/* ================================
-   MODO ESCURO - ATIVIDADES
-================================ */
-
-.modo-escuro .atividades-introducao h2{
-
-    color:#FFD54F;
-
-}
-
-
-.modo-escuro .atividades-introducao p{
-
-    color:#e5e7eb;
-
-}
-
-
-.modo-escuro .nivel-card{
-
-    background:#1E3A8A;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.30);
-
-}
-
-
-.modo-escuro .nivel-card:hover{
-
-    background:#294ec5;
-
-}
-
-
-.modo-escuro .nivel-icone{
-
-    background:rgba(255,255,255,0.10);
-
-}
-
-
-/* ================================
-   RESPONSIVIDADE
-================================ */
-
-@media(max-width:700px){
-
-    .pagina-atividades{
-
-        padding:35px 15px 50px;
-
-    }
-
-
-    .atividades-introducao h2{
-
-        font-size:29px;
-
-    }
-
-
-    .atividades-introducao p{
-
-        font-size:16px;
-
-    }
-
-
-    .nivel-card{
-
-        padding:18px;
-
-        gap:15px;
-
-        border-radius:16px;
-
-    }
-
-
-    .nivel-icone{
-
-        width:50px;
-
-        height:50px;
-
-        border-radius:13px;
-
-    }
-
-
-    .nivel-icone svg{
-
-        width:26px;
-
-        height:26px;
-
-    }
-
-
-    .nivel-conteudo h3{
-
-        font-size:20px;
-
-    }
-
-
-    .nivel-conteudo span{
-
-        font-size:15px;
-
-    }
-
-}  
-
