@@ -684,7 +684,7 @@ header svg {
 .titulo-operacoes h2 {
     display: inline-block;
     font-size: 34px;
-    color: white;
+    color: #1E3A8A;
     margin: 0 0 10px;
     font-weight: 700;
     position: relative;
@@ -703,7 +703,7 @@ header svg {
 .titulo-operacoes p {
     margin: 0 auto;
     font-size: 17px;
-    color: white;
+    color: #555;
     max-width: 500px;
     opacity: 0.9;
 }
