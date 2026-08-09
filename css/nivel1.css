@@ -245,7 +245,10 @@
     cursor: pointer;
     transition: 0.25s;
 }
-
+/* Esconde corretamente botões com o atributo hidden */
+.botao-navegacao[hidden] {
+    display: none !important;
+} 
 .botao-navegacao svg {
     width: 20px;
     height: 20px;
