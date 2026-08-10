@@ -811,7 +811,25 @@ header svg {
     transform: translateY(-4px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 }
+/* NÍVEIS PREMIUM — 4 E 5 */
 
+.nivel-premium {
+    background: linear-gradient(
+        135deg,
+        #d4af37,
+        #f59e0b,
+        #d97706
+    );
+}
+
+.nivel-premium:hover {
+    background: linear-gradient(
+        135deg,
+        #e0bd45,
+        #f59e0b,
+        #c96b05
+    );
+} 
 .nivel-icone {
     width: 58px;
     height: 58px;
