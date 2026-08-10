@@ -881,7 +881,23 @@ header svg {
 .modo-escuro .nivel-card:hover {
     background: #294ec5;
 }
+.modo-escuro .nivel-card.nivel-premium {
+    background: linear-gradient(
+        135deg,
+        #d4af37,
+        #f59e0b,
+        #d97706
+    );
+}
 
+.modo-escuro .nivel-card.nivel-premium:hover {
+    background: linear-gradient(
+        135deg,
+        #e0bd45,
+        #f59e0b,
+        #c96b05
+    );
+}  
 .modo-escuro .nivel-icone {
     background: rgba(255, 255, 255, 0.10);
 }   .perfil-container {
