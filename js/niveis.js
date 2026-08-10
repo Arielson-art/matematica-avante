@@ -887,15 +887,770 @@ const questoesNivel1 = {
     }
 
 ], 
-    6: [],
+    6: [
 
-    7: [],
+    {
+        pergunta: "Um quadrado possui lado de 6 cm. Qual é o seu perímetro?",
 
-    8: [],
+        alternativas: [
+            { texto: "24 cm", correta: true },
+            { texto: "12 cm", correta: false },
+            { texto: "18 cm", correta: false },
+            { texto: "36 cm", correta: false }
+        ],
 
-    9: [],
+        explicacao:
+            "O perímetro do quadrado é 4 × lado. Então, 4 × 6 = 24 cm."
+    },
 
-    10: []
+
+    {
+        pergunta: "Um retângulo possui 8 cm de comprimento e 5 cm de largura. Qual é a sua área?",
+
+        alternativas: [
+            { texto: "40 cm²", correta: true },
+            { texto: "26 cm²", correta: false },
+            { texto: "13 cm²", correta: false },
+            { texto: "35 cm²", correta: false }
+        ],
+
+        explicacao:
+            "A área do retângulo é comprimento × largura. Então, 8 × 5 = 40 cm²."
+    },
+
+
+    {
+        pergunta: "Um triângulo possui base de 10 cm e altura de 6 cm. Qual é sua área?",
+
+        alternativas: [
+            { texto: "30 cm²", correta: true },
+            { texto: "60 cm²", correta: false },
+            { texto: "16 cm²", correta: false },
+            { texto: "36 cm²", correta: false }
+        ],
+
+        explicacao:
+            "A área do triângulo é (base × altura) ÷ 2. Então, (10 × 6) ÷ 2 = 30 cm²."
+    },
+
+
+    {
+        pergunta: "Um retângulo possui perímetro de 30 cm. Se o comprimento é 10 cm, qual é a largura?",
+
+        alternativas: [
+            { texto: "5 cm", correta: true },
+            { texto: "10 cm", correta: false },
+            { texto: "15 cm", correta: false },
+            { texto: "3 cm", correta: false }
+        ],
+
+        explicacao:
+            "O perímetro é 2 × (comprimento + largura). Então, 30 ÷ 2 = 15. Como 15 - 10 = 5, a largura é 5 cm."
+    },
+
+
+    {
+        pergunta: "Quantos lados possui um hexágono?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "5", correta: false },
+            { texto: "7", correta: false },
+            { texto: "8", correta: false }
+        ],
+
+        explicacao:
+            "O prefixo 'hexa-' indica seis. Portanto, um hexágono possui 6 lados."
+    },
+
+
+    {
+        pergunta: "Um quadrado possui área de 49 cm². Quanto mede cada lado?",
+
+        alternativas: [
+            { texto: "7 cm", correta: true },
+            { texto: "6 cm", correta: false },
+            { texto: "8 cm", correta: false },
+            { texto: "14 cm", correta: false }
+        ],
+
+        explicacao:
+            "A área do quadrado é lado × lado. Como 7 × 7 = 49, cada lado mede 7 cm."
+    },
+
+
+    {
+        pergunta: "Um retângulo possui comprimento de 12 cm e largura de 4 cm. Qual é o perímetro?",
+
+        alternativas: [
+            { texto: "32 cm", correta: true },
+            { texto: "48 cm", correta: false },
+            { texto: "24 cm", correta: false },
+            { texto: "16 cm", correta: false }
+        ],
+
+        explicacao:
+            "O perímetro é 2 × (12 + 4) = 2 × 16 = 32 cm."
+    },
+
+
+    {
+        pergunta: "Um triângulo possui lados de 5 cm, 7 cm e 8 cm. Qual é o seu perímetro?",
+
+        alternativas: [
+            { texto: "20 cm", correta: true },
+            { texto: "18 cm", correta: false },
+            { texto: "21 cm", correta: false },
+            { texto: "24 cm", correta: false }
+        ],
+
+        explicacao:
+            "Somamos os três lados: 5 + 7 + 8 = 20 cm."
+    },
+
+
+    {
+        pergunta: "Um quadrado possui lado de 9 cm. Qual é a sua área?",
+
+        alternativas: [
+            { texto: "81 cm²", correta: true },
+            { texto: "36 cm²", correta: false },
+            { texto: "18 cm²", correta: false },
+            { texto: "90 cm²", correta: false }
+        ],
+
+        explicacao:
+            "A área do quadrado é lado × lado. Então, 9 × 9 = 81 cm²."
+    },
+
+
+    {
+        pergunta: "Uma figura possui 4 lados iguais e 4 ângulos retos. Qual é essa figura?",
+
+        alternativas: [
+            { texto: "Quadrado", correta: true },
+            { texto: "Triângulo", correta: false },
+            { texto: "Círculo", correta: false },
+            { texto: "Pentágono", correta: false }
+        ],
+
+        explicacao:
+            "Um quadrado possui quatro lados iguais e quatro ângulos retos."
+    }
+
+], 
+
+    7: [
+
+    {
+        pergunta: "Considere a função f(x) = x + 3. Qual é o valor de f(5)?",
+
+        alternativas: [
+            { texto: "8", correta: true },
+            { texto: "7", correta: false },
+            { texto: "9", correta: false },
+            { texto: "15", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 5: f(5) = 5 + 3 = 8."
+    },
+
+
+    {
+        pergunta: "Considere a função f(x) = 2x. Qual é o valor de f(7)?",
+
+        alternativas: [
+            { texto: "14", correta: true },
+            { texto: "9", correta: false },
+            { texto: "12", correta: false },
+            { texto: "16", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 7: f(7) = 2 × 7 = 14."
+    },
+
+
+    {
+        pergunta: "Se f(x) = x - 4, qual é o valor de f(10)?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "14", correta: false },
+            { texto: "4", correta: false },
+            { texto: "5", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 10: f(10) = 10 - 4 = 6."
+    },
+
+
+    {
+        pergunta: "Uma função é dada por f(x) = 3x + 1. Qual é o valor de f(4)?",
+
+        alternativas: [
+            { texto: "13", correta: true },
+            { texto: "12", correta: false },
+            { texto: "10", correta: false },
+            { texto: "15", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 4: f(4) = 3 × 4 + 1 = 12 + 1 = 13."
+    },
+
+
+    {
+        pergunta: "Observe a função f(x) = 5x. Quando x aumenta de 2 para 3, quanto aumenta o valor de f(x)?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "1", correta: false },
+            { texto: "10", correta: false },
+            { texto: "15", correta: false }
+        ],
+
+        explicacao:
+            "f(2) = 10 e f(3) = 15. A diferença é 15 - 10 = 5."
+    },
+
+
+    {
+        pergunta: "Se f(x) = x + 10, qual valor de x faz com que f(x) seja igual a 18?",
+
+        alternativas: [
+            { texto: "8", correta: true },
+            { texto: "10", correta: false },
+            { texto: "28", correta: false },
+            { texto: "9", correta: false }
+        ],
+
+        explicacao:
+            "Precisamos resolver x + 10 = 18. Portanto, x = 8."
+    },
+
+
+    {
+        pergunta: "Uma função associa cada número ao seu dobro. Qual expressão representa essa função?",
+
+        alternativas: [
+            { texto: "f(x) = 2x", correta: true },
+            { texto: "f(x) = x + 2", correta: false },
+            { texto: "f(x) = x - 2", correta: false },
+            { texto: "f(x) = x ÷ 2", correta: false }
+        ],
+
+        explicacao:
+            "O dobro de um número x é obtido multiplicando x por 2. Portanto, f(x) = 2x."
+    },
+
+
+    {
+        pergunta: "Considere f(x) = x². Qual é o valor de f(6)?",
+
+        alternativas: [
+            { texto: "36", correta: true },
+            { texto: "12", correta: false },
+            { texto: "18", correta: false },
+            { texto: "30", correta: false }
+        ],
+
+        explicacao:
+            "f(6) = 6² = 6 × 6 = 36."
+    },
+
+
+    {
+        pergunta: "Se f(x) = 4x - 2, qual é o valor de f(3)?",
+
+        alternativas: [
+            { texto: "10", correta: true },
+            { texto: "12", correta: false },
+            { texto: "8", correta: false },
+            { texto: "14", correta: false }
+        ],
+
+        explicacao:
+            "f(3) = 4 × 3 - 2 = 12 - 2 = 10."
+    },
+
+
+    {
+        pergunta: "Uma função é definida por f(x) = x + 2. Qual é o valor de x quando f(x) = 15?",
+
+        alternativas: [
+            { texto: "13", correta: true },
+            { texto: "17", correta: false },
+            { texto: "12", correta: false },
+            { texto: "10", correta: false }
+        ],
+
+        explicacao:
+            "Precisamos resolver x + 2 = 15. Subtraindo 2 dos dois lados, temos x = 13."
+    }
+
+],  
+
+  8: [
+
+    {
+        pergunta: "Qual é o valor de x na equação x + 7 = 15?",
+
+        alternativas: [
+            { texto: "8", correta: true },
+            { texto: "7", correta: false },
+            { texto: "9", correta: false },
+            { texto: "22", correta: false }
+        ],
+
+        explicacao:
+            "Subtraindo 7 dos dois lados: x = 15 - 7 = 8."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação x - 9 = 6?",
+
+        alternativas: [
+            { texto: "15", correta: true },
+            { texto: "3", correta: false },
+            { texto: "14", correta: false },
+            { texto: "17", correta: false }
+        ],
+
+        explicacao:
+            "Somamos 9 aos dois lados: x = 6 + 9 = 15."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 3x = 21?",
+
+        alternativas: [
+            { texto: "7", correta: true },
+            { texto: "6", correta: false },
+            { texto: "8", correta: false },
+            { texto: "9", correta: false }
+        ],
+
+        explicacao:
+            "Dividimos os dois lados por 3: x = 21 ÷ 3 = 7."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 2x + 5 = 17?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "5", correta: false },
+            { texto: "7", correta: false },
+            { texto: "11", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro: 2x = 17 - 5 = 12. Depois: x = 12 ÷ 2 = 6."
+    },
+
+
+    {
+        pergunta: "Simplifique a expressão 4x + 3x.",
+
+        alternativas: [
+            { texto: "7x", correta: true },
+            { texto: "12x", correta: false },
+            { texto: "7", correta: false },
+            { texto: "x + 7", correta: false }
+        ],
+
+        explicacao:
+            "Somamos os coeficientes dos termos semelhantes: 4x + 3x = 7x."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 5x - 10 = 20?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "4", correta: false },
+            { texto: "5", correta: false },
+            { texto: "8", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro: 5x = 20 + 10 = 30. Depois: x = 30 ÷ 5 = 6."
+    },
+
+
+    {
+        pergunta: "Qual expressão representa o dobro de um número x aumentado em 5?",
+
+        alternativas: [
+            { texto: "2x + 5", correta: true },
+            { texto: "2(x + 5)", correta: false },
+            { texto: "x + 10", correta: false },
+            { texto: "5x + 2", correta: false }
+        ],
+
+        explicacao:
+            "O dobro de x é 2x. Aumentando esse resultado em 5, temos 2x + 5."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 4x + 4 = 20?",
+
+        alternativas: [
+            { texto: "4", correta: true },
+            { texto: "5", correta: false },
+            { texto: "6", correta: false },
+            { texto: "16", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro: 4x = 20 - 4 = 16. Depois: x = 16 ÷ 4 = 4."
+    },
+
+
+    {
+        pergunta: "Simplifique a expressão 9x - 4x.",
+
+        alternativas: [
+            { texto: "5x", correta: true },
+            { texto: "13x", correta: false },
+            { texto: "36x", correta: false },
+            { texto: "5", correta: false }
+        ],
+
+        explicacao:
+            "Subtraímos os coeficientes: 9x - 4x = 5x."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 3x + 6 = 24?",
+
+        alternativas: [
+            { texto: "6", correta: true },
+            { texto: "8", correta: false },
+            { texto: "9", correta: false },
+            { texto: "10", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro: 3x = 24 - 6 = 18. Depois: x = 18 ÷ 3 = 6."
+    }
+
+], 
+
+   9: [
+
+    {
+        pergunta: "Quanto é 24 ÷ 6 + 5?",
+
+        alternativas: [
+            { texto: "9", correta: true },
+            { texto: "4", correta: false },
+            { texto: "14", correta: false },
+            { texto: "29", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro fazemos a divisão: 24 ÷ 6 = 4. Depois somamos 5: 4 + 5 = 9."
+    },
+
+
+    {
+        pergunta: "Um quadrado possui lado de 8 cm. Qual é sua área?",
+
+        alternativas: [
+            { texto: "64 cm²", correta: true },
+            { texto: "32 cm²", correta: false },
+            { texto: "24 cm²", correta: false },
+            { texto: "16 cm²", correta: false }
+        ],
+
+        explicacao:
+            "A área do quadrado é lado × lado. Então, 8 × 8 = 64 cm²."
+    },
+
+
+    {
+        pergunta: "Considere f(x) = 2x + 1. Qual é o valor de f(5)?",
+
+        alternativas: [
+            { texto: "11", correta: true },
+            { texto: "10", correta: false },
+            { texto: "12", correta: false },
+            { texto: "7", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 5: f(5) = 2 × 5 + 1 = 10 + 1 = 11."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 2x + 4 = 18?",
+
+        alternativas: [
+            { texto: "7", correta: true },
+            { texto: "6", correta: false },
+            { texto: "8", correta: false },
+            { texto: "9", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro: 2x = 18 - 4 = 14. Depois: x = 14 ÷ 2 = 7."
+    },
+
+
+    {
+        pergunta: "Um retângulo possui 9 cm de comprimento e 4 cm de largura. Qual é seu perímetro?",
+
+        alternativas: [
+            { texto: "26 cm", correta: true },
+            { texto: "36 cm", correta: false },
+            { texto: "13 cm", correta: false },
+            { texto: "18 cm", correta: false }
+        ],
+
+        explicacao:
+            "O perímetro é 2 × (9 + 4) = 2 × 13 = 26 cm."
+    },
+
+
+    {
+        pergunta: "Quanto é 7 × 8 - 10?",
+
+        alternativas: [
+            { texto: "46", correta: true },
+            { texto: "54", correta: false },
+            { texto: "56", correta: false },
+            { texto: "38", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro fazemos a multiplicação: 7 × 8 = 56. Depois subtraímos 10: 56 - 10 = 46."
+    },
+
+
+    {
+        pergunta: "Se f(x) = x - 3, qual é o valor de x quando f(x) = 9?",
+
+        alternativas: [
+            { texto: "12", correta: true },
+            { texto: "6", correta: false },
+            { texto: "9", correta: false },
+            { texto: "3", correta: false }
+        ],
+
+        explicacao:
+            "Temos x - 3 = 9. Somando 3 aos dois lados, encontramos x = 12."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 5x = 45?",
+
+        alternativas: [
+            { texto: "9", correta: true },
+            { texto: "8", correta: false },
+            { texto: "10", correta: false },
+            { texto: "40", correta: false }
+        ],
+
+        explicacao:
+            "Dividimos 45 por 5: x = 45 ÷ 5 = 9."
+    },
+
+
+    {
+        pergunta: "Um triângulo possui base de 12 cm e altura de 5 cm. Qual é sua área?",
+
+        alternativas: [
+            { texto: "30 cm²", correta: true },
+            { texto: "60 cm²", correta: false },
+            { texto: "17 cm²", correta: false },
+            { texto: "25 cm²", correta: false }
+        ],
+
+        explicacao:
+            "A área do triângulo é (base × altura) ÷ 2. Então, (12 × 5) ÷ 2 = 30 cm²."
+    },
+
+
+    {
+        pergunta: "Simplifique a expressão 6x + 2x - 3x.",
+
+        alternativas: [
+            { texto: "5x", correta: true },
+            { texto: "11x", correta: false },
+            { texto: "8x", correta: false },
+            { texto: "5", correta: false }
+        ],
+
+        explicacao:
+            "Somamos e subtraímos os coeficientes: 6 + 2 - 3 = 5. Portanto, o resultado é 5x."
+    }
+
+], 
+
+    10: [
+
+    {
+        pergunta: "Uma loja vende um produto por R$ 80,00 e oferece R$ 15,00 de desconto. Qual será o preço final?",
+
+        alternativas: [
+            { texto: "R$ 65,00", correta: true },
+            { texto: "R$ 70,00", correta: false },
+            { texto: "R$ 95,00", correta: false },
+            { texto: "R$ 55,00", correta: false }
+        ],
+
+        explicacao:
+            "Subtraímos o desconto do preço original: 80 - 15 = 65. Portanto, o preço final é R$ 65,00."
+    },
+
+
+    {
+        pergunta: "Um retângulo possui 12 cm de comprimento e 5 cm de largura. Qual é a sua área?",
+
+        alternativas: [
+            { texto: "60 cm²", correta: true },
+            { texto: "34 cm²", correta: false },
+            { texto: "17 cm²", correta: false },
+            { texto: "24 cm²", correta: false }
+        ],
+
+        explicacao:
+            "A área do retângulo é comprimento × largura: 12 × 5 = 60 cm²."
+    },
+
+
+    {
+        pergunta: "Considere f(x) = 3x - 2. Qual é o valor de f(6)?",
+
+        alternativas: [
+            { texto: "16", correta: true },
+            { texto: "18", correta: false },
+            { texto: "20", correta: false },
+            { texto: "14", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 6: f(6) = 3 × 6 - 2 = 18 - 2 = 16."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de x na equação 4x + 8 = 28?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "6", correta: false },
+            { texto: "7", correta: false },
+            { texto: "4", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro: 4x = 28 - 8 = 20. Depois: x = 20 ÷ 4 = 5."
+    },
+
+
+    {
+        pergunta: "Um triângulo possui lados de 6 cm, 8 cm e 10 cm. Qual é o seu perímetro?",
+
+        alternativas: [
+            { texto: "24 cm", correta: true },
+            { texto: "20 cm", correta: false },
+            { texto: "26 cm", correta: false },
+            { texto: "48 cm", correta: false }
+        ],
+
+        explicacao:
+            "O perímetro é a soma dos três lados: 6 + 8 + 10 = 24 cm."
+    },
+
+
+    {
+        pergunta: "Quanto é 36 ÷ 4 + 7 × 2?",
+
+        alternativas: [
+            { texto: "23", correta: true },
+            { texto: "32", correta: false },
+            { texto: "25", correta: false },
+            { texto: "16", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro fazemos divisão e multiplicação: 36 ÷ 4 = 9 e 7 × 2 = 14. Depois somamos: 9 + 14 = 23."
+    },
+
+
+    {
+        pergunta: "Se f(x) = x + 5 e f(x) = 17, qual é o valor de x?",
+
+        alternativas: [
+            { texto: "12", correta: true },
+            { texto: "10", correta: false },
+            { texto: "22", correta: false },
+            { texto: "13", correta: false }
+        ],
+
+        explicacao:
+            "Temos x + 5 = 17. Subtraindo 5 dos dois lados, encontramos x = 12."
+    },
+
+
+    {
+        pergunta: "Um quadrado possui área de 81 cm². Qual é a medida de seu lado?",
+
+        alternativas: [
+            { texto: "9 cm", correta: true },
+            { texto: "8 cm", correta: false },
+            { texto: "18 cm", correta: false },
+            { texto: "27 cm", correta: false }
+        ],
+
+        explicacao:
+            "Como a área do quadrado é lado × lado, precisamos encontrar o número que multiplicado por ele mesmo resulta em 81. Esse número é 9, pois 9 × 9 = 81."
+    },
+
+
+    {
+        pergunta: "Simplifique a expressão 8x - 3x + 2x.",
+
+        alternativas: [
+            { texto: "7x", correta: true },
+            { texto: "13x", correta: false },
+            { texto: "6x", correta: false },
+            { texto: "7", correta: false }
+        ],
+
+        explicacao:
+            "Somamos os coeficientes: 8 - 3 + 2 = 7. Portanto, o resultado é 7x."
+    },
+
+
+    {
+        pergunta: "Uma pessoa tinha R$ 120,00 e gastou R$ 35,00. Depois recebeu R$ 20,00. Quanto ela possui agora?",
+
+        alternativas: [
+            { texto: "R$ 105,00", correta: true },
+            { texto: "R$ 85,00", correta: false },
+            { texto: "R$ 100,00", correta: false },
+            { texto: "R$ 75,00", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro subtraímos o gasto: 120 - 35 = 85. Depois somamos o valor recebido: 85 + 20 = 105. Portanto, a pessoa possui R$ 105,00."
+    }
+
+],  
 
 };
 
