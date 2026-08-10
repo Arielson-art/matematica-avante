@@ -501,3 +501,73 @@ if(botaoAluno && botaoProfessor){
     });
 
 }  
+// ================================
+// NOTIFICAÇÃO PREMIUM
+// ================================
+
+const niveisPremium =
+document.querySelectorAll(".nivel-premium");
+
+const notificacaoPremium =
+document.getElementById("notificacaoPremium");
+
+const fecharNotificacaoPremium =
+document.getElementById("fecharNotificacaoPremium");
+
+
+function abrirNotificacaoPremium(){
+
+    if(!notificacaoPremium){
+
+        return;
+
+    }
+
+
+    notificacaoPremium.hidden = false;
+
+
+    atualizarIcones();
+
+}
+
+
+function fecharNotificacao(){
+
+    if(!notificacaoPremium){
+
+        return;
+
+    }
+
+
+    notificacaoPremium.hidden = true;
+
+}
+
+
+niveisPremium.forEach(function(nivel){
+
+    nivel.addEventListener("click", function(event){
+
+        event.preventDefault();
+
+        abrirNotificacaoPremium();
+
+    });
+
+});
+
+
+if(fecharNotificacaoPremium){
+
+    fecharNotificacaoPremium.addEventListener(
+        "click",
+        function(){
+
+            fecharNotificacao();
+
+        }
+    );
+
+} 
