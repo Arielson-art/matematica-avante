@@ -735,8 +735,158 @@ const questoesNivel1 = {
 
 ], 
 
-    5: [],
+    5: [
 
+    {
+        pergunta: "Quanto é 48 + 37?",
+
+        alternativas: [
+            { texto: "85", correta: true },
+            { texto: "75", correta: false },
+            { texto: "84", correta: false },
+            { texto: "95", correta: false }
+        ],
+
+        explicacao:
+            "Somando 48 + 37, temos 85."
+    },
+
+
+    {
+        pergunta: "Quanto é 96 - 47?",
+
+        alternativas: [
+            { texto: "49", correta: true },
+            { texto: "39", correta: false },
+            { texto: "59", correta: false },
+            { texto: "51", correta: false }
+        ],
+
+        explicacao:
+            "Fazendo 96 - 47, obtemos 49."
+    },
+
+
+    {
+        pergunta: "Quanto é 14 × 6?",
+
+        alternativas: [
+            { texto: "84", correta: true },
+            { texto: "74", correta: false },
+            { texto: "94", correta: false },
+            { texto: "80", correta: false }
+        ],
+
+        explicacao:
+            "14 × 6 = 84."
+    },
+
+
+    {
+        pergunta: "Quanto é 144 ÷ 12?",
+
+        alternativas: [
+            { texto: "12", correta: true },
+            { texto: "10", correta: false },
+            { texto: "14", correta: false },
+            { texto: "24", correta: false }
+        ],
+
+        explicacao:
+            "144 dividido por 12 é igual a 12."
+    },
+
+
+    {
+        pergunta: "João tinha 35 reais e gastou 18 reais. Quanto dinheiro restou?",
+
+        alternativas: [
+            { texto: "17 reais", correta: true },
+            { texto: "13 reais", correta: false },
+            { texto: "18 reais", correta: false },
+            { texto: "23 reais", correta: false }
+        ],
+
+        explicacao:
+            "Precisamos subtrair o valor gasto: 35 - 18 = 17 reais."
+    },
+
+
+    {
+        pergunta: "Uma caixa possui 8 fileiras com 7 objetos em cada uma. Quantos objetos há ao todo?",
+
+        alternativas: [
+            { texto: "56", correta: true },
+            { texto: "48", correta: false },
+            { texto: "64", correta: false },
+            { texto: "54", correta: false }
+        ],
+
+        explicacao:
+            "São 8 fileiras com 7 objetos: 8 × 7 = 56."
+    },
+
+
+    {
+        pergunta: "Maria tinha 72 balas e dividiu igualmente entre 8 crianças. Quantas balas cada criança recebeu?",
+
+        alternativas: [
+            { texto: "9", correta: true },
+            { texto: "8", correta: false },
+            { texto: "10", correta: false },
+            { texto: "12", correta: false }
+        ],
+
+        explicacao:
+            "Dividimos 72 por 8: 72 ÷ 8 = 9."
+    },
+
+
+    {
+        pergunta: "Quanto é 25 + 18 - 10?",
+
+        alternativas: [
+            { texto: "33", correta: true },
+            { texto: "43", correta: false },
+            { texto: "23", correta: false },
+            { texto: "35", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro fazemos 25 + 18 = 43. Depois, 43 - 10 = 33."
+    },
+
+
+    {
+        pergunta: "Uma escola comprou 6 caixas com 12 lápis em cada caixa. Quantos lápis foram comprados?",
+
+        alternativas: [
+            { texto: "72", correta: true },
+            { texto: "62", correta: false },
+            { texto: "68", correta: false },
+            { texto: "82", correta: false }
+        ],
+
+        explicacao:
+            "Multiplicamos o número de caixas pela quantidade de lápis: 6 × 12 = 72."
+    },
+
+
+    {
+        pergunta: "Pedro tinha 100 reais. Comprou um livro por 35 reais e um caderno por 18 reais. Quanto sobrou?",
+
+        alternativas: [
+            { texto: "47 reais", correta: true },
+            { texto: "53 reais", correta: false },
+            { texto: "57 reais", correta: false },
+            { texto: "45 reais", correta: false }
+        ],
+
+        explicacao:
+            "Primeiro somamos os gastos: 35 + 18 = 53. Depois fazemos 100 - 53 = 47 reais."
+    }
+
+], 
     6: [],
 
     7: [],
