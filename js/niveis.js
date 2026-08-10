@@ -1976,7 +1976,11 @@ function atualizarInformacoesFase() {
 
     }
 
-
+    const rotulo =
+    document.getElementById(
+        "rotuloFase"
+    );
+    
     const nome =
         document.getElementById(
             "nomeFase"
@@ -1988,7 +1992,12 @@ function atualizarInformacoesFase() {
             "descricaoFase"
         );
 
+if (rotulo) {
 
+    rotulo.textContent =
+        "Fase " + faseAtual;
+
+}  
     if (nome) {
 
         nome.textContent =
