@@ -582,7 +582,158 @@ const questoesNivel1 = {
 
 ],   
 
-    4: [],
+   4: [
+
+    {
+        pergunta: "Quanto vale x na equação x + 3 = 7?",
+
+        alternativas: [
+            { texto: "4", correta: true },
+            { texto: "3", correta: false },
+            { texto: "5", correta: false },
+            { texto: "10", correta: false }
+        ],
+
+        explicacao:
+            "Para encontrar x, fazemos 7 - 3. Portanto, x = 4."
+    },
+
+
+    {
+        pergunta: "Quanto vale x na equação x - 2 = 5?",
+
+        alternativas: [
+            { texto: "7", correta: true },
+            { texto: "3", correta: false },
+            { texto: "5", correta: false },
+            { texto: "10", correta: false }
+        ],
+
+        explicacao:
+            "Somamos 2 aos dois lados: x = 5 + 2 = 7."
+    },
+
+
+    {
+        pergunta: "Quanto vale x na equação 2x = 10?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "2", correta: false },
+            { texto: "8", correta: false },
+            { texto: "12", correta: false }
+        ],
+
+        explicacao:
+            "Dividimos os dois lados por 2: x = 10 ÷ 2 = 5."
+    },
+
+
+    {
+        pergunta: "Quanto vale x na equação x + 6 = 10?",
+
+        alternativas: [
+            { texto: "4", correta: true },
+            { texto: "6", correta: false },
+            { texto: "16", correta: false },
+            { texto: "3", correta: false }
+        ],
+
+        explicacao:
+            "Subtraímos 6 dos dois lados: x = 10 - 6 = 4."
+    },
+
+
+    {
+        pergunta: "Qual é o valor de 3x quando x = 4?",
+
+        alternativas: [
+            { texto: "12", correta: true },
+            { texto: "7", correta: false },
+            { texto: "9", correta: false },
+            { texto: "16", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 4: 3 × 4 = 12."
+    },
+
+
+    {
+        pergunta: "Quanto vale x na equação x - 5 = 3?",
+
+        alternativas: [
+            { texto: "8", correta: true },
+            { texto: "2", correta: false },
+            { texto: "5", correta: false },
+            { texto: "15", correta: false }
+        ],
+
+        explicacao:
+            "Somamos 5 aos dois lados: x = 3 + 5 = 8."
+    },
+
+
+    {
+        pergunta: "Quanto vale x na equação 3x = 15?",
+
+        alternativas: [
+            { texto: "5", correta: true },
+            { texto: "3", correta: false },
+            { texto: "12", correta: false },
+            { texto: "18", correta: false }
+        ],
+
+        explicacao:
+            "Dividimos 15 por 3: x = 15 ÷ 3 = 5."
+    },
+
+
+    {
+        pergunta: "Se x = 5, qual é o valor de x + 4?",
+
+        alternativas: [
+            { texto: "9", correta: true },
+            { texto: "1", correta: false },
+            { texto: "20", correta: false },
+            { texto: "8", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 5: 5 + 4 = 9."
+    },
+
+
+    {
+        pergunta: "Quanto vale x na equação x + 8 = 12?",
+
+        alternativas: [
+            { texto: "4", correta: true },
+            { texto: "8", correta: false },
+            { texto: "20", correta: false },
+            { texto: "3", correta: false }
+        ],
+
+        explicacao:
+            "Subtraímos 8 dos dois lados: x = 12 - 8 = 4."
+    },
+
+
+    {
+        pergunta: "Se x = 3, qual é o valor de 2x + 1?",
+
+        alternativas: [
+            { texto: "7", correta: true },
+            { texto: "6", correta: false },
+            { texto: "5", correta: false },
+            { texto: "8", correta: false }
+        ],
+
+        explicacao:
+            "Substituímos x por 3: 2 × 3 + 1 = 6 + 1 = 7."
+    }
+
+], 
 
     5: [],
 
