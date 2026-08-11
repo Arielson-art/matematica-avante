@@ -571,3 +571,532 @@ if(fecharNotificacaoPremium){
     );
 
 } 
+// ================================
+// SEQUÊNCIA DE ESTUDOS (STREAK)
+// ================================
+
+const CHAVE_STREAK = "diasEstudados";
+
+
+// =====================================================
+// OBTER DATA LOCAL NO FORMATO YYYY-MM-DD
+// =====================================================
+
+function obterDataHoje() {
+
+    const data = new Date();
+
+    const ano = data.getFullYear();
+
+    const mes = String(
+        data.getMonth() + 1
+    ).padStart(2, "0");
+
+    const dia = String(
+        data.getDate()
+    ).padStart(2, "0");
+
+    return `${ano}-${mes}-${dia}`;
+
+}
+
+
+// =====================================================
+// CONVERTER DATA YYYY-MM-DD EM OBJETO DATE
+// =====================================================
+
+function converterData(dataString) {
+
+    const partes =
+        dataString.split("-");
+
+    return new Date(
+        Number(partes[0]),
+        Number(partes[1]) - 1,
+        Number(partes[2])
+    );
+
+}
+
+
+// =====================================================
+// OBTER DIAS DE ESTUDO
+// =====================================================
+
+function obterDiasEstudados() {
+
+    const salvo =
+        localStorage.getItem(
+            CHAVE_STREAK
+        );
+
+    if (!salvo) {
+
+        return [];
+
+    }
+
+    try {
+
+        const dados =
+            JSON.parse(salvo);
+
+        if (!Array.isArray(dados)) {
+
+            return [];
+
+        }
+
+        return [
+            ...new Set(dados)
+        ].sort();
+
+    } catch (erro) {
+
+        console.error(
+            "Não foi possível carregar a sequência:",
+            erro
+        );
+
+        return [];
+
+    }
+
+}
+
+
+// =====================================================
+// SALVAR DIAS DE ESTUDO
+// =====================================================
+
+function salvarDiasEstudados(
+    dias
+) {
+
+    localStorage.setItem(
+        CHAVE_STREAK,
+        JSON.stringify(dias)
+    );
+
+}
+
+
+// =====================================================
+// REGISTRAR ESTUDO DO DIA
+// =====================================================
+//
+// Responder uma ou várias questões no mesmo dia
+// continua representando apenas um dia estudado.
+// =====================================================
+
+function registrarEstudoHoje() {
+
+    const hoje =
+        obterDataHoje();
+
+    const dias =
+        obterDiasEstudados();
+
+    if (
+        dias.includes(hoje)
+    ) {
+
+        return;
+
+    }
+
+    dias.push(hoje);
+
+    dias.sort();
+
+    salvarDiasEstudados(
+        dias
+    );
+
+    atualizarSequenciaInicio();
+
+}
+
+
+// =====================================================
+// CALCULAR SEQUÊNCIA ATUAL
+// =====================================================
+
+function calcularSequenciaAtual() {
+
+    const dias =
+        obterDiasEstudados();
+
+    if (!dias.length) {
+
+        return 0;
+
+    }
+
+
+    const hoje =
+        converterData(
+            obterDataHoje()
+        );
+
+
+    const ontem =
+        new Date(hoje);
+
+    ontem.setDate(
+        ontem.getDate() - 1
+    );
+
+
+    const ultimoDia =
+        converterData(
+            dias[dias.length - 1]
+        );
+
+
+    // Se o último estudo não foi hoje nem ontem,
+    // a sequência atual já foi quebrada.
+
+    if (
+        ultimoDia.getTime() <
+        ontem.getTime()
+    ) {
+
+        return 0;
+
+    }
+
+
+    let sequencia = 1;
+
+    let dataAtual =
+        ultimoDia;
+
+
+    for (
+        let i = dias.length - 2;
+        i >= 0;
+        i--
+    ) {
+
+        const dataAnterior =
+            converterData(
+                dias[i]
+            );
+
+
+        const esperado =
+            new Date(
+                dataAtual
+            );
+
+        esperado.setDate(
+            esperado.getDate() - 1
+        );
+
+
+        if (
+            dataAnterior.getTime() !==
+            esperado.getTime()
+        ) {
+
+            break;
+
+        }
+
+
+        sequencia++;
+
+        dataAtual =
+            dataAnterior;
+
+    }
+
+
+    // Caso o último dia estudado tenha sido ontem,
+    // a sequência continua válida.
+    //
+    // Caso tenha sido hoje, também continua válida.
+
+    return sequencia;
+
+}
+
+
+// =====================================================
+// ATUALIZAR VISUAL DA SEQUÊNCIA
+// =====================================================
+
+function atualizarSequenciaInicio() {
+
+    const diasSequencia =
+        document.getElementById(
+            "diasSequencia"
+        );
+
+    const numeroSequencia =
+        document.getElementById(
+            "numeroSequencia"
+        );
+
+    const textoSequencia =
+        document.getElementById(
+            "textoSequencia"
+        );
+
+    const areaSequencia =
+        document.querySelector(
+            ".sequencia"
+        );
+
+    if (
+        !diasSequencia ||
+        !areaSequencia
+    ) {
+
+        return;
+
+    }
+
+
+    const dias =
+        calcularSequenciaAtual();
+
+
+    const pontos =
+        diasSequencia.querySelectorAll(
+            ".dia-sequencia"
+        );
+
+
+    // =================================================
+    // LIMPAR ESTADOS VISUAIS
+    // =================================================
+
+    areaSequencia.classList.remove(
+        "streak-ativo",
+        "streak-ciano"
+    );
+
+
+    pontos.forEach(
+        function(ponto) {
+
+            ponto.classList.remove(
+                "ativo"
+            );
+
+        }
+    );
+
+
+    // =================================================
+    // SE NÃO HOUVER SEQUÊNCIA
+    // =================================================
+
+    if (dias === 0) {
+
+        diasSequencia.style.setProperty(
+            "--progresso-sequencia",
+            "0px"
+        );
+
+
+        if (numeroSequencia) {
+
+            numeroSequencia.hidden =
+                true;
+
+            numeroSequencia.textContent =
+                "";
+
+        }
+
+
+        if (textoSequencia) {
+
+            textoSequencia.textContent =
+                "0 dias seguidos";
+
+        }
+
+
+        return;
+
+    }
+
+
+    // =================================================
+    // DEFINIR QUANTOS PONTOS FICAM ATIVOS
+    // =================================================
+
+    const quantidadeAtiva =
+        Math.min(
+            dias,
+            7
+        );
+
+
+    for (
+        let i = 0;
+        i < quantidadeAtiva;
+        i++
+    ) {
+
+        if (pontos[i]) {
+
+            pontos[i].classList.add(
+                "ativo"
+            );
+
+        }
+
+    }
+
+
+    // =================================================
+    // COR DA SEQUÊNCIA
+    // =================================================
+
+    if (dias >= 8) {
+
+        areaSequencia.classList.add(
+            "streak-ciano"
+        );
+
+    } else {
+
+        areaSequencia.classList.add(
+            "streak-ativo"
+        );
+
+    }
+
+
+    // =================================================
+    // CALCULAR COMPRIMENTO DA BARRA
+    // =================================================
+
+    if (
+        pontos.length >= 2 &&
+        quantidadeAtiva >= 2
+    ) {
+
+        const primeiro =
+            pontos[0]
+                .getBoundingClientRect();
+
+        const ultimo =
+            pontos[
+                quantidadeAtiva - 1
+            ]
+                .getBoundingClientRect();
+
+
+        const distancia =
+            ultimo.left +
+            (
+                ultimo.width / 2
+            ) -
+            (
+                primeiro.left +
+                (
+                    primeiro.width / 2
+                )
+            );
+
+
+        diasSequencia.style.setProperty(
+            "--progresso-sequencia",
+            Math.max(
+                0,
+                distancia
+            ) + "px"
+        );
+
+    } else {
+
+        diasSequencia.style.setProperty(
+            "--progresso-sequencia",
+            "0px"
+        );
+
+    }
+
+
+    // =================================================
+    // TEXTO
+    // =================================================
+
+    if (textoSequencia) {
+
+        textoSequencia.textContent =
+            dias === 1
+                ? "1 dia seguido"
+                : `${dias} dias seguidos`;
+
+    }
+
+
+    // =================================================
+    // NÚMERO A PARTIR DO 8º DIA
+    // =================================================
+
+    if (numeroSequencia) {
+
+        if (dias >= 8) {
+
+            numeroSequencia.hidden =
+                false;
+
+            numeroSequencia.textContent =
+                dias;
+
+        } else {
+
+            numeroSequencia.hidden =
+                true;
+
+            numeroSequencia.textContent =
+                "";
+
+        }
+
+    }
+
+}
+
+
+// =====================================================
+// ATUALIZAR SEQUÊNCIA AO REDIMENSIONAR
+// =====================================================
+
+window.addEventListener(
+    "resize",
+    function() {
+
+        atualizarSequenciaInicio();
+
+    }
+);
+
+
+// =====================================================
+// ATUALIZAR SEQUÊNCIA AO CARREGAR A PÁGINA
+// =====================================================
+
+if (
+    document.readyState ===
+    "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        atualizarSequenciaInicio
+    );
+
+} else {
+
+    atualizarSequenciaInicio();
+
+}  
