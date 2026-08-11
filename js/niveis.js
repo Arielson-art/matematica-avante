@@ -2283,7 +2283,16 @@ function responderAlternativa(
     respostas[questaoAtual] =
         alternativa.correta;
 
+// Registra que o usuário estudou hoje.
 
+if (
+    typeof registrarEstudoHoje ===
+    "function"
+) {
+
+    registrarEstudoHoje();
+
+}  
     // =================================================
     // BLOQUEAR TODAS AS ALTERNATIVAS
     // =================================================
