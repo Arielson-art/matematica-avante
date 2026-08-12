@@ -619,9 +619,25 @@ if (
         pesquisarProfessores
     );
 
-}
 
+    campoPesquisaProfessor.addEventListener(
+        "keydown",
+        function(event) {
 
+            if (
+                event.key === "Enter"
+            ) {
+
+                event.preventDefault();
+
+                pesquisarProfessores();
+
+            }
+
+        }
+    );
+
+}  
 // =====================================================
 // INICIALIZAÇÃO
 // =====================================================
