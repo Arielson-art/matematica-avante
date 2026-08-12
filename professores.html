@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Professores - Matemática Avante</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <button
+        id="voltarPagina"
+        type="button"
+        class="icon-button"
+        aria-label="Voltar"
+    >
+
+        <i data-lucide="arrow-left"></i>
+
+    </button>
+
+
+    <h1>
+        👨‍🏫 Professores
+    </h1>
+
+
+    <button
+        id="modoEscuro"
+        type="button"
+        class="icon-button"
+        aria-label="Ativar modo escuro"
+    >
+
+        <i data-lucide="moon"></i>
+
+    </button>
+
+
+    <button
+        id="botaoMenu"
+        type="button"
+        class="icon-button"
+        aria-label="Abrir menu"
+    >
+
+        <i data-lucide="menu"></i>
+
+    </button>
+
+</header>
+
+
+
+<main class="pagina-professores">
+
+
+    <!-- =================================================
+         APRESENTAÇÃO
+         ================================================= -->
+
+    <section class="professores-introducao">
+
+        <span class="professores-selo">
+
+            <i data-lucide="graduation-cap"></i>
+
+            Aprenda com especialistas
+
+        </span>
+
+
+        <h2>
+            Encontre um professor
+            para acompanhar sua evolução
+        </h2>
+
+
+        <p>
+            Em breve você poderá encontrar professores
+            de matemática e conhecer suas especialidades,
+            experiências e áreas de ensino.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PESQUISA
+         ================================================= -->
+
+    <section class="pesquisa-professores">
+
+        <label
+            for="campoPesquisaProfessor"
+            class="rotulo-pesquisa-professores"
+        >
+            Procurar professor
+        </label>
+
+
+        <div class="campo-pesquisa-professores">
+
+            <i data-lucide="search"></i>
+
+
+            <input
+                type="search"
+                id="campoPesquisaProfessor"
+                placeholder="Nome ou especialidade..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ÁREA DOS PROFESSORES
+         ================================================= -->
+
+    <section class="lista-professores">
+
+
+        <!--
+            Os perfis dos professores serão inseridos
+            futuramente pelo JavaScript.
+
+            Estrutura planejada:
+
+            .card-professor
+                .professor-resumo
+                .professor-detalhes
+
+            O card será horizontal e poderá ser
+            expandido quando clicado.
+        -->
+
+
+        <!-- =================================================
+             ESTADO VAZIO
+             ================================================= -->
+
+        <div
+            id="estadoVazioProfessores"
+            class="estado-vazio-professores"
+        >
+
+            <div class="estado-vazio-icone">
+
+                <i data-lucide="graduation-cap"></i>
+
+            </div>
+
+
+            <h3>
+                Professores chegando em breve
+            </h3>
+
+
+            <p>
+                Ainda não há professores cadastrados
+                na plataforma.
+            </p>
+
+
+            <span>
+                Quando novos professores fizerem parte
+                do Matemática Avante, os perfis aparecerão aqui.
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             RESULTADO DA PESQUISA SEM RESULTADOS
+             ================================================= -->
+
+        <div
+            id="nenhumProfessorEncontrado"
+            class="estado-pesquisa-vazia"
+            hidden
+        >
+
+            <div class="estado-pesquisa-icone">
+
+                <i data-lucide="search-x"></i>
+
+            </div>
+
+
+            <h3>
+                Nenhum professor encontrado
+            </h3>
+
+
+            <p>
+                Não encontramos nenhum professor
+                correspondente à sua pesquisa.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CARDS DOS PROFESSORES
+             ================================================= -->
+
+        <div
+            id="listaCardsProfessores"
+            class="lista-cards-professores"
+        >
+
+            <!--
+                Os cards serão adicionados futuramente.
+
+                Exemplo de estrutura que o JavaScript
+                poderá gerar:
+
+                <article class="card-professor">
+
+                    <div class="professor-resumo">
+
+                        <div class="professor-avatar">
+                            <img ...>
+                        </div>
+
+                        <div class="professor-identidade">
+                            <h3>Nome</h3>
+                            <span>Especialidade</span>
+                        </div>
+
+                        <i class="professor-expandir"
+                           data-lucide="chevron-down">
+                        </i>
+
+                    </div>
+
+
+                    <div class="professor-detalhes">
+
+                        <div class="informacao-professor">
+                            ...
+                        </div>
+
+                        <a href="..." class="botao-ver-perfil">
+                            Ver perfil
+                        </a>
+
+                    </div>
+
+                </article>
+            -->
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     MENU LATERAL
+     ===================================================== -->
+
+<div id="fundoMenu"></div>
+
+
+<div id="menuLateral">
+
+
+    <h2>
+        Menu
+    </h2>
+
+
+
+    <a
+        href="perfil.html"
+        class="menu-item"
+    >
+
+        <i data-lucide="user-round"></i>
+
+        <span>
+            Perfil
+        </span>
+
+    </a>
+
+
+
+    <a
+        href="materias.html"
+        class="menu-item"
+    >
+
+        <i data-lucide="book-open"></i>
+
+        <span>
+            Matérias
+        </span>
+
+    </a>
+
+
+
+    <a
+        href="atividades.html"
+        class="menu-item"
+    >
+
+        <i data-lucide="clipboard-list"></i>
+
+        <span>
+            Atividades
+        </span>
+
+    </a>
+
+
+
+    <div class="menu-item">
+
+        <i data-lucide="graduation-cap"></i>
+
+        <span>
+            Professores
+        </span>
+
+    </div>
+
+
+
+    <div class="menu-item">
+
+        <i data-lucide="chart-column"></i>
+
+        <span>
+            Meu progresso
+        </span>
+
+    </div>
+
+
+
+    <div class="menu-item">
+
+        <i data-lucide="gem"></i>
+
+        <span>
+            Premium
+        </span>
+
+    </div>
+
+
+
+    <div class="menu-item">
+
+        <i data-lucide="credit-card"></i>
+
+        <span>
+            Planos e Assinaturas
+        </span>
+
+    </div>
+
+
+
+    <div class="menu-item">
+
+        <i data-lucide="settings"></i>
+
+        <span>
+            Configurações
+        </span>
+
+    </div>
+
+
+
+    <a
+        href="sobre.html"
+        class="menu-item"
+    >
+
+        <i data-lucide="info"></i>
+
+        <span>
+            Sobre
+        </span>
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+     ===================================================== -->
+
+<script src="js/script.js"></script>
+
+
+<script>
+
+    atualizarIcones();
+
+</script>
+
+
+</body>
+
+</html>  
