@@ -2135,3 +2135,527 @@ header svg {
         height: 36px;
     }
 }  
+/* =====================================================
+   PÁGINA DE PROFESSORES
+   ===================================================== */
+
+.pagina-professores {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 45px 20px 70px;
+}
+
+
+/* =====================================================
+   INTRODUÇÃO
+   ===================================================== */
+
+.professores-introducao {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 35px;
+}
+
+.professores-selo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #fff4c7;
+    color: #8a6500;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.professores-selo svg {
+    width: 18px;
+    height: 18px;
+}
+
+.professores-introducao h2 {
+    margin: 18px auto 15px;
+    max-width: 720px;
+    color: #1E3A8A;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.professores-introducao p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   PESQUISA
+   ===================================================== */
+
+.pesquisa-professores {
+    max-width: 760px;
+    margin: 0 auto 35px;
+}
+
+.rotulo-pesquisa-professores {
+    display: block;
+    margin-bottom: 8px;
+    color: #1E3A8A;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.campo-pesquisa-professores {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 18px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+}
+
+.campo-pesquisa-professores:focus-within {
+    border-color: #4169E1;
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.08),
+        0 0 0 4px rgba(65, 105, 225, 0.10);
+}
+
+.campo-pesquisa-professores svg {
+    width: 22px;
+    height: 22px;
+    color: #4169E1;
+    flex-shrink: 0;
+}
+
+.campo-pesquisa-professores input {
+    width: 100%;
+    min-width: 0;
+    padding: 16px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #222;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.campo-pesquisa-professores input::placeholder {
+    color: #999;
+}
+
+
+/* =====================================================
+   LISTA
+   ===================================================== */
+
+.lista-professores {
+    width: 100%;
+}
+
+.lista-cards-professores {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =====================================================
+   ESTADO VAZIO
+   ===================================================== */
+
+.estado-vazio-professores {
+    max-width: 700px;
+    margin: 35px auto 0;
+    padding: 45px 30px;
+    text-align: center;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.estado-vazio-icone {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 20px;
+    border-radius: 22px;
+    background: #eef3ff;
+    color: #4169E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estado-vazio-icone svg {
+    width: 38px;
+    height: 38px;
+    stroke-width: 2;
+}
+
+.estado-vazio-professores h3 {
+    margin-bottom: 10px;
+    color: #1E3A8A;
+    font-size: 25px;
+}
+
+.estado-vazio-professores p {
+    margin: 0 auto 8px;
+    color: #444;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.estado-vazio-professores span {
+    display: block;
+    max-width: 540px;
+    margin: 0 auto;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PESQUISA SEM RESULTADOS
+   ===================================================== */
+
+.estado-pesquisa-vazia {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 35px 25px;
+    text-align: center;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+}
+
+.estado-pesquisa-vazia[hidden] {
+    display: none;
+}
+
+.estado-pesquisa-icone {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 18px;
+    background: #eef3ff;
+    color: #4169E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estado-pesquisa-icone svg {
+    width: 30px;
+    height: 30px;
+}
+
+.estado-pesquisa-vazia h3 {
+    margin-bottom: 8px;
+    color: #1E3A8A;
+    font-size: 22px;
+}
+
+.estado-pesquisa-vazia p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CARDS FUTUROS DOS PROFESSORES
+   ===================================================== */
+
+.card-professor {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card-professor:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    border-color: #cbd5e1;
+}
+
+.professor-resumo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 115px;
+    padding: 18px 22px;
+}
+
+.professor-avatar {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #eef3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.professor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.professor-identidade {
+    min-width: 0;
+    flex: 1;
+}
+
+.professor-identidade h3 {
+    margin: 0 0 5px;
+    color: #1E3A8A;
+    font-size: 21px;
+}
+
+.professor-identidade span {
+    color: #666;
+    font-size: 15px;
+}
+
+.professor-expandir {
+    width: 22px;
+    height: 22px;
+    color: #4169E1;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+}
+
+.card-professor.aberto .professor-expandir {
+    transform: rotate(180deg);
+}
+
+.professor-detalhes {
+    display: none;
+    padding: 0 22px 22px;
+}
+
+.card-professor.aberto .professor-detalhes {
+    display: block;
+}
+
+.informacoes-professor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.informacao-professor {
+    padding: 14px;
+    background: #f8faff;
+    border-radius: 12px;
+}
+
+.informacao-professor span {
+    display: block;
+    margin-bottom: 5px;
+    color: #777;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.informacao-professor strong {
+    color: #1E3A8A;
+    font-size: 15px;
+}
+
+.botao-ver-perfil {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 11px;
+    background: #4169E1;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.botao-ver-perfil:hover {
+    background: #294ec5;
+    transform: translateY(-2px);
+}
+
+.botao-ver-perfil svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =====================================================
+   MODO ESCURO
+   ===================================================== */
+
+.modo-escuro .professores-selo {
+    background: #3a3215;
+    color: #FFD54F;
+}
+
+.modo-escuro .professores-introducao h2 {
+    color: #FFD54F;
+}
+
+.modo-escuro .professores-introducao p {
+    color: #e5e7eb;
+}
+
+.modo-escuro .rotulo-pesquisa-professores {
+    color: #FFD54F;
+}
+
+.modo-escuro .campo-pesquisa-professores {
+    background: #13294b;
+    border-color: #29456f;
+}
+
+.modo-escuro .campo-pesquisa-professores:focus-within {
+    border-color: #FFD54F;
+}
+
+.modo-escuro .campo-pesquisa-professores svg {
+    color: #FFD54F;
+}
+
+.modo-escuro .campo-pesquisa-professores input {
+    color: white;
+}
+
+.modo-escuro .campo-pesquisa-professores input::placeholder {
+    color: #9ca3af;
+}
+
+.modo-escuro .estado-vazio-professores,
+.modo-escuro .estado-pesquisa-vazia,
+.modo-escuro .card-professor {
+    background: #13294b;
+    border-color: #29456f;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.30);
+}
+
+.modo-escuro .estado-vazio-icone,
+.modo-escuro .estado-pesquisa-icone {
+    background: #1d3b6d;
+    color: #FFD54F;
+}
+
+.modo-escuro .estado-vazio-professores h3,
+.modo-escuro .estado-pesquisa-vazia h3 {
+    color: #FFD54F;
+}
+
+.modo-escuro .estado-vazio-professores p {
+    color: white;
+}
+
+.modo-escuro .estado-vazio-professores span,
+.modo-escuro .estado-pesquisa-vazia p {
+    color: #cbd5e1;
+}
+
+.modo-escuro .professor-avatar {
+    background: #1d3b6d;
+}
+
+.modo-escuro .professor-identidade h3 {
+    color: #FFD54F;
+}
+
+.modo-escuro .professor-identidade span {
+    color: #cbd5e1;
+}
+
+.modo-escuro .professor-expandir {
+    color: #FFD54F;
+}
+
+.modo-escuro .informacao-professor {
+    background: #102442;
+}
+
+.modo-escuro .informacao-professor span {
+    color: #9ca3af;
+}
+
+.modo-escuro .informacao-professor strong {
+    color: #FFD54F;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — PROFESSORES
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .pagina-professores {
+        padding: 35px 15px 50px;
+    }
+
+    .professores-introducao h2 {
+        font-size: 30px;
+    }
+
+    .professores-introducao p {
+        font-size: 16px;
+    }
+
+    .estado-vazio-professores {
+        padding: 35px 20px;
+    }
+
+    .professor-resumo {
+        padding: 16px;
+        gap: 13px;
+    }
+
+    .professor-avatar {
+        width: 58px;
+        height: 58px;
+        border-radius: 15px;
+    }
+
+    .professor-identidade h3 {
+        font-size: 18px;
+    }
+
+    .professor-identidade span {
+        font-size: 14px;
+    }
+
+    .informacoes-professor {
+        grid-template-columns: 1fr;
+    }
+
+    .professor-detalhes {
+        padding: 0 16px 18px;
+    }
+
+}  
