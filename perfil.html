@@ -466,6 +466,98 @@ if(progressoSalvo){
     }
 
 } 
+    // =====================================================
+// QUESTÕES RESPONDIDAS
+// =====================================================
+
+const progressoQuestoes =
+    localStorage.getItem("progressoNiveis");
+
+
+if(progressoQuestoes){
+
+    try {
+
+        const progresso =
+            JSON.parse(progressoQuestoes);
+
+
+        let questoesRespondidas =
+            0;
+
+
+        if(
+            progresso &&
+            progresso.niveis &&
+            typeof progresso.niveis === "object"
+        ){
+
+            Object.values(
+                progresso.niveis
+            ).forEach(function(nivel){
+
+                if(
+                    !nivel ||
+                    !nivel.fases ||
+                    typeof nivel.fases !== "object"
+                ){
+
+                    return;
+
+                }
+
+
+                Object.values(
+                    nivel.fases
+                ).forEach(function(fase){
+
+                    if(
+                        !fase ||
+                        !fase.respostas ||
+                        typeof fase.respostas !== "object"
+                    ){
+
+                        return;
+
+                    }
+
+
+                    questoesRespondidas +=
+                        Object.keys(
+                            fase.respostas
+                        ).length;
+
+                });
+
+            });
+
+        }
+
+
+        const elementoQuestoes =
+            document.getElementById(
+                "questoesRespondidasPerfil"
+            );
+
+
+        if(elementoQuestoes){
+
+            elementoQuestoes.textContent =
+                questoesRespondidas;
+
+        }
+
+
+    } catch(erro){
+
+        console.error(
+            "Não foi possível carregar as questões respondidas:",
+            erro
+        );
+
+    }
+
+}  
 </script>
 
 <script src="js/script.js"></script>
