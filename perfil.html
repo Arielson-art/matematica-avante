@@ -386,7 +386,86 @@ if(tipoSalvo){
     }
 
 } 
+const progressoSalvo =
+    localStorage.getItem("progressoNiveis");
 
+
+if(progressoSalvo){
+
+    try {
+
+        const progresso =
+            JSON.parse(progressoSalvo);
+
+
+        let fasesConcluidas = 0;
+
+
+        if(
+            progresso &&
+            progresso.niveis &&
+            typeof progresso.niveis === "object"
+        ){
+
+            Object.values(
+                progresso.niveis
+            ).forEach(function(nivel){
+
+                if(
+                    !nivel ||
+                    !nivel.fases ||
+                    typeof nivel.fases !== "object"
+                ){
+
+                    return;
+
+                }
+
+
+                Object.values(
+                    nivel.fases
+                ).forEach(function(fase){
+
+                    if(
+                        fase &&
+                        fase.concluida === true
+                    ){
+
+                        fasesConcluidas++;
+
+                    }
+
+                });
+
+            });
+
+        }
+
+
+        const elementoFases =
+            document.getElementById(
+                "fasesConcluidasResumo"
+            );
+
+
+        if(elementoFases){
+
+            elementoFases.textContent =
+                fasesConcluidas;
+
+        }
+
+
+    } catch(erro){
+
+        console.error(
+            "Não foi possível carregar as fases concluídas:",
+            erro
+        );
+
+    }
+
+} 
 </script>
 
 <script src="js/script.js"></script>
