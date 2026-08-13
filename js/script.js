@@ -577,7 +577,7 @@ if(fecharNotificacaoPremium){
 
 const CHAVE_STREAK = "diasEstudados";
 
-
+const CHAVE_ULTIMA_ATIVIDADE = "ultimaAtividade"; 
 // =====================================================
 // OBTER DATA LOCAL NO FORMATO YYYY-MM-DD
 // =====================================================
@@ -694,16 +694,32 @@ function registrarEstudoHoje() {
     const hoje =
         obterDataHoje();
 
+
+    // Registra a data e hora da última questão respondida.
+
+    localStorage.setItem(
+        CHAVE_ULTIMA_ATIVIDADE,
+        new Date().toISOString()
+    );
+
+
     const dias =
         obterDiasEstudados();
+
+
+    // Se o dia já foi registrado,
+    // não adiciona novamente à sequência.
 
     if (
         dias.includes(hoje)
     ) {
 
+        atualizarSequenciaInicio();
+
         return;
 
     }
+
 
     dias.push(hoje);
 
@@ -713,11 +729,10 @@ function registrarEstudoHoje() {
         dias
     );
 
+
     atualizarSequenciaInicio();
 
-}
-
-
+}  
 // =====================================================
 // CALCULAR SEQUÊNCIA ATUAL
 // =====================================================
