@@ -558,6 +558,130 @@ if(progressoQuestoes){
     }
 
 }  
+    // =====================================================
+// TAXA DE ACERTOS
+// =====================================================
+
+const progressoAcertos =
+    localStorage.getItem("progressoNiveis");
+
+
+if(progressoAcertos){
+
+    try {
+
+        const progresso =
+            JSON.parse(progressoAcertos);
+
+
+        let totalRespostas =
+            0;
+
+        let totalAcertos =
+            0;
+
+
+        if(
+            progresso &&
+            progresso.niveis &&
+            typeof progresso.niveis === "object"
+        ){
+
+            Object.values(
+                progresso.niveis
+            ).forEach(function(nivel){
+
+                if(
+                    !nivel ||
+                    !nivel.fases ||
+                    typeof nivel.fases !== "object"
+                ){
+
+                    return;
+
+                }
+
+
+                Object.values(
+                    nivel.fases
+                ).forEach(function(fase){
+
+                    if(
+                        !fase ||
+                        !fase.respostas ||
+                        typeof fase.respostas !== "object"
+                    ){
+
+                        return;
+
+                    }
+
+
+                    Object.values(
+                        fase.respostas
+                    ).forEach(function(resposta){
+
+                        totalRespostas++;
+
+
+                        if(
+                            resposta === true
+                        ){
+
+                            totalAcertos++;
+
+                        }
+
+                    });
+
+                });
+
+            });
+
+        }
+
+
+        let taxaAcertos =
+            0;
+
+
+        if(totalRespostas > 0){
+
+            taxaAcertos =
+                Math.round(
+                    (
+                        totalAcertos /
+                        totalRespostas
+                    ) * 100
+                );
+
+        }
+
+
+        const elementoTaxa =
+            document.getElementById(
+                "taxaAcertosResumo"
+            );
+
+
+        if(elementoTaxa){
+
+            elementoTaxa.textContent =
+                taxaAcertos + "%";
+
+        }
+
+
+    } catch(erro){
+
+        console.error(
+            "Não foi possível calcular a taxa de acertos:",
+            erro
+        );
+
+    }
+
+}  
 </script>
 
 <script src="js/script.js"></script>
