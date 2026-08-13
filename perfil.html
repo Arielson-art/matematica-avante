@@ -366,7 +366,26 @@ if(nomeSalvo){
     document.getElementById("nomeUsuario").textContent = nomeSalvo;
 
 }
+const tipoSalvo =
+    localStorage.getItem("tipoUsuario");
 
+
+if(tipoSalvo){
+
+    const tipoUsuario =
+        document.getElementById("tipoUsuario");
+
+
+    if(tipoUsuario){
+
+        tipoUsuario.textContent =
+            tipoSalvo === "professor"
+                ? "Professor"
+                : "Aluno";
+
+    }
+
+} 
 
 </script>
 
