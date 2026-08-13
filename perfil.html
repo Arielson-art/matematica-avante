@@ -737,6 +737,125 @@ if (
     }
 
 }  
+    // =====================================================
+// EVOLUÇÃO GERAL
+// =====================================================
+
+const progressoEvolucao =
+    localStorage.getItem(
+        "progressoNiveis"
+    );
+
+
+if(progressoEvolucao){
+
+    try {
+
+        const progresso =
+            JSON.parse(
+                progressoEvolucao
+            );
+
+
+        let fasesConcluidas =
+            0;
+
+
+        const totalFasesAtuais =
+            10;
+
+
+        if(
+            progresso &&
+            progresso.niveis &&
+            typeof progresso.niveis === "object"
+        ){
+
+            Object.values(
+                progresso.niveis
+            ).forEach(function(nivel){
+
+                if(
+                    !nivel ||
+                    !nivel.fases ||
+                    typeof nivel.fases !== "object"
+                ){
+
+                    return;
+
+                }
+
+
+                Object.values(
+                    nivel.fases
+                ).forEach(function(fase){
+
+                    if(
+                        fase &&
+                        fase.concluida === true
+                    ){
+
+                        fasesConcluidas++;
+
+                    }
+
+                });
+
+            });
+
+        }
+
+
+        const porcentagemEvolucao =
+            Math.min(
+                100,
+                Math.round(
+                    (
+                        fasesConcluidas /
+                        totalFasesAtuais
+                    ) * 100
+                )
+            );
+
+
+        const elementoEvolucao =
+            document.getElementById(
+                "evolucaoGeralPerfil"
+            );
+
+
+        if(elementoEvolucao){
+
+            elementoEvolucao.textContent =
+                porcentagemEvolucao + "%";
+
+        }
+
+
+        const barraEvolucao =
+            document.querySelector(
+                ".card-perfil.progresso .progresso-atual"
+            );
+
+
+        if(barraEvolucao){
+
+            barraEvolucao.style.width =
+                porcentagemEvolucao + "%";
+
+        }
+
+
+    } catch(erro){
+
+        console.error(
+            "Não foi possível calcular a evolução geral:",
+            erro
+        );
+
+    }
+
+}  
 </script>
 
 <script src="js/script.js"></script>
