@@ -259,8 +259,8 @@ Não possui
 
 🚀 Próximo nível:
 
-<span>
-0 / 500 XP
+<span id="proximoNivelPerfil">
+    0 / 500 XP
 </span>
 
 </p>
@@ -856,6 +856,82 @@ if(progressoEvolucao){
     }
 
 }  
+
+// =====================================================
+// XP ACUMULADO
+// =====================================================
+
+const xpAtualPerfil =
+    obterXP();
+
+
+const elementoXP =
+    document.getElementById(
+        "xpAcumuladoPerfil"
+    );
+
+
+if (elementoXP) {
+
+    elementoXP.textContent =
+        xpAtualPerfil + " XP";
+
+}
+// =====================================================
+// NÍVEL ATUAL
+// =====================================================
+
+const informacoesNivel =
+    obterInformacoesNivel(
+        xpAtualPerfil
+    );
+
+
+const elementoNivel =
+    document.getElementById(
+        "nivelResumo"
+    );
+
+
+if (elementoNivel) {
+
+    elementoNivel.textContent =
+        "Nível " +
+        informacoesNivel.nivel;
+
+}
+
+// =====================================================
+// PROGRESSO PARA O PRÓXIMO NÍVEL
+// =====================================================
+
+const elementoProximoNivel =
+    document.getElementById(
+        "proximoNivelPerfil"
+    );
+
+
+if (elementoProximoNivel) {
+
+    if (
+        informacoesNivel.nivelMaximo
+    ) {
+
+        elementoProximoNivel.textContent =
+            "Nível máximo";
+
+    } else {
+
+        elementoProximoNivel.textContent =
+            informacoesNivel.xpNoNivel +
+            " / " +
+            informacoesNivel.xpNecessario +
+            " XP";
+
+    }
+
+}
+
 </script>
 
 <script src="js/script.js"></script>
