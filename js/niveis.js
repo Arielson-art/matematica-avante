@@ -2298,6 +2298,56 @@ function responderAlternativa(
 
     respostas[questaoAtual] =
         alternativa.correta;
+// =================================================
+// REGISTRAR XP DA QUESTÃO
+// =================================================
+
+const dadosFaseXP =
+    obterDadosFase(
+        nivelAtual,
+        faseAtual
+    );
+
+
+if (
+    !dadosFaseXP.xpRecebido
+) {
+
+    dadosFaseXP.xpRecebido = {};
+
+}
+
+
+if (
+    alternativa.correta &&
+    !dadosFaseXP.xpRecebido[questaoAtual]
+) {
+
+    registrarXPResposta(
+        true
+    );
+
+
+    dadosFaseXP.xpRecebido[
+        questaoAtual
+    ] = true;
+
+
+    const progressoXP =
+        carregarProgresso();
+
+
+    progressoXP.niveis[nivelAtual]
+        .fases[faseAtual]
+        .xpRecebido =
+            dadosFaseXP.xpRecebido;
+
+
+    salvarProgresso(
+        progressoXP
+    );
+
+} 
 
 // Registra que o usuário estudou hoje.
 
