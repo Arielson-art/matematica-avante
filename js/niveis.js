@@ -1836,6 +1836,7 @@ function obterDadosFase(
                 questaoAtual: 1,
 
                 respostas: {},
+xpRecebido: {},
 
                 acertos: 0,
 
@@ -1852,6 +1853,21 @@ function obterDadosFase(
 
     }
 
+if (
+    !progresso.niveis[numeroNivel]
+        .fases[numeroFase]
+        .xpRecebido
+) {
+
+    progresso.niveis[numeroNivel]
+        .fases[numeroFase]
+        .xpRecebido = {};
+
+    salvarProgresso(
+        progresso
+    );
+
+}
 
     return progresso.niveis[numeroNivel]
         .fases[numeroFase];
