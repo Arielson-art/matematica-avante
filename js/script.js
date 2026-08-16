@@ -1115,3 +1115,230 @@ if (
     atualizarSequenciaInicio();
 
 }  
+
+// =====================================================
+// SISTEMA DE XP
+// =====================================================
+
+const CHAVE_XP = "xpUsuario";
+const XP_POR_ACERTO = 10;
+const XP_BONUS_FASE = 50;
+const XP_POR_NIVEL = 500;
+const NIVEL_MAXIMO = 10;
+
+
+// =====================================================
+// OBTER XP ATUAL
+// =====================================================
+
+function obterXP() {
+
+    const salvo =
+        localStorage.getItem(
+            CHAVE_XP
+        );
+
+    const xp =
+        Number(salvo);
+
+    if (
+        !Number.isFinite(xp) ||
+        xp < 0
+    ) {
+
+        return 0;
+
+    }
+
+    return xp;
+
+}
+
+
+// =====================================================
+// SALVAR XP
+// =====================================================
+
+function salvarXP(
+    xp
+) {
+
+    localStorage.setItem(
+        CHAVE_XP,
+        String(xp)
+    );
+
+}
+
+
+// =====================================================
+// ADICIONAR XP
+// =====================================================
+
+function adicionarXP(
+    quantidade
+) {
+
+    const xpAtual =
+        obterXP();
+
+    const novoXP =
+        xpAtual + quantidade;
+
+    salvarXP(
+        novoXP
+    );
+
+    return novoXP;
+
+}
+
+
+// =====================================================
+// REGISTRAR XP DE RESPOSTA
+// =====================================================
+
+function registrarXPResposta(
+    correta
+) {
+
+    if (!correta) {
+
+        return obterXP();
+
+    }
+
+    return adicionarXP(
+        XP_POR_ACERTO
+    );
+
+}
+
+
+// =====================================================
+// REGISTRAR BÔNUS DE CONCLUSÃO DE FASE
+// =====================================================
+
+function registrarXPConclusaoFase(
+    dadosFase
+) {
+
+    if (!dadosFase) {
+
+        return obterXP();
+
+    }
+
+
+    // Impede receber o mesmo bônus
+    // de conclusão mais de uma vez.
+
+    if (
+        dadosFase.bonusXPRecebido === true
+    ) {
+
+        return obterXP();
+
+    }
+
+
+    dadosFase.bonusXPRecebido =
+        true;
+
+
+    return adicionarXP(
+        XP_BONUS_FASE
+    );
+
+}
+
+
+// =====================================================
+// CALCULAR NÍVEL PELO XP
+// =====================================================
+
+function calcularNivelPorXP(
+    xp
+) {
+
+    if (xp < XP_POR_NIVEL) {
+
+        return 1;
+
+    }
+
+
+    const nivel =
+        Math.floor(
+            xp / XP_POR_NIVEL
+        ) + 1;
+
+
+    return Math.min(
+        nivel,
+        NIVEL_MAXIMO
+    );
+
+}
+
+
+// =====================================================
+// OBTER INFORMAÇÕES DO NÍVEL PELO XP
+// =====================================================
+
+function obterInformacoesNivel(
+    xp
+) {
+
+    const nivel =
+        calcularNivelPorXP(
+            xp
+        );
+
+
+    if (
+        nivel >= NIVEL_MAXIMO
+    ) {
+
+        return {
+
+            nivel: NIVEL_MAXIMO,
+
+            xpNoNivel: xp - 4500,
+
+            xpNecessario:
+                0,
+
+            nivelMaximo: true
+
+        };
+
+    }
+
+
+    const inicioNivel =
+        (nivel - 1) *
+        XP_POR_NIVEL;
+
+
+    const xpNoNivel =
+        xp -
+        inicioNivel;
+
+
+    return {
+
+        nivel: nivel,
+
+        xpNoNivel:
+            xpNoNivel,
+
+        xpNecessario:
+            XP_POR_NIVEL,
+
+        nivelMaximo:
+            false
+
+    };
+
+}
