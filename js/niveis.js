@@ -3043,6 +3043,14 @@ function finalizarFase() {
     dadosFase.tempo =
         tempo;
 
+// =================================================
+// BÔNUS DE XP POR CONCLUSÃO DA FASE
+// =================================================
+
+registrarXPConclusaoFase(
+    dadosFase
+);
+
 
     // =================================================
     // ATUALIZAR MELHOR RESULTADO
